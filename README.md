@@ -1,7 +1,10 @@
 # 注意（超重要）
 **作業前に必ずプル**<br>**プッシュ前に必ずプル**<br>
+コンフリクト回避のため、之を徹底する<br>
+<br>
 
-コンフリクト回避のため、之を徹底する
+
+![alt](https://raw.githubusercontent.com/louim/in-case-of-fire/refs/heads/master/in_case_of_fire.png)
 
 ## OutRow(あうとろう)チーム制作
 
