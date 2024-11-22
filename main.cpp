@@ -1,4 +1,6 @@
 #include "DxLib.h"
+#include "FpsControll.h"
+#include "constants.h"
 
 // ケーキのデータ格納
 int remain[8];
@@ -9,56 +11,111 @@ int playerItem[2][8] = { {0} };
 // プレイヤーのHPを格納
 int playerHP[2] = { 0 };
 
-// ルーレットが回っているか
-bool roulette = FALSE;
-
 // プレイヤーの選択している要素を格納
-int select = 0;
+int playerSelect = 0;
+
+// 状態遷移
+int status = 0;
+
+// 使ったアイテムのIDを格納する
+int itemUse = 0;
+
+
+// グラフィックスデータを格納する構造体
+typedef struct _Graphic {
+	bool visible;				// 画像を表示するかどうか
+	int Graph;					// 表示する画像のハンドルを格納
+	int x;						// 左上の座標を格納
+	int y;
+	int xx;						//右下の座標を格納
+	int yy;
+	int event;					// 適応されるイベントの格納
+	int flame;					// イベントのフレーム数の格納
+}Graphic;
+
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	if (DxLib_Init() == -1)		// ＤＸライブラリ初期化処理
+
+	SetWaitVSyncFlag(FALSE);			// 垂直同期をオフにする（こうしない45fpsぐらいになる）
+
+	if (DxLib_Init() == -1)			// ＤＸライブラリ初期化処理
 	{
 		return -1;			// エラーが起きたら直ちに終了
 	}
 
-	DxLib_End();				// ＤＸライブラリ使用の終了処理
+	// グラフィックスの格納 
+	Graphic graphic[G_NUM];
 
-	return 0;				// ソフトの終了 
+	// エフェクトの格納
+	Graphic effect[E_NUM];
 
-	// アイテムを引く
 
-	// 描写する関数
+	FpsControll_Initialize();
 
-	while () {
+	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0) {
 
-		// 現在のプレイヤーの表示。
 
-		// 選択の操作を受け付ける。
 
-		// アイテムを使う。
-		
-		// ルーレットを開始する。
+		// 操作部：変数の値をプレイヤーからの操作によって変える。
+		switch (status) {
+		case 1:					// 選択の操作を受け付ける。
 
-		// ルーレットを止める(戻り値をルーレットの結果を反映する)。
+			break;
+		case 2:					// ルーレットの操作を受け付ける。
 
-		// ルーレットの結果を反映する。
+			break;
+		default:				// 操作を受け付けない。
 
-		// 勝利条件を確認する。
+			break;
+		}
 
-		// ターンを回す。
+		// 処理部：操作部で変えた変数を読み取り、適切に処理する。グラフィックス構造体を調整または生成する。
+		if (itemUse) {
+			;			switch (itemUse) {
 
-		if (roulette) {
-			//ルーレットを描画する関数の変数を変更する処理
+			case 1:
+				break;
+			}
+
+
+			itemUse = 0;
+		}
+
+		// 描画部：操作部、処理部で変えた変数を読み取り、適切に描画する
+
+		// 背景など常に描画するもの
+
+		for (int i = 0; i < G_NUM; i++) {
+			if (graphic[i].visible) {
+
+			}
+		}
+
+		// エフェクトなど、動的に配置されるもの。
+
+		for (int i = 0; i < G_NUM; i++) {
+			if (effect[i].visible) {
+
+			}
 		}
 
 
-		// ルーレット以外を描画する関数
+		// エスケープキーでゲームを終了する。
+		if (CheckHitKey(KEY_INPUT_ESCAPE)) {
+			DxLib_End();
+			return 0;			//正常な終了を通知
+		}
 
-		// ルーレットを描画する関数
-
+		// FPSをコントロールする奴ら
+		FpsControll_Wait();
+		FpsControll_Update();
+		FpsControll_Draw();
 	}
 
 
+
+	DxLib_End();				// ＤＸライブラリ使用の終了処理
+	return -1;					// 異常終了の通知
 }
