@@ -9,7 +9,7 @@ int remain[8];
 int playerItem[2][8] = { {0} };
 
 // プレイヤーのHPを格納
-int playerHP[2] = { 0 };
+int playerPoints[2] = { 0 };
 
 // プレイヤーの選択している要素を格納
 int playerSelect = 0;
@@ -20,11 +20,16 @@ int status = 0;
 // 使ったアイテムのIDを格納する
 int itemUse = 0;
 
+int turnPlayer = 0;
+
+bool turnEnd = false;
+
+int rulette;
 
 // グラフィックスデータを格納する構造体
 typedef struct _Graphic {
 	bool visible;				// 画像を表示するかどうか
-	int Graph;					// 表示する画像のハンドルを格納
+	int graph;					// 表示する画像のハンドルを格納
 	int x;						// 左上の座標を格納
 	int y;
 	int xx;						//右下の座標を格納
@@ -51,7 +56,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// エフェクトの格納
 	Graphic effect[E_NUM];
 
-
+	// fpsの初期化
 	FpsControll_Initialize();
 
 	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0) {
@@ -59,12 +64,28 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 
 		// 操作部：変数の値をプレイヤーからの操作によって変える。
+
 		switch (status) {
-		case 1:					// 選択の操作を受け付ける。
+		case 1:					// アイテム選択の操作を受け付ける。
+
+			// アイテムを選択する操作
+			if (CheckHitKey(KEY_INPUT_A)) {
+				playerSelect -= 1;
+			}
+			if (CheckHitKey(KEY_INPUT_D)) {
+				playerSelect += 1;
+			}
+
+			// アイテムを決定する操作
+			if (CheckHitKey(KEY_INPUT_S)) {
+				itemUse = playerItem[turnPlayer][playerSelect];
+			}
 
 			break;
 		case 2:					// ルーレットの操作を受け付ける。
+			if (CheckHitKey(KEY_INPUT_S)) {
 
+			}
 			break;
 		default:				// 操作を受け付けない。
 
@@ -76,6 +97,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			;			switch (itemUse) {
 
 			case 1:
+				playerPoints[turnPlayer] += 1;
+				graphic[1]; // これがポイントのグラフィックスと仮定する
+				graphic[1].event = 1;
 				break;
 			}
 
@@ -90,6 +114,26 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		for (int i = 0; i < G_NUM; i++) {
 			if (graphic[i].visible) {
 
+				switch (graphic[i].event) {
+				case 1:
+					// 一定時間表示を大きくする
+					if (graphic[i].flame == 0) {
+						graphic[i].flame = 60;
+						graphic[i].x = graphic[i].x + 60;
+					}
+					else {
+
+					}
+					graphic[i].flame--;
+					if (graphic[i].flame == 0) {
+						graphic[i].event = 0;
+					}
+					break;
+				default:
+					break;
+				}
+				// 画像を表示する
+				DrawExtendGraph(graphic[i].x, graphic[i].y, graphic[i].xx, graphic[i].yy, graphic[i].graph, TRUE);
 			}
 		}
 
@@ -101,21 +145,35 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			}
 		}
 
+		// turnEndを踏んだら、プレイヤーが切り替わる。
+		if (turnEnd) {
 
-		// エスケープキーでゲームを終了する。
-		if (CheckHitKey(KEY_INPUT_ESCAPE)) {
-			DxLib_End();
-			return 0;			//正常な終了を通知
+			switch (turnPlayer) {
+			case 0:
+				turnPlayer = 1;
+				break;
+
+			case 1:
+				turnPlayer = 0;
+				break;
+			}
+
+
+
+			// エスケープキーでゲームを終了する。
+			if (CheckHitKey(KEY_INPUT_ESCAPE)) {
+				DxLib_End();
+				return 0;			//正常な終了を通知
+			}
+
+			// FPSをコントロールする奴ら
+			FpsControll_Wait();
+			FpsControll_Update();
+			FpsControll_Draw();
 		}
 
-		// FPSをコントロールする奴ら
-		FpsControll_Wait();
-		FpsControll_Update();
-		FpsControll_Draw();
+
+
+		DxLib_End();				// ＤＸライブラリ使用の終了処理
+		return -1;					// 異常終了の通知
 	}
-
-
-
-	DxLib_End();				// ＤＸライブラリ使用の終了処理
-	return -1;					// 異常終了の通知
-}
