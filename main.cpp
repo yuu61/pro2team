@@ -75,43 +75,51 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		switch (status) 
 		{
-			case 1:	// アイテム選択の操作を受け付ける。
-					// アイテムを選択する操作
-					if (CheckHitKey(KEY_INPUT_A)) {
-						playerSelect -= 1;
-					}
-					if (CheckHitKey(KEY_INPUT_D)) {
-						playerSelect += 1;
-					}
+			case 1:	
+				// アイテム選択の操作を受け付ける。
+				// アイテムを選択する操作
+				if (CheckHitKey(KEY_INPUT_A)) {
+					playerSelect -= 1;
+				}
+				if (CheckHitKey(KEY_INPUT_D)) {
+					playerSelect += 1;
+				}
 
-					// アイテムの選択が一周するように（のちにルーレットを選択する手段を確保する）
-					if (playerSelect < 0) {
-						playerSelect = ITEM_NUM - 1;
-					}
-					else if (playerSelect > ITEM_NUM - 1) {
-						playerSelect = 0;
-					}
+				// アイテムの選択が一周するように（のちにルーレットを選択する手段を確保する）
+				switch (playerSelect)
+				{
+				case 8:playerSelect = 0; break;//playerSelect > ITEM_NUM - 1 ７を越えたつまり8　呼び出した関数で触る場合はswitchを削除してifのコメントアウトを解除
+				default:playerSelect = ITEM_NUM - 1;break;
+				}
+				/*
+				if (playerSelect < 0) {
+					playerSelect = ITEM_NUM - 1;
+				}
+				else if (playerSelect > ITEM_NUM - 1) {
+					playerSelect = 0;
+				}
+				*/
 
-					// アイテムを決定する操作
-					if (CheckHitKey(KEY_INPUT_S)) {
-						itemUse = playerItem[turnPlayer][playerSelect];
-					}
-					else if (CheckHitKey(KEY_INPUT_W)) {			// ルーレット画面へ移動する操作（条件は仮置き）
-						status = 2;
-						toBeBigCake = TRUE;
-					}
-					break;
+				// アイテムを決定する操作
+				if (CheckHitKey(KEY_INPUT_S)) {
+					itemUse = playerItem[turnPlayer][playerSelect];
+				}
+				else if (CheckHitKey(KEY_INPUT_W)) {			// ルーレット画面へ移動する操作（条件は仮置き）
+					status = 2;
+					toBeBigCake = TRUE;
+				}
+				break;
 
 			case 2:					// ルーレットの操作を受け付ける。
-					if (CheckHitKey(KEY_INPUT_S))
-					{
-						rulette = TRUE;		// ルーレットを開始する操作。
-						status = 0;			// 暫く操作を受け付けない。（要改修）
-					}
+				if (CheckHitKey(KEY_INPUT_S))
+				{
+					rulette = TRUE;		// ルーレットを開始する操作。
+					status = 0;			// 暫く操作を受け付けない。（要改修）
+				}
 
-					break;
+				break;
 
-			default:break;	// 操作を受け付けない。
+			//default:break;冗長なためコメントアウト	// 操作を受け付けない。
 		}
 
 		// 処理部：操作部で変えた変数を読み取り、適切に処理する。グラフィックス構造体を調整または生成する。
@@ -119,11 +127,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 			switch (itemUse) 
 			{
-				case 1:			// ポイントを増やす効果
-						playerPoints[turnPlayer] += 1;
-						graphic[1]; // これがポイントのグラフィックスと仮定する
-						graphic[1].event = 1;
-						break;
+			case 1:			// ポイントを増やす効果
+				playerPoints[turnPlayer] += 1;
+				graphic[1]; // これがポイントのグラフィックスと仮定する
+				graphic[1].event = 1;
+				break;
 			}
 
 			itemUse = 0;
@@ -143,8 +151,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			}
 			if (cakeFlame >= 360) {
 				cakeFlame = 0;
-			}
-			
+			}			
 		}
 
 
@@ -157,35 +164,32 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		{
 			if (graphic[i].visible) 
 			{
-
 				switch (graphic[i].event) 
 				{
-					case 1:
-							// 一定時間表示を大きくする
-							if (graphic[i].flame == 0)
-							{
-								graphic[i].flame = 60;
-								graphic[i].x = graphic[i].x - 60;
-								graphic[i].y = graphic[i].y - 60;
-								graphic[i].xx = graphic[i].xx + 60;
-								graphic[i].yy = graphic[i].yy + 60;
-							}
+				case 1:
+					// 一定時間表示を大きくする
+					if (graphic[i].flame == 0)
+					{
+						graphic[i].flame = 60;
+						graphic[i].x = graphic[i].x - 60;
+						graphic[i].y = graphic[i].y - 60;
+						graphic[i].xx = graphic[i].xx + 60;
+						graphic[i].yy = graphic[i].yy + 60;
+					}
 
-							graphic[i].flame--;
+					graphic[i].flame--;
 
-							if (graphic[i].flame == 0)
-							{
+					if (graphic[i].flame == 0)
+					{
 						
-								graphic[i].x = graphic[i].x + 60;			// 一定時間経過後の処理
-								graphic[i].y = graphic[i].y + 60;
-								graphic[i].xx = graphic[i].xx - 60;
-								graphic[i].yy = graphic[i].yy - 60;
+						graphic[i].x = graphic[i].x + 60;			// 一定時間経過後の処理
+						graphic[i].y = graphic[i].y + 60;
+						graphic[i].xx = graphic[i].xx - 60;
+						graphic[i].yy = graphic[i].yy - 60;
 						
-								graphic[i].event = 0;
-							}
-							break;
-					default:
-							break;
+						graphic[i].event = 0;
+					}
+					break;
 				}
 				// 画像を表示する
 				DrawExtendGraph(graphic[i].x, graphic[i].y, graphic[i].xx, graphic[i].yy, graphic[i].graph, TRUE);
