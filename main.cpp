@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdbool.h>
 #include "DxLib.h"
 #include "FpsControll.h"
 #include "constants.h"
@@ -25,6 +25,12 @@ int turnPlayer = 0;
 
 bool turnEnd = false;
 
+// ルーレットの稼働状態を格納する変数	０：ルーレットを使っていない	
+//										１：ルーレット回転開始前の拡大表示	
+//										２：ルーレット開始可能状態
+//										３：ルーレット回転開始	(操作不可）
+//										４：ルーレット停止可能状態
+//										５：ルーレット停止
 int rulette;
 
 bool toBeBigCake = FALSE;
@@ -75,6 +81,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		switch (status) 
 		{
+			//GetHitKeyStateAllを使う形に変えたい
 			case 1:	
 				// アイテム選択の操作を受け付ける。
 				// アイテムを選択する操作
@@ -88,38 +95,45 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				// アイテムの選択が一周するように（のちにルーレットを選択する手段を確保する）
 				switch (playerSelect)
 				{
-				case 8:playerSelect = 0; break;//playerSelect > ITEM_NUM - 1 ７を越えたつまり8　呼び出した関数で触る場合はswitchを削除してifのコメントアウトを解除
-				default:playerSelect = ITEM_NUM - 1;break;
+				case 8:playerSelect = 0; break;//0未満か7より大きい場合に一周させる
+				case -1:playerSelect = ITEM_NUM - 1;break;
 				}
-				/*
-				if (playerSelect < 0) {
-					playerSelect = ITEM_NUM - 1;
-				}
-				else if (playerSelect > ITEM_NUM - 1) {
-					playerSelect = 0;
-				}
-				*/
 
 				// アイテムを決定する操作
 				if (CheckHitKey(KEY_INPUT_S)) {
-					itemUse = playerItem[turnPlayer][playerSelect];
+					if (playerItem[turnPlayer][playerSelect] != NULL) {
+						itemUse = playerItem[turnPlayer][playerSelect];
+					}
 				}
 				else if (CheckHitKey(KEY_INPUT_W)) {			// ルーレット画面へ移動する操作（条件は仮置き）
-					status = 2;
+					status = 2;	
 					toBeBigCake = TRUE;
 				}
 				break;
 
 			case 2:					// ルーレットの操作を受け付ける。
-				if (CheckHitKey(KEY_INPUT_S))
-				{
-					rulette = TRUE;		// ルーレットを開始する操作。
-					status = 0;			// 暫く操作を受け付けない。（要改修）
+				if (CheckHitKey(KEY_INPUT_S) && rulette == 1)
+				if (CheckHitKey(KEY_INPUT_S) && rulette == 2) {
+					rulette = 3;		// ルーレットを開始する操作。
+										// 暫く操作を受け付けない
+				}
+				else if (rulette == 3) {
+					// 適当に待機する
+					static int waitFlame = 0;
+					waitFlame += rand() % 100;
+					// 適当な時間待ったらルーレットを止めれるようにする。
+					if (waitFlame >= 10000000) {
+						rulette = 4;
+						waitFlame = 0;
+					}
+				}
+								// ルーレットを止めるときの操作
+				else if (CheckHitKey(KEY_INPUT_S) && rulette == 4) {
+					rulette = 5;
 				}
 
 				break;
-
-			//default:break;冗長なためコメントアウト	// 操作を受け付けない。
+							
 		}
 
 		// 処理部：操作部で変えた変数を読み取り、適切に処理する。グラフィックス構造体を調整または生成する。
@@ -138,6 +152,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		}
 
 		
+		if (rulette == 1) {
+			static int waitFlame = 0;
+			waitFlame += rand() % 100;	// 適当な数を入れる
+			if (waitFlame >= 1000) {	// 適当に待つ
+				rulette = 2;
+			}
+		}
 
 		// ケーキの回転中の描画のための、変数の調整（考え中）
 		if (rulette) {
@@ -178,10 +199,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 					}
 
 					graphic[i].flame--;
-
 					if (graphic[i].flame == 0)
-					{
-						
+					{	
 						graphic[i].x = graphic[i].x + 60;			// 一定時間経過後の処理
 						graphic[i].y = graphic[i].y + 60;
 						graphic[i].xx = graphic[i].xx - 60;
@@ -199,6 +218,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//ケーキを大きくする描画
 		if (toBeBigCake) {
 			static int cakeScale = 0;
+			cakeScale++;
 		}
 
 
