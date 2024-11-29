@@ -2,6 +2,7 @@
 #include "DxLib.h"
 #include "FpsControll.h"
 #include "constants.h"
+#include "Graphic.h"
 
 // ケーキのデータ格納
 Cake remain[8];
@@ -34,18 +35,6 @@ bool turnEnd = false;
 int rulette;
 
 bool toBeBigCake = FALSE;
-
-// グラフィックスデータを格納する構造体
-typedef struct _Graphic {
-	bool visible;				// 画像を表示するかどうか
-	int graph;					// 表示する画像のハンドルを格納
-	int x;						// 左上の座標を格納
-	int y;
-	int xx;						//右下の座標を格納
-	int yy;
-	int event;					// 適応されるイベントの格納
-	int flame;					// イベントのフレーム数の格納
-}Graphic;
 
 typedef struct _cake {
 	int point;					// ケーキのイチゴの数
@@ -183,36 +172,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 		for (int i = 0; i < G_NUM; i++)
 		{
-			if (graphic[i].visible) 
-			{
-				switch (graphic[i].event) 
-				{
-				case 1:
-					// 一定時間表示を大きくする
-					if (graphic[i].flame == 0)
-					{
-						graphic[i].flame = 60;
-						graphic[i].x = graphic[i].x - 60;
-						graphic[i].y = graphic[i].y - 60;
-						graphic[i].xx = graphic[i].xx + 60;
-						graphic[i].yy = graphic[i].yy + 60;
-					}
-
-					graphic[i].flame--;
-					if (graphic[i].flame == 0)
-					{	
-						graphic[i].x = graphic[i].x + 60;			// 一定時間経過後の処理
-						graphic[i].y = graphic[i].y + 60;
-						graphic[i].xx = graphic[i].xx - 60;
-						graphic[i].yy = graphic[i].yy - 60;
-						
-						graphic[i].event = 0;
-					}
-					break;
-				}
-				// 画像を表示する
-				DrawExtendGraph(graphic[i].x, graphic[i].y, graphic[i].xx, graphic[i].yy, graphic[i].graph, TRUE);
-			}
+			graphic[i].Display();
 		}
 
 		//ケーキを大きくする描画
