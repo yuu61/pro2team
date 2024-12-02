@@ -55,6 +55,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		return -1;			// エラーが起きたら直ちに終了
 	}
 
+	Item_Menu itemMenu;
+
 	// グラフィックスの格納 
 	Graphic graphic[G_NUM];
 
@@ -66,6 +68,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0) 
 	{
+		itemMenu.Update();
+		
+
+		/*
 		// 操作部：変数の値をプレイヤーからの操作によって変える。
 
 		switch (status) 
@@ -216,7 +222,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		FpsControll_Update();
 		FpsControll_Draw();
 
-
+		*/
 		DxLib_End();				// ＤＸライブラリ使用の終了処理
 		return -1;					// 異常終了の通知
 	}
