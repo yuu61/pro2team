@@ -86,7 +86,30 @@ void Graphic::Update() {
     }
 }
 
+bool Item::Return_Exist() {
+    if (exist) {
+        return TRUE;
+    }
+    return FALSE;
+}
 
-void Container<Item>::Display() {
+int Item::Return_ItemID() {
+    return itemID;
+}
+
+void Item::Use() {
     
-};
+    switch (itemID) {
+    
+        // イチゴを増やすアイテムの処理
+    case 1:
+
+    }
+}
+
+Item Item_Menu::Return_Item(int idx){
+    if (item[idx].Return_Exist() == TRUE) {
+
+    }
+    return item[idx];
+}

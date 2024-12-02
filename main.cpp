@@ -4,8 +4,6 @@
 #include "constants.h"
 #include "Graphic.h"
 
-// ケーキのデータ格納
-Cake remain[8];
 
 // プレイヤーのアイテムを格納
 int playerItem[2][ITEM_NUM] = { {0} };
@@ -36,13 +34,11 @@ int rulette;
 
 bool toBeBigCake = FALSE;
 
+/*
 typedef struct _cake {
-	int point;					// ケーキのイチゴの数
-	int item;					// ケーキの中に含まれてるアイテム。（０なら何も入っていない）
-	int locationX;				// 座標
-	int locationY;
-	int radian;					// 角度
+	
 }Cake;
+*/
 
 // プログラムは WinMain から始まります
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -55,7 +51,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		return -1;			// エラーが起きたら直ちに終了
 	}
 
-	Item_Menu itemMenu;
+	// アイテムメニュー
+	Item_Menu itemMenu[2];
+
+	// ルーレット
+	Rulette rulette;
 
 	// グラフィックスの格納 
 	Graphic graphic[G_NUM];
@@ -68,10 +68,17 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0) 
 	{
-		itemMenu.Update();
+		itemMenu[0].Update();
+		itemMenu[1].Update();
+		for (int i = 0; i < G_NUM; i++) {
+			graphic[i].Update();
+		}
+		for (int i = 0; i < E_NUM; i++) {
+			effect[i].Update();
+		}
 		
 
-		/*
+		
 		// 操作部：変数の値をプレイヤーからの操作によって変える。
 
 		switch (status) 
@@ -80,25 +87,29 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			case 1:	
 				// アイテム選択の操作を受け付ける。
 				// アイテムを選択する操作
-				if (CheckHitKey(KEY_INPUT_A)) {
-					playerSelect -= 1;
+				if (CheckHitKey(KEY_INPUT_D) || CheckHitKey(KEY_INPUT_A)) {
+					if (CheckHitKey(KEY_INPUT_A)) {
+						playerSelect -= 1;
+					}
+					else if (CheckHitKey(KEY_INPUT_D)) {
+						playerSelect += 1;
+					}
+					// アイテムの選択が一周するように（のちにルーレットを選択する手段を確保する）
+					switch (playerSelect)
+					{
+					case 8:playerSelect = 0; break;//0未満か7より大きい場合に一周させる
+					case -1:playerSelect = ITEM_NUM - 1; break;
+					}
 				}
-				if (CheckHitKey(KEY_INPUT_D)) {
-					playerSelect += 1;
-				}
-
-				// アイテムの選択が一周するように（のちにルーレットを選択する手段を確保する）
-				switch (playerSelect)
-				{
-				case 8:playerSelect = 0; break;//0未満か7より大きい場合に一周させる
-				case -1:playerSelect = ITEM_NUM - 1;break;
-				}
+				
 
 				// アイテムを決定する操作
 				if (CheckHitKey(KEY_INPUT_S)) {
-					if (playerItem[turnPlayer][playerSelect] != NULL) {
-						itemUse = playerItem[turnPlayer][playerSelect];
+
+					if (itemMenu[turnPlayer].Return_Item(playerSelect).Return_Exist()) {
+						itemMenu[turnPlayer].Return_Item(playerSelect).Use();
 					}
+
 				}
 				else if (CheckHitKey(KEY_INPUT_W)) {			// ルーレット画面へ移動する操作（条件は仮置き）
 					status = 2;	
@@ -130,7 +141,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				break;
 							
 		}
-
+		/*
 		// 処理部：操作部で変えた変数を読み取り、適切に処理する。グラフィックス構造体を調整または生成する。
 		if (itemUse) {
 

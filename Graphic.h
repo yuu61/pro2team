@@ -8,6 +8,7 @@ using namespace std;
 class Graphic
 {
 protected:
+
 	bool visible;				// 画像を表示するかどうか
 	int graph;					// 表示する画像のハンドルを格納
 	int x;						// 左上の座標を格納
@@ -18,9 +19,6 @@ protected:
 	int gY;
 	int gXx;					
 	int gYy;
-	int flame;					// イベントのフレーム数の格納
-
-	int event[10];				// 適応されるイベントの格納
 
 public:
 	void Set_Visible(bool in);
@@ -33,14 +31,34 @@ public:
 	void Update();
 };
 
-class Rulette :Graphic {
-
+class Peace_Of_Cake :public Graphic {
+	int point;					// ケーキのイチゴの数
+	int item;					// ケーキの中に含まれてるアイテム。（０なら何も入っていない）
+	int radian;					// 角度
 };
 
-class Item :Graphic {
-	
+// ルーレット
+class Rulette :public Graphic {
+	Peace_Of_Cake POC[8];
+	int radian;					// 角度
 };
 
-class Item_Menu : Item {
+class Item : public Graphic 
+{
+protected :
+	bool exist;					// アイテムが存在するかどうか
+	int itemID;
+
+public:
+	bool Return_Exist();
+	int Return_ItemID();
+	void Use();
+};
+
+class Item_Menu : public Graphic
+{
+protected:
 	Item item[8];
+public:
+	Item Return_Item(int idx);
 };
