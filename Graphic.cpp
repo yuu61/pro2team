@@ -1,11 +1,13 @@
 #include "Graphic.h"
 #include "DxLib.h"
+#include "constants.h"
+
 void Graphic::Set_Visible(bool in)
 {
     visible = x;
 }
 
-void Graphic::Set_Graph(char* in)
+void Graphic::Set_Graph(const char* in)
 {
     graph = LoadGraph(in);
 }
@@ -33,8 +35,11 @@ void Graphic::Display(int inx,int iny) {
     }
 }
 
-void Graphic::Be_Big() {
-    
+void Graphic::Change_Scale(int scale) {
+    this->x -= scale;
+    this->xx += scale;
+    this->y -= scale;
+    this->yy += scale;
 }
 
 //　グラフィックを囲うように枠を表示する。
@@ -105,6 +110,52 @@ void Item::Use() {
     case 1:
 
     }
+}
+
+// ルーレットを回す処理
+void Rulette::Start() {
+    this->speed += 10;
+}
+
+void Rulette::Stop() {
+    this->speed = 0;
+}
+
+void Rulette::Rotate() {
+    if (speed <= gSpeed) {
+        gSpeed -= 1;
+    }
+    else if (speed >= gSpeed) {
+        gSpeed += 1;
+    }
+
+    if (gSpeed + radian >= 360) {
+        gSpeed = gSpeed + radian - 360;
+    }
+    else {
+        this->radian += gSpeed;
+    }
+}
+
+// ルーレットのケーキを表示する処理
+void Rulette::Display() {
+    for (int i = 0; i < CAKE_NUM; i++) {
+        this->POC[i].Display();
+    }
+}
+
+// ルーレットが停止したかを確認する処理
+bool Rulette::Get_Stoping() {
+    static int sFlame = 0;
+    // ルーレット停止後、すこし次の処理の以降に遅延を持たせる。
+    if (gSpeed == 0) {
+        sFlame += 1;
+    }
+    if (sFlame >= 60) {
+        sFlame = 0;
+        return TRUE;
+    }
+    return FALSE;
 }
 
 Item Item_Menu::Return_Item(int idx){

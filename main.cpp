@@ -15,6 +15,9 @@ int playerPoints[2] = { 0 };
 int playerSelect = 0;
 
 // 状態遷移
+// １：アイテムの選択画面
+// ２：ルーレットの操作画面
+// ３：ルーレット後の処理
 int status = 0;
 
 // 使ったアイテムのIDを格納する
@@ -30,9 +33,7 @@ bool turnEnd = false;
 //										３：ルーレット回転開始	(操作不可）
 //										４：ルーレット停止可能状態
 //										５：ルーレット停止
-int rulette;
-
-bool toBeBigCake = FALSE;
+int ruletteStatus;
 
 /*
 typedef struct _cake {
@@ -45,6 +46,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 {
 
 	SetWaitVSyncFlag(FALSE);			// 垂直同期をオフにする（こうしない45fpsぐらいになる）
+
+	//return 0;
 
 	if (DxLib_Init() == -1)			// ＤＸライブラリ初期化処理
 	{
@@ -59,9 +62,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	// グラフィックスの格納 
 	Graphic graphic[G_NUM];
-
+	graphic[0].Set_Graph("Image\\convert.png");
+	graphic[0].Set_Location(0, 0, SCREEN_X, SCREEN_Y);
 	// エフェクトの格納
 	Graphic effect[E_NUM];
+
 
 	// fpsの初期化
 	FpsControll_Initialize();
@@ -70,12 +75,21 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	{
 		itemMenu[0].Update();
 		itemMenu[1].Update();
+
+		itemMenu[turnPlayer].Display();
+
+
 		for (int i = 0; i < G_NUM; i++) {
 			graphic[i].Update();
+			graphic[i].Display();
 		}
+
+		/*
 		for (int i = 0; i < E_NUM; i++) {
 			effect[i].Update();
+			effect[i].Display();
 		}
+		*/
 		
 
 		
@@ -112,35 +126,54 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 				}
 				else if (CheckHitKey(KEY_INPUT_W)) {			// ルーレット画面へ移動する操作（条件は仮置き）
+					rulette.Change_Scale(100);
 					status = 2;	
-					toBeBigCake = TRUE;
 				}
 				break;
 
 			case 2:					// ルーレットの操作を受け付ける。
-				if (CheckHitKey(KEY_INPUT_S) && rulette == 1)
-				if (CheckHitKey(KEY_INPUT_S) && rulette == 2) {
-					rulette = 3;		// ルーレットを開始する操作。
-										// 暫く操作を受け付けない
+
+				if (CheckHitKey(KEY_INPUT_S) && ruletteStatus == 1) {
+					// 適当に待機する処理
 				}
-				else if (rulette == 3) {
+				else if (CheckHitKey(KEY_INPUT_S) && ruletteStatus == 2) {
+					ruletteStatus = 3;		// ルーレットを開始する操作。
+											// 暫く操作を受け付けない
+					rulette.Start();
+				}
+				else if (ruletteStatus == 3) {
 					// 適当に待機する
 					static int waitFlame = 0;
 					waitFlame += rand() % 100;
 					// 適当な時間待ったらルーレットを止めれるようにする。
 					if (waitFlame >= 10000000) {
-						rulette = 4;
+						ruletteStatus = 4;
 						waitFlame = 0;
 					}
 				}
 								// ルーレットを止めるときの操作
-				else if (CheckHitKey(KEY_INPUT_S) && rulette == 4) {
-					rulette = 5;
+				else if (CheckHitKey(KEY_INPUT_S) && ruletteStatus == 4) {
+					rulette.Stop();
+					if (rulette.Get_Stoping()) {
+						ruletteStatus = 0;
+						status = 3;
+						rulette.Change_Scale(-100);
+
+					}
+					
 				}
 
+				rulette.Rotate();
+
 				break;
-							
-		}
+
+			case 3:
+				rulette.Get_Radian();
+
+		}	
+
+
+
 		/*
 		// 処理部：操作部で変えた変数を読み取り、適切に処理する。グラフィックス構造体を調整または生成する。
 		if (itemUse) {

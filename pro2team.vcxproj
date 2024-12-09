@@ -148,6 +148,9 @@
     <ClInclude Include="FpsControll.h" />
     <ClInclude Include="Graphic.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Downloads\convert.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

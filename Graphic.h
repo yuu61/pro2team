@@ -22,13 +22,17 @@ protected:
 
 public:
 	void Set_Visible(bool in);
-	void Set_Graph(char* in);
+	void Set_Graph(const char* in);
 	void Set_Location(int inx, int iny, int inxx, int inyy);
 	void Display();
 	void Display(int inx, int iny);
-	void Be_Big();
+	void Change_Scale(int scale);
 	void Light_Up();
 	void Update();
+	int Get_X() { return x; }
+	int Get_Xx() { return xx; }
+	int Get_Y() { return y; }
+	int Get_Yy() { return yy; }
 };
 
 class Peace_Of_Cake :public Graphic {
@@ -39,8 +43,19 @@ class Peace_Of_Cake :public Graphic {
 
 // ルーレット
 class Rulette :public Graphic {
+	bool rotate;
 	Peace_Of_Cake POC[8];
 	int radian;					// 角度
+	int speed;
+	int gSpeed;
+
+public:
+	void Start();
+	void Stop();
+	void Rotate();
+	void Display();
+	bool Get_Stoping();
+	int Get_Radian() { return radian; }
 };
 
 class Item : public Graphic 
