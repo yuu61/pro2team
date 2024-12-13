@@ -151,6 +151,7 @@
     <ClInclude Include="My_Check_Hit_Key.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="image\convert.png" />
     <Image Include="image\girl_A.jpg" />
     <Image Include="image\girl_B.jpg" />
     <Image Include="image\itembox.png" />

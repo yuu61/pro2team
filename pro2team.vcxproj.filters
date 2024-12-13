@@ -55,5 +55,8 @@
     <Image Include="image\itembox.png">
       <Filter>Image</Filter>
     </Image>
+    <Image Include="image\convert.png">
+      <Filter>Image</Filter>
+    </Image>
   </ItemGroup>
 </Project>
