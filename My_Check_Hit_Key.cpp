@@ -8,7 +8,6 @@ int MyCheckHitKey(int keycode) {
 	if (preKey == keycode) {
 		return -1;
 	}
-
 	preKey = keycode;
 
 	return CheckHitKey(keycode);
