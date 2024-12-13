@@ -54,7 +54,10 @@ public:
 	void Rotate();
 	void Display();
 	bool Get_Stoping();
-	int Get_Radian() { return radian; }
+	int Get_Poc() 
+	{ 
+		return Rulette.POC[Rulette.radian / 45].point;
+	}
 };
 
 class Item : public Graphic 
