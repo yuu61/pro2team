@@ -142,11 +142,13 @@
     <ClCompile Include="FpsControll.cpp" />
     <ClCompile Include="Graphic.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="My_Check_Hit_Key.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constants.h" />
     <ClInclude Include="FpsControll.h" />
     <ClInclude Include="Graphic.h" />
+    <ClInclude Include="My_Check_Hit_Key.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\Downloads\convert.png" />

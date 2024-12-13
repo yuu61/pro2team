@@ -25,11 +25,13 @@ void Graphic::Set_Location(int inx, int iny, int inxx, int inyy) {
 
 // ‰æ‘œ‚ð•\Ž¦‚·‚é
 void Graphic::Display() {
+
     if (visible) {
         DrawExtendGraph(x, y, xx, yy, graph, TRUE);
     }
 }
 void Graphic::Display(int inx,int iny) {
+
     if (visible) {
         DrawExtendGraph(x + inx, y + iny, xx + inx, yy +iny, graph, TRUE);
     }

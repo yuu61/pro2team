@@ -35,16 +35,15 @@ public:
 	int Get_Yy() { return yy; }
 };
 
-class Peace_Of_Cake :public Graphic {
+class Piece_Of_Cake :public Graphic {
 	int point;					// ケーキのイチゴの数
 	int item;					// ケーキの中に含まれてるアイテム。（０なら何も入っていない）
-	int radian;					// 角度
 };
 
 // ルーレット
 class Rulette :public Graphic {
-	bool rotate;
-	Peace_Of_Cake POC[8];
+
+	Piece_Of_Cake POC[8];
 	int radian;					// 角度
 	int speed;
 	int gSpeed;
@@ -55,7 +54,10 @@ public:
 	void Rotate();
 	void Display();
 	bool Get_Stoping();
-	int Get_Radian() { return radian; }
+	int Get_Poc() 
+	{ 
+		return Rulette.POC[Rulette.radian / 45].point;
+	}
 };
 
 class Item : public Graphic 
@@ -65,7 +67,7 @@ protected :
 	int itemID;
 
 public:
-	bool Return_Exist();
+	bool Return_Exist() { return exist; }
 	int Return_ItemID();
 	void Use();
 };
