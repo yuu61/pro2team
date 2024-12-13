@@ -43,5 +43,14 @@
     <Image Include="..\..\..\Downloads\convert.png">
       <Filter>Image</Filter>
     </Image>
+    <Image Include="image\girl_A.jpg">
+      <Filter>Image</Filter>
+    </Image>
+    <Image Include="image\girl_B.jpg">
+      <Filter>Image</Filter>
+    </Image>
+    <Image Include="image\itembox.png">
+      <Filter>Image</Filter>
+    </Image>
   </ItemGroup>
 </Project>

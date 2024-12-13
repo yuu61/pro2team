@@ -150,6 +150,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\Downloads\convert.png" />
+    <Image Include="image\girl_A.jpg" />
+    <Image Include="image\girl_B.jpg" />
+    <Image Include="image\itembox.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
