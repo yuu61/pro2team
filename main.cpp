@@ -190,7 +190,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				break;
 
 			case 3:
-				rulette.Get_Radian();
+				rulette.Get_Poc();//piece point of kace
 				
 
 		}	

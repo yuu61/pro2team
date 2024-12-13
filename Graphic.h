@@ -38,7 +38,6 @@ public:
 class Peace_Of_Cake :public Graphic {
 	int point;					// ケーキのイチゴの数
 	int item;					// ケーキの中に含まれてるアイテム。（０なら何も入っていない）
-	int radian;					// 角度
 };
 
 // ルーレット
@@ -55,7 +54,10 @@ public:
 	void Rotate();
 	void Display();
 	bool Get_Stoping();
-	int Get_Radian() { return radian; }
+	int Get_Poc() 
+	{ 
+		return Rulette.POC[Rulette.radian / 45].point;
+	}
 };
 
 class Item : public Graphic 
