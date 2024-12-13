@@ -65,7 +65,7 @@ protected :
 	int itemID;
 
 public:
-	bool Return_Exist();
+	bool Return_Exist() { return exist; }
 	int Return_ItemID();
 	void Use();
 };
