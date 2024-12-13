@@ -46,9 +46,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\Downloads\convert.png">
-      <Filter>Image</Filter>
-    </Image>
     <Image Include="image\girl_A.jpg">
       <Filter>Image</Filter>
     </Image>

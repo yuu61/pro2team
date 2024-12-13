@@ -57,6 +57,7 @@ public:
 	int Get_Poc() 
 	{ 
 		return Rulette.POC[Rulette.radian / 45].point;
+		
 	}
 };
 
