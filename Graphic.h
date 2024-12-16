@@ -4,18 +4,18 @@
 
 using namespace std;
 
-// ƒOƒ‰ƒtƒBƒbƒNƒXƒf[ƒ^‚ğŠi”[‚·‚é\‘¢‘Ì
+// ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãƒ‡ãƒ¼ã‚¿ã‚’æ ¼ç´ã™ã‚‹æ§‹é€ ä½“
 class Graphic
 {
 protected:
 
-	bool visible;				// ‰æ‘œ‚ğ•\¦‚·‚é‚©‚Ç‚¤‚©
-	int graph;					// •\¦‚·‚é‰æ‘œ‚Ìƒnƒ“ƒhƒ‹‚ğŠi”[
-	int x;						// ¶ã‚ÌÀ•W‚ğŠi”[
+	bool visible;				// ç”»åƒã‚’è¡¨ç¤ºã™ã‚‹ã‹ã©ã†ã‹
+	int graph;					// è¡¨ç¤ºã™ã‚‹ç”»åƒã®ãƒãƒ³ãƒ‰ãƒ«ã‚’æ ¼ç´
+	int x;						// å·¦ä¸Šã®åº§æ¨™ã‚’æ ¼ç´
 	int y;
-	int xx;						//‰E‰º‚ÌÀ•W‚ğŠi”[
+	int xx;						//å³ä¸‹ã®åº§æ¨™ã‚’æ ¼ç´
 	int yy;
-	int gX;						//ƒOƒ‰ƒtƒBƒbƒNƒX—p‚Ì•Ï”
+	int gX;						//ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ç”¨ã®å¤‰æ•°
 	int gY;
 	int gXx;					
 	int gYy;
@@ -36,15 +36,15 @@ public:
 };
 
 class Piece_Of_Cake :public Graphic {
-	int point;					// ƒP[ƒL‚ÌƒCƒ`ƒS‚Ì”
-	int item;					// ƒP[ƒL‚Ì’†‚ÉŠÜ‚Ü‚ê‚Ä‚éƒAƒCƒeƒ€Bi‚O‚È‚ç‰½‚à“ü‚Á‚Ä‚¢‚È‚¢j
+	int point;					// ã‚±ãƒ¼ã‚­ã®ã‚¤ãƒã‚´ã®æ•°
+	int item;					// ã‚±ãƒ¼ã‚­ã®ä¸­ã«å«ã¾ã‚Œã¦ã‚‹ã‚¢ã‚¤ãƒ†ãƒ ã€‚ï¼ˆï¼ãªã‚‰ä½•ã‚‚å…¥ã£ã¦ã„ãªã„ï¼‰
 };
 
-// ƒ‹[ƒŒƒbƒg
+// ãƒ«ãƒ¼ãƒ¬ãƒƒãƒˆ
 class Rulette :public Graphic {
 
 	Piece_Of_Cake POC[8];
-	int radian;					// Šp“x
+	int radian;					// è§’åº¦
 	int speed;
 	int gSpeed;
 
@@ -56,7 +56,7 @@ public:
 	bool Get_Stoping();
 	int Get_Poc() 
 	{ 
-		return Rulette.POC[Rulette.radian / 45].point;
+		return POC[radian / 45].point;
 		
 	}
 };
@@ -64,7 +64,7 @@ public:
 class Item : public Graphic 
 {
 protected :
-	bool exist;					// ƒAƒCƒeƒ€‚ª‘¶İ‚·‚é‚©‚Ç‚¤‚©
+	bool exist;					// ã‚¢ã‚¤ãƒ†ãƒ ãŒå­˜åœ¨ã™ã‚‹ã‹ã©ã†ã‹
 	int itemID;
 
 public:

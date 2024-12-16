@@ -17,13 +17,13 @@ void Graphic::Set_Location(int inx, int iny, int inxx, int inyy) {
     y = iny;
     xx = inxx;
     yy = inyy;
-    gX = x;						// ����̍��W���i�[
+    gX = x;						// 左上の座標を格納
     gY = y;
-    gXx = y;						//�E���̍��W���i�[
+    gXx = y;						//右下の座標を格納
     gYy = y;
 }
 
-// �摜��\������
+// 画像を表示する
 void Graphic::Display() {
 
     if (visible) {
@@ -44,12 +44,12 @@ void Graphic::Change_Scale(int scale) {
     this->yy += scale;
 }
 
-//�@�O���t�B�b�N���͂��悤�ɘg��\������B
+//　グラフィックを囲うように枠を表示する。
 void Graphic::Light_Up() {
     DrawExtendGraph(x, y, xx, yy, graph, TRUE);
 }
 
-// �S�Ă̕`��C�x���g�̎Q�Ɛ�̏��X�V�����B�O���t�B�N�X�p�̕ϐ��͂����ł̂ݕύX
+// 全ての描画イベントの参照先の情報更新処理。グラフィクス用の変数はここでのみ変更
 void Graphic::Update() {
     if (x != gX) {
         {
@@ -108,13 +108,13 @@ void Item::Use() {
     
     switch (itemID) {
     
-        // �C�`�S�𑝂₷�A�C�e���̏���
+        // イチゴを増やすアイテムの処理
     case 1:
 
     }
 }
 
-// ���[���b�g���񂷏���
+// ルーレットを回す処理
 void Rulette::Start() {
     this->speed += 10;
 }
@@ -139,17 +139,17 @@ void Rulette::Rotate() {
     }
 }
 
-// ���[���b�g�̃P�[�L��\�����鏈��
+// ルーレットのケーキを表示する処理
 void Rulette::Display() {
     for (int i = 0; i < CAKE_NUM; i++) {
         this->POC[i].Display();
     }
 }
 
-// ���[���b�g����~���������m�F���鏈��
+// ルーレットが停止したかを確認する処理
 bool Rulette::Get_Stoping() {
     static int sFlame = 0;
-    // ���[���b�g��~��A���������̏����̈ȍ~�ɒx������������B
+    // ルーレット停止後、すこし次の処理の以降に遅延を持たせる。
     if (gSpeed == 0) {
         sFlame += 1;
     }
