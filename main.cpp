@@ -37,7 +37,7 @@ int ruletteStatus = 0;
 
 /*
 typedef struct _cake {
-	
+
 }Cake;
 */
 
@@ -65,6 +65,18 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	graphic[0].Set_Graph("Image\\convert.png");
 	graphic[0].Set_Location(0, 0, SCREEN_X, SCREEN_Y);
 
+	graphic[1].Set_Graph("Image\\girl_A.jpg");
+	graphic[1].Set_Location(0, 0, SCREEN_X, SCREEN_Y);
+
+	graphic[2].Set_Graph("Image\\girl_B.jpg");
+	graphic[2].Set_Location(0, 0, SCREEN_X, SCREEN_Y);
+
+	graphic[3].Set_Graph("Image\\itembox.png");
+	graphic[3].Set_Location(0, 0, SCREEN_X, SCREEN_Y);
+
+	graphic[4].Set_Graph("Image\\cake.png");
+	graphic[4].Set_Location(0, 0, SCREEN_X, SCREEN_Y);
+
 	// エフェクトの格納
 	Graphic effect[E_NUM];
 
@@ -72,7 +84,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// fpsの初期化
 	FpsControll_Initialize();
 
-	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0) 
+	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
 	{
 		// アイテムメニューの更新
 		itemMenu[0].Update();
@@ -93,12 +105,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			effect[i].Display();
 		}
 		*/
-		
 
-		
+
+
 		// 操作部：変数の値をプレイヤーからの操作によって変える。
 
-		switch (status) 
+		switch (status)
 		{
 
 			//GetHitKeyStateAllを使う形に変えたい
@@ -186,15 +198,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 					}
 				}
 
-				rulette.Rotate();
+			rulette.Rotate();
 
-				break;
+			break;
 
 			case TURN_END:
 				rulette.Get_Poc();//piece point of kace
 				
 
-		}	
+		}
 
 
 
@@ -203,7 +215,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		// 処理部：操作部で変えた変数を読み取り、適切に処理する。グラフィックス構造体を調整または生成する。
 		if (itemUse) {
 
-			switch (itemUse) 
+			switch (itemUse)
 			{
 			case 1:			// ポイントを増やす効果
 				playerPoints[turnPlayer] += 1;
@@ -215,7 +227,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			itemUse = 0;
 		}
 
-		
+
 		if (rulette == 1) {
 			static int waitFlame = 0;
 			waitFlame += rand() % 100;	// 適当な数を入れる
@@ -236,7 +248,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			}
 			if (cakeFlame >= 360) {
 				cakeFlame = 0;
-			}			
+			}
 		}
 
 
@@ -277,7 +289,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			case 0:turnPlayer = 1; break;
 			case 1:turnPlayer = 0; break;
 			}
-			
+
 		}
 
 		// エスケープキーでゲームを終了する。
