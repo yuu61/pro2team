@@ -17,7 +17,7 @@ int playerSelect = 0;
 // ３：ルーレット後の処理
 int status = 0;
 
-enum eStatus {START_TURN = 1,MENU,ITEM,RULETTE, TURN_END};
+enum eStatus {START_TURN = 1,MENU,ITEM_MENU,RULETTE, TURN_END};
 
 // 使ったアイテムのIDを格納する
 int itemUse = 0;
@@ -107,18 +107,18 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 				// アイテムボックスを選択する操作
 				if (MyCheckHitKey(KEY_INPUT_S) == 1) {
-					status = ITEM;
+					status = ITEM_MENU;
 
 				}
 				else if (MyCheckHitKey(KEY_INPUT_W) == 1) {			// ルーレット画面へ移動する操作（条件は仮置き）
 					rulette.Change_Scale(100);
-					status = RULETTE;	
+					status = RULETTE;
 				}
 
 				break;
 
 
-			case ITEM:
+			case ITEM_MENU:
 
 				// アイテム選択の操作を受け付ける。
 				// アイテムを選択する操作。
@@ -153,6 +153,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 				break;
 
+				
 
 			case RULETTE:					// ルーレットの操作を受け付ける。
 
