@@ -1,25 +1,24 @@
-#include "DxLib.h"
 #include "FpsControll.h"
 
-static int mStartTime;      //æ¸¬å®šé–‹å§‹æ™‚åˆ»
-static int mCount;          //ã‚«ã‚¦ãƒ³ã‚¿
+static int mStartTime;      //‘ª’èŠJŽnŽž
+static int mCount;          //ƒJƒEƒ“ƒ^
 static float mFps;          //fps
-static const int N = 60;  //å¹³å‡ã‚’å–ã‚‹ã‚µãƒ³ãƒ—ãƒ«æ•°
-static const int FPS = 60;  //è¨­å®šã—ãŸFPS
+static const int N = 60;  //•½‹Ï‚ðŽæ‚éƒTƒ“ƒvƒ‹”
+static const int FPS = 60;  //Ý’è‚µ‚½FPS
 
-
+// FPS‚Ì‰Šú‰»Aˆê”ÔÅ‰‚És‚¤
 void FpsControll_Initialize() {
 	mStartTime = GetNowCount();
 	mCount = 0;
 	mFps = 0;
 }
 
-//FPSåˆ¶å¾¡
+//FPS§Œä
 bool FpsControll_Update() {
-	if (mCount == 0) { //1ãƒ•ãƒ¬ãƒ¼ãƒ ç›®ãªã‚‰æ™‚åˆ»ã‚’è¨˜æ†¶
+	if (mCount == 0) { //1ƒtƒŒ[ƒ€–Ú‚È‚çŽž‚ð‹L‰¯
 		mStartTime = GetNowCount();
 	}
-	if (mCount == N) { //60ãƒ•ãƒ¬ãƒ¼ãƒ ç›®ãªã‚‰å¹³å‡ã‚’è¨ˆç®—ã™ã‚‹
+	if (mCount == N) { //60ƒtƒŒ[ƒ€–Ú‚È‚ç•½‹Ï‚ðŒvŽZ‚·‚é
 		int t = GetNowCount();
 		mFps = 1000.f / ((t - mStartTime) / (float)N);
 		mCount = 0;
@@ -29,15 +28,17 @@ bool FpsControll_Update() {
 	return true;
 }
 
-//FPSè¡¨ç¤º
+//FPS•\Ž¦
 void FpsControll_Draw() {
 	DrawFormatString(0, 0, GetColor(255, 255, 255), "%.1f", mFps);
 }
 
+//‘Ò‹@‚·‚é‚±‚Æ‚ÅƒtƒŒ[ƒ€ƒŒ[ƒg‚ð60‚É‚·‚éŠÖ”B
 void FpsControll_Wait() {
-	int tookTime = GetNowCount() - mStartTime;  //ã‹ã‹ã£ãŸæ™‚é–“
-	int waitTime = mCount * 1000 / FPS - tookTime;  //å¾…ã¤ã¹ãæ™‚é–“
+	int tookTime = GetNowCount() - mStartTime;  //‚©‚©‚Á‚½ŽžŠÔ
+	int waitTime = mCount * 1000 / FPS - tookTime;  //‘Ò‚Â‚×‚«ŽžŠÔ
 	if (waitTime > 0) {
-		Sleep(waitTime);  //å¾…æ©Ÿ
+		Sleep(waitTime);  //‘Ò‹@
 	}
 }
+
