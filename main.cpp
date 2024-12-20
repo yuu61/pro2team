@@ -1,310 +1,36 @@
-#include <stdbool.h>
 #include "DxLib.h"
+#include "BaseMgr.h"
+#include "CatchInput.h"
 #include "FpsControll.h"
-#include "constants.h"
-#include "Graphic.h"
-#include "My_Check_Hit_Key.h"
 
-// プレイヤーのHPを格納
-int playerPoints[2] = { 0 };
+int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){
+    SetWaitVSyncFlag(FALSE),ChangeWindowMode(TRUE), DxLib_Init(), SetDrawScreen( DX_SCREEN_BACK ); //�E�B���h�E���[�h�ύX�Ə������Ɨ���ʐݒ�
 
-// プレイヤーの選択している要素を格納
-int playerSelect = 0;
+    
 
-// 状態遷移
-// １：アイテムの選択画面
-// ２：ルーレットの操作画面
-// ３：ルーレット後の処理
-int status = 0;
+    SetGraphMode(1920, 1080, 32);
 
-enum eStatus {START_TURN = 1,MENU,ITEM_MENU,RULETTE, TURN_END};
+    BaseMgr baseMgr;
+    baseMgr.Initialize();
 
-// 使ったアイテムのIDを格納する
-int itemUse = 0;
+    FpsControll_Initialize();
 
-int turnPlayer = 0;
+    while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0 && gpUpdateKey() == 0) {//��ʍX�V & ���b�Z�[�W���� & ��ʏ���
 
-bool turnEnd = false;
+        baseMgr.Update();  //�X�V
+        baseMgr.Draw();    //�`��
+        
 
-// ルーレットの稼働状態を格納する変数	０：ルーレットを使っていない	
-//										１：ルーレット回転開始前の拡大表示	
-//										２：ルーレット開始可能状態
-//										３：ルーレット回転開始	(操作不可）
-//										４：ルーレット停止可能状態
-//										５：ルーレット停止
+        //�t���[�����[�g�\��
+        FpsControll_Draw();
+        // �t���[�����[�g����
+        FpsControll_Update();
+        // �t���[�����[�g���ҋ@
+        FpsControll_Wait();
+    }
 
-int ruletteStatus = 0;
+    baseMgr.Finalize();
 
-/*
-typedef struct _cake {
-
-}Cake;
-*/
-
-// プログラムは WinMain から始まります
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
-{
-
-	SetWaitVSyncFlag(FALSE);			// 垂直同期をオフにする（こうしない45fpsぐらいになる）
-
-
-	if (DxLib_Init() == -1)			// ＤＸライブラリ初期化処理
-	{
-		return -1;			// エラーが起きたら直ちに終了
-	}
-
-	// アイテムメニュー
-	Item_Menu itemMenu[2];
-
-	// ルーレット
-	Rulette rulette;
-
-	// グラフィックスの格納 
-	Graphic graphic[G_NUM] ;
-
-	graphic[0].Set_Graph("Image\\convert.png");
-	graphic[0].Set_Location(0, 0, SCREEN_X, SCREEN_Y);
-
-	graphic[1].Set_Graph("Image\\girl_A.jpg");
-	graphic[1].Set_Location(0, 0, SCREEN_X, SCREEN_Y);
-
-	graphic[2].Set_Graph("Image\\girl_B.jpg");
-	graphic[2].Set_Location(0, 0, SCREEN_X, SCREEN_Y);
-
-	graphic[3].Set_Graph("Image\\itembox.png");
-	graphic[3].Set_Location(0, 0, SCREEN_X, SCREEN_Y);
-
-	graphic[4].Set_Graph("Image\\cake.png");
-	graphic[4].Set_Location(0, 0, SCREEN_X, SCREEN_Y);
-
-	// エフェクトの格納
-	Graphic effect[E_NUM];
-
-
-	// fpsの初期化
-	FpsControll_Initialize();
-
-	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
-	{
-		// アイテムメニューの更新
-		itemMenu[0].Update();
-		itemMenu[1].Update();
-
-		// アイテムメニューの表示
-		itemMenu[turnPlayer].Display();
-
-		// 背景などのグラフィックスの表示
-		for (int i = 0; i < G_NUM; i++) {
-			graphic[i].Update();
-			graphic[i].Display();
-		}
-
-		/*
-		for (int i = 0; i < E_NUM; i++) {
-			effect[i].Update();
-			effect[i].Display();
-		}
-		*/
-
-
-
-		// 操作部：変数の値をプレイヤーからの操作によって変える。
-
-		switch (status)
-		{
-
-			//GetHitKeyStateAllを使う形に変えたい
-			case MENU:
-
-
-				// アイテムボックスを選択する操作
-				if (MyCheckHitKey(KEY_INPUT_S) == 1) {
-					status = ITEM_MENU;
-
-				}
-				else if (MyCheckHitKey(KEY_INPUT_W) == 1) {			// ルーレット画面へ移動する操作（条件は仮置き）
-					rulette.Change_Scale(100);
-					status = RULETTE;
-				}
-
-				break;
-
-
-			case ITEM_MENU:
-
-				// アイテム選択の操作を受け付ける。
-				// アイテムを選択する操作。
-
-				if (MyCheckHitKey(KEY_INPUT_D) == 1 || MyCheckHitKey(KEY_INPUT_A) == 1) {
-					if (MyCheckHitKey(KEY_INPUT_A) == 1) {
-						playerSelect -= 1;
-					}
-					else if (MyCheckHitKey(KEY_INPUT_D) == 1) {
-						playerSelect += 1;
-					}
-					//	アイテムボックスかルーレットを選択する
-					switch (playerSelect)
-					{
-					case 8:playerSelect = 0; break;//0未満か7より大きい場合に一周させる
-					case -1:playerSelect = ITEM_NUM - 1; break;
-					}
-				}
-
-				// アイテムを使う操作
-				else if (MyCheckHitKey(KEY_INPUT_S) == 1) {
-					
-					if (itemMenu[turnPlayer].Return_Item(playerSelect).Return_Exist()) {
-						itemMenu[turnPlayer].Return_Item(playerSelect).Use();
-					}
-					
-				}
-
-				else if (MyCheckHitKey(KEY_INPUT_W) == 1) {
-					status = MENU;
-				}
-
-				break;
-
-				
-
-			case RULETTE:					// ルーレットの操作を受け付ける。
-
-				if (MyCheckHitKey(KEY_INPUT_S) == 1 && ruletteStatus == 1) {
-					// 適当に待機する処理
-				}
-				else if (MyCheckHitKey(KEY_INPUT_S) == 1 && ruletteStatus == 2) {
-					ruletteStatus = 3;		// ルーレットを開始する操作。
-											// 暫く操作を受け付けない
-					rulette.Start();
-				}
-				else if (ruletteStatus == 3) {
-					// 適当に待機する
-					static int waitFlame = 0;
-					waitFlame += rand() % 100;
-					// 適当な時間待ったらルーレットを止めれるようにする。
-					if (waitFlame >= 10000000) {
-						ruletteStatus = 4;
-						waitFlame = 0;
-					}
-				}
-								// ルーレットを止めるときの操作
-				else if (MyCheckHitKey(KEY_INPUT_S) == 1 && ruletteStatus == 4) {
-					rulette.Stop();
-					if (rulette.Get_Stoping()) {
-						ruletteStatus = 0;
-						status = TURN_END;
-						rulette.Change_Scale(-100);
-
-					}
-				}
-
-			rulette.Rotate();
-
-			break;
-
-			case TURN_END:
-				rulette.Get_Poc();//piece point of kace
-				
-
-		}
-
-
-
-
-		/*
-		// 処理部：操作部で変えた変数を読み取り、適切に処理する。グラフィックス構造体を調整または生成する。
-		if (itemUse) {
-
-			switch (itemUse)
-			{
-			case 1:			// ポイントを増やす効果
-				playerPoints[turnPlayer] += 1;
-				graphic[1]; // これがポイントのグラフィックスと仮定する
-				graphic[1].event = 1;
-				break;
-			}
-
-			itemUse = 0;
-		}
-
-
-		if (rulette == 1) {
-			static int waitFlame = 0;
-			waitFlame += rand() % 100;	// 適当な数を入れる
-			if (waitFlame >= 1000) {	// 適当に待つ
-				rulette = 2;
-			}
-		}
-
-		// ケーキの回転中の描画のための、変数の調整（考え中）
-		if (rulette) {
-			//ケーキの描画を考えてフレームを管理する
-			static int cakeFlame = 0;
-			cakeFlame++;
-			for (int i = 0; i < CAKE_NUM; i++) {
-				remain[i].locationX;		//	適切に値を変更したい
-				remain[i].locationY;
-				remain[i].radian;
-			}
-			if (cakeFlame >= 360) {
-				cakeFlame = 0;
-			}
-		}
-
-
-
-		// 描画部：操作部、処理部で変えた変数を読み取り、適切に描画する
-
-		// 背景など常に描画するもの
-
-		for (int i = 0; i < G_NUM; i++)
-		{
-			graphic[i].Display();
-		}
-
-		//ケーキを大きくする描画
-		if (toBeBigCake) {
-			static int cakeScale = 0;
-			cakeScale++;
-		}
-
-
-		for (int i = 0; i < CAKE_NUM; i++) {
-
-		}
-
-		// エフェクトなど、動的に配置されるもの。
-
-		for (int i = 0; i < G_NUM; i++) {
-			if (effect[i].visible) {
-
-			}
-		}
-
-		// turnEndを踏んだら、プレイヤーが切り替わる。
-		if (turnEnd) {
-
-			switch (turnPlayer)
-			{
-			case 0:turnPlayer = 1; break;
-			case 1:turnPlayer = 0; break;
-			}
-
-		}
-
-		// エスケープキーでゲームを終了する。
-		if (CheckHitKey(KEY_INPUT_ESCAPE)) {
-			DxLib_End();
-			return 0;			//正常な終了を通知
-		}
-
-		// FPSをコントロールする奴ら
-		FpsControll_Wait();
-		FpsControll_Update();
-		FpsControll_Draw();
-
-		*/
-		DxLib_End();				// ＤＸライブラリ使用の終了処理
-		return -1;					// 異常終了の通知
-	}
+    DxLib_End(); // DX���C�u�����I������
+    return 0;
 }
