@@ -1,7 +1,7 @@
 #pragma once
-#include "BaseScene.h"
-#include "GameCgr.h"
-#include "GameScene.h"
+#include "..\header\BaseScene.h"
+#include "..\header\GameCgr.h"
+#include "..\header\GameScene.h"
 
 
 class GameMgr : public BaseScene , GameCgr 

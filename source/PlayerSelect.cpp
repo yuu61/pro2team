@@ -1,5 +1,5 @@
-#include "PlayerSelect.h"
-#include "DxLib.h"
+#include "..\header\PlayerSelect.h"
+#include "..\dxlib_for_visual_studio\DxLib.h"
 
 PlayerSelect::PlayerSelect(GameCgr* changer,GameVar* gVar) : 
 	GameScene(changer,gVar),

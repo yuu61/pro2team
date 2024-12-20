@@ -1,5 +1,5 @@
-#include "BaseMgr.h"
-#include "GameMgr.h"
+#include "..\header\BaseMgr.h"
+#include "..\header\GameMgr.h"
 
 BaseMgr::BaseMgr():
 	nextScene(SCENE_NON) {

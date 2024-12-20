@@ -1,5 +1,5 @@
-#include "RoulettePlay.h"
-#include "DxLib.h"
+#include "..\header\RoulettePlay.h"
+#include "..\dxlib_for_visual_studio\DxLib.h"
 
 RoulettePlay::RoulettePlay(GameCgr* changer, GameVar* gVar) : GameScene(changer, gVar)
 {

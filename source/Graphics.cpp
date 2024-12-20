@@ -1,5 +1,5 @@
-#include "Graphics.h"
-#include "DxLib.h"
+#include "..\header\Graphics.h"
+#include "..\dxlib_for_visual_studio\DxLib.h"
 
 
 Graphics::Graphics() :

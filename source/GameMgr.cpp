@@ -1,8 +1,8 @@
-#include "GameMgr.h"
-#include "DxLib.h"
-#include "PlayerSelect.h"
-#include "ItemSelect.h"
-#include "RoulettePlay.h"
+#include "..\header\GameMgr.h"
+#include "..\dxlib_for_visual_studio\DxLib.h"
+#include "..\header\PlayerSelect.h"
+#include "..\header\ItemSelect.h"
+#include "..\header\RoulettePlay.h"
 
 GameMgr::GameMgr(BaseCgr* changer) : BaseScene(changer),
 	nextScene(GAME_NON) {

@@ -1,5 +1,5 @@
-#include "ItemSelect.h"
-#include "DxLib.h"
+#include "..\header\ItemSelect.h"
+#include "..\dxlib_for_visual_studio\DxLib.h"
 
 ItemSelect::ItemSelect(GameCgr* changer, GameVar* gVar) : GameScene(changer, gVar)
 {

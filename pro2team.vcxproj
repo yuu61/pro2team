@@ -143,46 +143,46 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BaseCgr.cpp" />
-    <ClCompile Include="BaseMgr.cpp" />
-    <ClCompile Include="BaseScene.cpp" />
-    <ClCompile Include="Button.cpp" />
-    <ClCompile Include="CatchInput.cpp" />
-    <ClCompile Include="FpsControll.cpp" />
-    <ClCompile Include="GameCgr.cpp" />
-    <ClCompile Include="GameMgr.cpp" />
-    <ClCompile Include="GameScene.cpp" />
-    <ClCompile Include="GameVar.cpp" />
-    <ClCompile Include="Graphics.cpp" />
-    <ClCompile Include="ItemSelect.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="PlayerSelect.cpp" />
-    <ClCompile Include="RoulettePlay.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="BaseCgr.h" />
-    <ClInclude Include="BaseMgr.h" />
-    <ClInclude Include="BaseScene.h" />
-    <ClInclude Include="Button.h" />
-    <ClInclude Include="CatchInput.h" />
-    <ClInclude Include="FpsControll.h" />
-    <ClInclude Include="GameCgr.h" />
-    <ClInclude Include="GameMgr.h" />
-    <ClInclude Include="GameScene.h" />
-    <ClInclude Include="GameVar.h" />
-    <ClInclude Include="Graphics.h" />
-    <ClInclude Include="ItemSelect.h" />
-    <ClInclude Include="PlayerSelect.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="RoulettePlay.h" />
-    <ClInclude Include="Task.h" />
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="image\backGround.png" />
     <Image Include="image\convert.png" />
     <Image Include="image\girl_A.jpg" />
     <Image Include="image\girl_B.jpg" />
     <Image Include="image\itembox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="header\BaseCgr.h" />
+    <ClInclude Include="header\BaseMgr.h" />
+    <ClInclude Include="header\BaseScene.h" />
+    <ClInclude Include="header\Button.h" />
+    <ClInclude Include="header\CatchInput.h" />
+    <ClInclude Include="header\FpsControll.h" />
+    <ClInclude Include="header\GameCgr.h" />
+    <ClInclude Include="header\GameMgr.h" />
+    <ClInclude Include="header\GameScene.h" />
+    <ClInclude Include="header\GameVar.h" />
+    <ClInclude Include="header\Graphics.h" />
+    <ClInclude Include="header\ItemSelect.h" />
+    <ClInclude Include="header\PlayerSelect.h" />
+    <ClInclude Include="header\resource.h" />
+    <ClInclude Include="header\RoulettePlay.h" />
+    <ClInclude Include="header\Task.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\BaseCgr.cpp" />
+    <ClCompile Include="source\BaseMgr.cpp" />
+    <ClCompile Include="source\BaseScene.cpp" />
+    <ClCompile Include="source\Button.cpp" />
+    <ClCompile Include="source\CatchInput.cpp" />
+    <ClCompile Include="source\FpsControll.cpp" />
+    <ClCompile Include="source\GameCgr.cpp" />
+    <ClCompile Include="source\GameMgr.cpp" />
+    <ClCompile Include="source\GameScene.cpp" />
+    <ClCompile Include="source\GameVar.cpp" />
+    <ClCompile Include="source\Graphics.cpp" />
+    <ClCompile Include="source\ItemSelect.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\PlayerSelect.cpp" />
+    <ClCompile Include="source\RoulettePlay.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

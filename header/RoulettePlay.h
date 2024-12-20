@@ -1,6 +1,6 @@
 #pragma once
-#include "GameScene.h"
-#include "Button.h"
+#include "..\header\GameScene.h"
+#include "..\header\Button.h"
 
 class RoulettePlay : public GameScene
 {

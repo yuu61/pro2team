@@ -1,18 +1,16 @@
 #pragma once
-#include "Task.h"
-#include "GameCgr.h"
-#include "GameVar.h"
+#include "..\header\Task.h"
+#include "..\header\BaseCgr.h"
 
-class GameScene : public Task
+class BaseScene : public Task
 {
 protected:
-    GameCgr* gameCgr;
-    GameVar* gameVar;
+    BaseCgr* baseCgr;
 
 public:
-    GameScene(GameCgr* changer,GameVar* gVar);
-    virtual ~GameScene() {};
-    virtual void Initialize() override {}        //初期化処理は実装してもしなくてもいい
+    BaseScene(BaseCgr* changer) ;
+    virtual ~BaseScene() {};
+	virtual void Initialize() override {}        //初期化処理は実装してもしなくてもいい
     virtual void Finalize() override {};        //終了処理は実装してもしなくてもいい
     virtual void Update() override {};    //更新処理は必ず継承先で実装する
     virtual void Draw() override {};    //描画処理は必ず継承先で実装する
