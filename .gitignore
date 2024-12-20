@@ -468,6 +468,9 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+# Exclude .lib files in dxlib_for_visual_studio
+!dxlib_for_visual_studio/*.lib
+
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
