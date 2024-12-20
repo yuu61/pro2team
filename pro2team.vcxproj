@@ -139,18 +139,42 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BaseCgr.cpp" />
+    <ClCompile Include="BaseMgr.cpp" />
+    <ClCompile Include="BaseScene.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="CatchInput.cpp" />
     <ClCompile Include="FpsControll.cpp" />
-    <ClCompile Include="Graphic.cpp" />
+    <ClCompile Include="GameCgr.cpp" />
+    <ClCompile Include="GameMgr.cpp" />
+    <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="GameVar.cpp" />
+    <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="ItemSelect.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="My_Check_Hit_Key.cpp" />
+    <ClCompile Include="PlayerSelect.cpp" />
+    <ClCompile Include="RoulettePlay.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="constants.h" />
+    <ClInclude Include="BaseCgr.h" />
+    <ClInclude Include="BaseMgr.h" />
+    <ClInclude Include="BaseScene.h" />
+    <ClInclude Include="Button.h" />
+    <ClInclude Include="CatchInput.h" />
     <ClInclude Include="FpsControll.h" />
-    <ClInclude Include="Graphic.h" />
-    <ClInclude Include="My_Check_Hit_Key.h" />
+    <ClInclude Include="GameCgr.h" />
+    <ClInclude Include="GameMgr.h" />
+    <ClInclude Include="GameScene.h" />
+    <ClInclude Include="GameVar.h" />
+    <ClInclude Include="Graphics.h" />
+    <ClInclude Include="ItemSelect.h" />
+    <ClInclude Include="PlayerSelect.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="RoulettePlay.h" />
+    <ClInclude Include="Task.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="image\backGround.png" />
     <Image Include="image\convert.png" />
     <Image Include="image\girl_A.jpg" />
     <Image Include="image\girl_B.jpg" />
