@@ -4,7 +4,7 @@
 #include "FpsControll.h"
 
 int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){
-    SetWaitVSyncFlag(FALSE),ChangeWindowMode(TRUE), DxLib_Init(), SetDrawScreen( DX_SCREEN_BACK ); //ƒEƒBƒ“ƒhƒEƒ‚[ƒh•ÏX‚Æ‰Šú‰»‚Æ— ‰æ–Êİ’è
+    SetWaitVSyncFlag(FALSE),ChangeWindowMode(TRUE), DxLib_Init(), SetDrawScreen( DX_SCREEN_BACK ); //ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ãƒ¢ãƒ¼ãƒ‰å¤‰æ›´ã¨åˆæœŸåŒ–ã¨è£ç”»é¢è¨­å®š
 
     
 
@@ -15,22 +15,22 @@ int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){
 
     FpsControll_Initialize();
 
-    while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0 && gpUpdateKey() == 0) {//‰æ–ÊXV & ƒƒbƒZ[ƒWˆ— & ‰æ–ÊÁ‹
+    while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0 && gpUpdateKey() == 0) {//ç”»é¢æ›´æ–° & ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å‡¦ç† & ç”»é¢æ¶ˆå»
 
-        baseMgr.Update();  //XV
-        baseMgr.Draw();    //•`‰æ
+        baseMgr.Update();  //æ›´æ–°
+        baseMgr.Draw();    //æç”»
         
 
-        //ƒtƒŒ[ƒ€ƒŒ[ƒg•\¦
+        //ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¬ãƒ¼ãƒˆè¡¨ç¤º
         FpsControll_Draw();
-        // ƒtƒŒ[ƒ€ƒŒ[ƒg§Œä
+        // ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¬ãƒ¼ãƒˆåˆ¶å¾¡
         FpsControll_Update();
-        // ƒtƒŒ[ƒ€ƒŒ[ƒg•ª‘Ò‹@
+        // ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¬ãƒ¼ãƒˆåˆ†å¾…æ©Ÿ
         FpsControll_Wait();
     }
 
     baseMgr.Finalize();
 
-    DxLib_End(); // DXƒ‰ƒCƒuƒ‰ƒŠI—¹ˆ—
+    DxLib_End(); // DXãƒ©ã‚¤ãƒ–ãƒ©ãƒªçµ‚äº†å‡¦ç†
     return 0;
 }

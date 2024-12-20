@@ -5,13 +5,13 @@ class Graphics : public Task
 {
 protected:
 
-	bool visible;				// ‰æ‘œ‚ğ•\¦‚·‚é‚©‚Ç‚¤‚©
-	int graph;					// •\¦‚·‚é‰æ‘œ‚Ìƒnƒ“ƒhƒ‹‚ğŠi”[
-	int x;						// ¶ã‚ÌÀ•W‚ğŠi”[
+	bool visible;				// ç”»åƒã‚’è¡¨ç¤ºã™ã‚‹ã‹ã©ã†ã‹
+	int graph;					// è¡¨ç¤ºã™ã‚‹ç”»åƒã®ãƒãƒ³ãƒ‰ãƒ«ã‚’æ ¼ç´
+	int x;						// å·¦ä¸Šã®åº§æ¨™ã‚’æ ¼ç´
 	int y;
-	int xx;						//‰E‰º‚ÌÀ•W‚ğŠi”[
+	int xx;						//å³ä¸‹ã®åº§æ¨™ã‚’æ ¼ç´
 	int yy;
-	int gX;						//ƒOƒ‰ƒtƒBƒbƒNƒX—p‚Ì•Ï”
+	int gX;						//ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹ç”¨ã®å¤‰æ•°
 	int gY;
 	int gXx;
 	int gYy;

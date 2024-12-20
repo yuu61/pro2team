@@ -1,11 +1,11 @@
 #pragma once
 
-//ƒ^ƒXƒNƒNƒ‰ƒXB‰½‚©‚Ìƒ‚ƒWƒ…[ƒ‹‚Í‚·‚×‚Ä‚±‚ÌTaskƒNƒ‰ƒX‚ðŒp³‚·‚éB
+//ã‚¿ã‚¹ã‚¯ã‚¯ãƒ©ã‚¹ã€‚ä½•ã‹ã®ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã¯ã™ã¹ã¦ã“ã®Taskã‚¯ãƒ©ã‚¹ã‚’ç¶™æ‰¿ã™ã‚‹ã€‚
 class Task {
 public:
     virtual ~Task(){}
-    virtual void Initialize(){}        //‰Šú‰»ˆ—‚ÍŽÀ‘•‚µ‚Ä‚à‚µ‚È‚­‚Ä‚à‚¢‚¢
-    virtual void Finalize(){}        //I—¹ˆ—‚ÍŽÀ‘•‚µ‚Ä‚à‚µ‚È‚­‚Ä‚à‚¢‚¢
-    virtual void Update()     = 0;    //XVˆ—‚Í•K‚¸Œp³æ‚ÅŽÀ‘•‚·‚é
-    virtual void Draw()       = 0;    //•`‰æˆ—‚Í•K‚¸Œp³æ‚ÅŽÀ‘•‚·‚é
+    virtual void Initialize(){}        //åˆæœŸåŒ–å‡¦ç†ã¯å®Ÿè£…ã—ã¦ã‚‚ã—ãªãã¦ã‚‚ã„ã„
+    virtual void Finalize(){}        //çµ‚äº†å‡¦ç†ã¯å®Ÿè£…ã—ã¦ã‚‚ã—ãªãã¦ã‚‚ã„ã„
+    virtual void Update()     = 0;    //æ›´æ–°å‡¦ç†ã¯å¿…ãšç¶™æ‰¿å…ˆã§å®Ÿè£…ã™ã‚‹
+    virtual void Draw()       = 0;    //æç”»å‡¦ç†ã¯å¿…ãšç¶™æ‰¿å…ˆã§å®Ÿè£…ã™ã‚‹
 };

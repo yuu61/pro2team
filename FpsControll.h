@@ -1,16 +1,16 @@
 #pragma once
 #include "DxLib.h"
 
-// FPS�̏������A��ԍŏ��ɍs��
+// FPSの初期化、一番最初に行う
 void FpsControll_Initialize();
 
-//FPS����
+//FPS制御
 bool FpsControll_Update();
 
-//FPS�\��
+//FPS表示
 void FpsControll_Draw();
 
-//�ҋ@���邱�ƂŃt���[�����[�g��60�ɂ���֐��B
+//待機することでフレームレートを60にする関数。
 void FpsControll_Wait();
 
 

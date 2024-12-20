@@ -1,19 +1,19 @@
 #include "CatchInput.h"
 #include "DxLib.h"
 
-// ƒL[‚Ì“ü—Íó‘Ô‚ğXV‚·‚é
+// ã‚­ãƒ¼ã®å…¥åŠ›çŠ¶æ…‹ã‚’æ›´æ–°ã™ã‚‹
 
 int InputKey[256]{ 0 };
 
 int gpUpdateKey() {
-    char tmpKey[256]; // Œ»İ‚ÌƒL[‚Ì“ü—Íó‘Ô‚ğŠi”[‚·‚é
-    GetHitKeyStateAll(tmpKey); // ‘S‚Ä‚ÌƒL[‚Ì“ü—Íó‘Ô‚ğ“¾‚é
+    char tmpKey[256]; // ç¾åœ¨ã®ã‚­ãƒ¼ã®å…¥åŠ›çŠ¶æ…‹ã‚’æ ¼ç´ã™ã‚‹
+    GetHitKeyStateAll(tmpKey); // å…¨ã¦ã®ã‚­ãƒ¼ã®å…¥åŠ›çŠ¶æ…‹ã‚’å¾—ã‚‹
     for (int i = 0; i < 256; i++) {
-        if (tmpKey[i] != 0) { // i”Ô‚ÌƒL[ƒR[ƒh‚É‘Î‰‚·‚éƒL[‚ª‰Ÿ‚³‚ê‚Ä‚¢‚½‚ç
-            InputKey[i]++;     // ‰ÁZ
+        if (tmpKey[i] != 0) { // iç•ªã®ã‚­ãƒ¼ã‚³ãƒ¼ãƒ‰ã«å¯¾å¿œã™ã‚‹ã‚­ãƒ¼ãŒæŠ¼ã•ã‚Œã¦ã„ãŸã‚‰
+            InputKey[i]++;     // åŠ ç®—
         }
-        else {              // ‰Ÿ‚³‚ê‚Ä‚¢‚È‚¯‚ê‚Î
-            InputKey[i] = 0;   // 0‚É‚·‚é
+        else {              // æŠ¼ã•ã‚Œã¦ã„ãªã‘ã‚Œã°
+            InputKey[i] = 0;   // 0ã«ã™ã‚‹
         }
     }
     return 0;

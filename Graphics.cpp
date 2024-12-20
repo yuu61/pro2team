@@ -9,9 +9,9 @@ Graphics::Graphics() :
     y(0),
     xx(100),
     yy(100),
-    gX(x),						// ����̍��W���i�[
+    gX(x),						// 左上の座標を格納
     gY(y),
-    gXx(xx),						//�E���̍��W���i�[
+    gXx(xx),						//右下の座標を格納
     gYy(yy) {
 }
 
@@ -47,13 +47,13 @@ void Graphics::SetLocation(int inx, int iny, int inxx, int inyy) {
     y = iny;
     xx = inxx;
     yy = inyy;
-    gX = x;						// ����̍��W���i�[
+    gX = x;						// 左上の座標を格納
     gY = y;
-    gXx = y;						//�E���̍��W���i�[
+    gXx = y;						//右下の座標を格納
     gYy = y;
 }
 
-// �摜��\������
+// 画像を表示する
 void Graphics::Draw() {
 
     if (visible) {
@@ -74,12 +74,12 @@ void Graphics::ChangeScale(int scale) {
     this->yy += scale;
 }
 
-//�@�O���t�B�b�N���͂��悤�ɘg��\������B
+//　グラフィックを囲うように枠を表示する。
 void Graphics::LightUp() {
     DrawExtendGraph(x, y, xx, yy, graph, TRUE);
 }
 
-// �S�Ă̕`��C�x���g�̎Q�Ɛ�̏��X�V�����B�O���t�B�N�X�p�̕ϐ��͂����ł̂ݕύX
+// 全ての描画イベントの参照先の情報更新処理。グラフィクス用の変数はここでのみ変更
 void Graphics::Update() {
     if (x != gX) {
         {

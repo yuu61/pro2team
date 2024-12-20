@@ -12,9 +12,9 @@ protected:
 public:
     GameScene(GameCgr* changer,GameVar* gVar);
     virtual ~GameScene() {};
-    virtual void Initialize() override {}        //‰Šú‰»ˆ—‚ÍÀ‘•‚µ‚Ä‚à‚µ‚È‚­‚Ä‚à‚¢‚¢
-    virtual void Finalize() override {};        //I—¹ˆ—‚ÍÀ‘•‚µ‚Ä‚à‚µ‚È‚­‚Ä‚à‚¢‚¢
-    virtual void Update() override {};    //XVˆ—‚Í•K‚¸Œp³æ‚ÅÀ‘•‚·‚é
-    virtual void Draw() override {};    //•`‰æˆ—‚Í•K‚¸Œp³æ‚ÅÀ‘•‚·‚é
+    virtual void Initialize() override {}        //åˆæœŸåŒ–å‡¦ç†ã¯å®Ÿè£…ã—ã¦ã‚‚ã—ãªãã¦ã‚‚ã„ã„
+    virtual void Finalize() override {};        //çµ‚äº†å‡¦ç†ã¯å®Ÿè£…ã—ã¦ã‚‚ã—ãªãã¦ã‚‚ã„ã„
+    virtual void Update() override {};    //æ›´æ–°å‡¦ç†ã¯å¿…ãšç¶™æ‰¿å…ˆã§å®Ÿè£…ã™ã‚‹
+    virtual void Draw() override {};    //æç”»å‡¦ç†ã¯å¿…ãšç¶™æ‰¿å…ˆã§å®Ÿè£…ã™ã‚‹
 };
 
