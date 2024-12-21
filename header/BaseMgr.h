@@ -1,6 +1,6 @@
 #pragma once
 #include "..\header\Task.h"
-#include "..\header\..\header\BaseCgr.h"
+#include "..\header\BaseCgr.h"
 #include "..\header\BaseScene.h"
 
 
