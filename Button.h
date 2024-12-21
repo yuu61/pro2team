@@ -4,28 +4,33 @@
 typedef enum _eButtonStatus {
 	NONE,
 	CHARGING,
-	PRESSED
+	PRESSED,
+	INVALID
 }eButtonStatus;
 
-class Button : Graphics
+class Button : public Graphics
 {
 private:
-	int status;
-	int checkKey;
-	int checkTime;
+	eButtonStatus statusRight;
+	eButtonStatus statusLeft;
+	int checkRightCharge;
+	int checkLeftCharge;
+
+	void CheckClick(int time, int charge, eButtonStatus* stutas);
 
 public:
 	Button();
-	Button(int checkKey,int checkTime, int x, int xx, int y, int yy, int graph);
+	Button(int checkLeftCharge, int checkRightCharge, int x, int xx, int y, int yy, int graph);
 	~Button() {};
 
-	void SetKey(int k) { checkKey = k; }
-	bool Check();
-	bool DrawCheck();
+	eButtonStatus CheckLeft();
+	eButtonStatus CheckRight();
+	eButtonStatus DrawCheckLeft();
+	eButtonStatus DrawCheckRight();
 
 	void Initialize() override;        //初期化処理は実装してもしなくてもいい
 	void Finalize() override;        //終了処理は実装してもしなくてもいい
 	void Update();    //更新処理は必ず継承先で実装する
-	void Draw() ;    //描画処理は必ず継承先で実装する
+	// void Draw() ;    //描画処理は必ず継承先で実装する
 };
 

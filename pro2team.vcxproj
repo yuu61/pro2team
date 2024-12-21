@@ -154,8 +154,10 @@
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GameVar.cpp" />
     <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="Item.cpp" />
     <ClCompile Include="ItemSelect.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerSelect.cpp" />
     <ClCompile Include="RoulettePlay.cpp" />
   </ItemGroup>
@@ -171,7 +173,9 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameVar.h" />
     <ClInclude Include="Graphics.h" />
+    <ClInclude Include="Item.h" />
     <ClInclude Include="ItemSelect.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerSelect.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="RoulettePlay.h" />

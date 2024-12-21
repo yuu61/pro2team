@@ -15,7 +15,7 @@ int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){
 
     FpsControll_Initialize();
 
-    while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0 && gpUpdateKey() == 0) {//画面更新 & メッセージ処理 & 画面消去
+    while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0 && UpdateKey() == 0 && UpdateMouse() == 0) {//画面更新 & メッセージ処理 & 画面消去 & キー入力 & マウス入力
 
         baseMgr.Update();  //更新
         baseMgr.Draw();    //描画

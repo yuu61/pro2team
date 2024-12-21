@@ -3,15 +3,16 @@
 #include "Button.h"
 
 typedef enum _eButton {
-    ITEM,
-    ROULETTE,
-    MAX
+    GO_ITEM_SELECT,
+    GO_ROULETTE_PLAY,
+    E_BUTTON
 }eButton;
 
 class PlayerSelect : public GameScene
 {
+
     int select;
-    Button button[MAX];
+    Button* button[E_BUTTON];
     // Button button();
 public:
 
