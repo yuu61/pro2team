@@ -1,5 +1,5 @@
 #pragma once
-#include "..\header\Graphics.h"
+#include ".\Graphics.h"
 
 class GameVar
 {
