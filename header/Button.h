@@ -1,5 +1,5 @@
 #pragma once
-#include "Graphics.h"
+#include "..\header\Graphics.h"
 
 typedef enum _eButtonStatus {
 	NONE,

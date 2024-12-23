@@ -1,6 +1,6 @@
 #pragma once
-#include "Task.h"
-#include "BaseCgr.h"
+#include "..\header\Task.h"
+#include "..\header\BaseCgr.h"
 
 class BaseScene : public Task
 {

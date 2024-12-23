@@ -1,7 +1,7 @@
 #pragma once
-#include "Task.h"
-#include "BaseCgr.h"
-#include "BaseScene.h"
+#include "..\header\Task.h"
+#include "..\header\BaseCgr.h"
+#include "..\header\BaseScene.h"
 
 
 class BaseMgr :public BaseCgr ,Task
