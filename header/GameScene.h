@@ -1,7 +1,7 @@
 #pragma once
-#include "..\header\Task.h"
-#include "..\header\GameCgr.h"
-#include "..\header\GameVar.h"
+#include "Task.h"
+#include "GameCgr.h"
+#include "GameVar.h"
 
 class GameScene : public Task
 {

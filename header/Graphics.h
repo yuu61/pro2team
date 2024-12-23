@@ -1,5 +1,5 @@
 #pragma once
-#include "..\header\Task.h"
+#include "Task.h"
 
 class Graphics : public Task
 {
