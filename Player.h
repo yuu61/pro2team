@@ -3,10 +3,10 @@
 #include "Item.h"
 
 typedef enum _eKey {
-	KEY_LEFT,
-	KEY_RIGHT,
 	KEY_ENTER,
 	KEY_CANSEL,
+	KEY_LEFT,
+	KEY_RIGHT,
 	E_KEY
 }eKey;
 
@@ -22,12 +22,12 @@ private:
 public:
 
 	Player();
-	
+	Player(int enter, int cansel, int left, int right);
 
-	//eKey 
-	void Initialize() override;
-	void Finalize() override;
-	void Update() ;
+	int GetInputKey(eKey checkKey);
+	void Initialize() override {};
+	void Finalize() override {};
+	void Update() {};
 	// void Draw();
 	
 };

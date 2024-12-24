@@ -147,6 +147,7 @@
     <ClCompile Include="BaseMgr.cpp" />
     <ClCompile Include="BaseScene.cpp" />
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="ButtonCharge.cpp" />
     <ClCompile Include="CatchInput.cpp" />
     <ClCompile Include="FpsControll.cpp" />
     <ClCompile Include="GameCgr.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="BaseMgr.h" />
     <ClInclude Include="BaseScene.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="ButtonCharge.h" />
     <ClInclude Include="CatchInput.h" />
     <ClInclude Include="FpsControll.h" />
     <ClInclude Include="GameCgr.h" />

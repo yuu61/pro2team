@@ -1,6 +1,7 @@
 #include "PlayerSelect.h"
+#include "CatchInput.h"
 #include "DxLib.h"
-
+#include "GameVar.h"
 PlayerSelect::PlayerSelect(GameCgr* changer,GameVar* gVar) : 
 	GameScene(changer,gVar),
 	select(0){
@@ -17,39 +18,42 @@ void PlayerSelect::Finalize() {
 void PlayerSelect::Update() {
 
 	
-
-	if (button[GO_ITEM_SELECT]->CheckLeft() == PRESSED) {
+	if (button[GO_ITEM_SELECT]->CheckLeft(gameVar->player->GetInputKey(KEY_RIGHT)) == PRESSED) {
 		gameCgr->SceneChange(ITEM_SELECT);
 	}
+	
 
-	if (button[GO_ROULETTE_PLAY]->CheckLeft() == PRESSED) {
+	
+
+	if (button[GO_ROULETTE_PLAY]->CheckLeft(gameVar->player->GetInputKey(KEY_RIGHT)) == PRESSED) {
 
 	}
 
 	button[GO_ITEM_SELECT]->Update();
 	button[GO_ROULETTE_PLAY]->Update();
-
-	//gameCgr->SceneChange(ITEM_SELECT);
 }
 
 void PlayerSelect::Draw() {
 	//DrawString(100, 100, "PlayerSelect", RGB(255, 255, 255));
 
 	
-	if (button[GO_ITEM_SELECT]->DrawCheckLeft() == INVALID) {
+	if (button[GO_ITEM_SELECT]->GetStatusLeft() == INVALID) {
 		DrawString(100, 100, "INVALID", RGB(255, 255, 255));
 	}
-	if (button[GO_ITEM_SELECT]->DrawCheckLeft() == PRESSED) {
+	if (button[GO_ITEM_SELECT]->GetStatusLeft() == PRESSED) {
 		DrawString(100, 100, "PRESSED", RGB(255, 255, 255));
 	}
-	if (button[GO_ITEM_SELECT]->DrawCheckLeft() == NONE) {
+	if (button[GO_ITEM_SELECT]->GetStatusLeft() == NONE) {
 		DrawString(100, 100, "NONE", RGB(255, 255, 255));
 	}
-	if (button[GO_ITEM_SELECT]->DrawCheckLeft() == CHARGING) {
+	if (button[GO_ITEM_SELECT]->GetStatusLeft() == CHARGING) {
 		DrawString(100, 100, "CHARGING", RGB(255, 255, 255));
 	}
+	if (button[GO_ITEM_SELECT]->GetStatusLeft() == CHARGED) {
+		DrawString(100, 100, "CHARGED", RGB(255, 255, 255));
+	}
 
-	if (button[GO_ROULETTE_PLAY]->DrawCheckLeft() == PRESSED) {
+	if (button[GO_ROULETTE_PLAY]->GetStatusLeft() == PRESSED) {
 
 	}
 

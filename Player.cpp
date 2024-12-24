@@ -1,11 +1,23 @@
 #include "Player.h"
 #include "CatchInput.h"
-/*
-Player::CheckKey() {
 
+Player::Player() {}
+
+Player::Player(int enter, int cansel, int left, int right) :
+	point(0),
+	crown(0),
+	item{ nullptr } ,
+	key{ enter,cansel,left,right } {
 }
-if (InputKey[checkKey] == 0) {
-	status = NONE;
+
+int Player::GetInputKey(eKey checkKey) {
+	return inputKey[key[checkKey]];
+}
+
+
+/*
+if (inputKey[key[checkKey]] == 1) {
+	return true;
 }
 else if (InputKey[checkKey] == 1) {
 	status = CHARGING;
@@ -18,4 +30,5 @@ if (status == CHARGING && InputKey[checkKey] >= checkTime) {
 }
 
 return 0;
+
 */
