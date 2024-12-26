@@ -5,8 +5,6 @@
 PlayerSelect::PlayerSelect(GameCgr* changer,GameVar* gVar) : 
 	GameScene(changer,gVar),
 	select(0){
-	button[GO_ITEM_SELECT] = (Button*) new Button(100, 0, 710, 540, 910, 640, LoadGraph("image\\backGround.png"));
-	button[GO_ROULETTE_PLAY] = (Button*) new Button(1, 0, 710, 690, 910, 790, LoadGraph("image\\backGround.png"));
 }
 
 void PlayerSelect::Initialize() {
@@ -51,10 +49,6 @@ void PlayerSelect::Draw() {
 	}
 	if (button[GO_ITEM_SELECT]->GetStatusLeft() == CHARGED) {
 		DrawString(100, 100, "CHARGED", RGB(255, 255, 255));
-	}
-
-	if (button[GO_ROULETTE_PLAY]->GetStatusLeft() == PRESSED) {
-
 	}
 
 	button[GO_ITEM_SELECT]->Draw();

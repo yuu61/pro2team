@@ -12,8 +12,9 @@ class PlayerSelect : public GameScene
 {
 
     int select;
-    Button* button[E_BUTTON]{new Button(100, 0, 710, 540, 910, 640, LoadGraph("image\\backGround.png")) , new Button(1, 0, 710, 690, 910, 790, LoadGraph("image\\backGround.png")) };
-    // ButtonCharge button();
+    Button* button[E_BUTTON]{   new Button(100, 0, 710.f, 540.f, 910.f, 640.f, LoadGraph("image\\backGround.png")) ,
+                                new Button(1, 0, 710.f, 690.f, 910.f, 790.f, LoadGraph("image\\backGround.png")) };
+    
 public:
 
 	PlayerSelect(GameCgr* changer, GameVar* gVar);

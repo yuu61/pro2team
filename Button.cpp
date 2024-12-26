@@ -10,7 +10,7 @@ Button::Button() :
 	Graphics() {
 }
 
-Button::Button(int checkLeftCharge, int checkRightCharge, int x, int y, int xx, int yy, int graph) :
+Button::Button(int checkLeftCharge, int checkRightCharge, float x, float y, float xx, float yy, int graph) :
 	statusRight(NONE),
 	statusLeft(NONE),
 	checkRightCharge(checkRightCharge),
@@ -95,5 +95,5 @@ eButtonStatus Button::CheckRight(int inputKeyCharge) {
 }
 
 bool Button::CheckLocation() {
-	return (inputMouse.x >= x && inputMouse.y >= y && inputMouse.x <= xx && inputMouse.y <= yy);
+	return (inputMouse.x >= graphLocation.x1 && inputMouse.y >= graphLocation.y1 && inputMouse.x <= graphLocation.x2 && inputMouse.y <= graphLocation.y2);
 }

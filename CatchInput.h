@@ -2,7 +2,7 @@
 
 //
 
-typedef struct _Location {
+typedef struct _InputMouse {
 	int x;
 	int y;
 	int left; //押されている時間

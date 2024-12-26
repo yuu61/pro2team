@@ -21,7 +21,7 @@ protected:
 
 public:
 	Button();
-	Button(int checkLeftCharge, int checkRightCharge, int x, int xx, int y, int yy, int graph);
+	Button(int checkLeftCharge, int checkRightCharge, float x, float xx, float y, float yy, int graph);
 	~Button() {};
 
 	// virtual eButtonStatus CheckLeft();
