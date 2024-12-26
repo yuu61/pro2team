@@ -1,13 +1,13 @@
 #pragma once
 #include "MoveType.h"
 
-class MoveTypeNormal : MoveType
+class MoveTypeNormal : public MoveType
 {
 private:
 	
 public:
 	MoveTypeNormal(float x, float y, int flame);
 
-	std::tuple<int, int> Calc() override;
+	std::tuple<float, float> Calc() override;
 };
 

@@ -1,38 +1,24 @@
 #pragma once
 #include "Task.h"
-#include "MovementI.h"
-#include "Movement.h"
+#include "MovementI.h";
+#include "Movement.h";
 
 typedef struct _Location {
 	float x1, y1, x2, y2;
 }Location;
 
 
-typedef enum _eMovementType {
-	MOVEMENT_MOVE,
-	MOVEMENT_EXPAND,
-	MOVEMENT_TYPE_MAX
-}eMovementType;
-
-
-typedef enum _eMoveType {
-	MOVE_NONE,
-	MOVE_NORMAL,
-	MOVE_SIGN
-}eMoveType;
-
 
 class Graphics : public Task, MovementI
 {
 protected:
 
-	Movement* movement[MOVEMENT_TYPE_MAX];
 	bool visible;				// 画像を表示するかどうか
 	int graph;					// 表示する画像のハンドルを格納
 	Location location;
 	Location graphLocation;
 	float scale;
-	
+	Movement* movement[MOVEMENT_TYPE_MAX];
 
 public:
 	Graphics();

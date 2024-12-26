@@ -2,6 +2,8 @@
 #include "CatchInput.h"
 #include "DxLib.h"
 #include "GameVar.h"
+
+
 PlayerSelect::PlayerSelect(GameCgr* changer,GameVar* gVar) : 
 	GameScene(changer,gVar),
 	select(0){

@@ -5,6 +5,6 @@ MoveTypeNormal:: MoveTypeNormal(float x, float y, int flame) :
 
 }
 
-std::tuple<int, int> MoveTypeNormal::Calc() {
+std::tuple<float, float> MoveTypeNormal::Calc() {
 	return { 1, 2 };
 }

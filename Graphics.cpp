@@ -65,7 +65,7 @@ void Graphics::LightUp() {
 void Graphics::SetMovement(eMovementType eventType, eMoveType moveType, float x, float y,int flame) {
     switch (eventType) {
     case MOVEMENT_MOVE:
-        movement[eventType] = (Movement*) new EventMove(this, moveType, x, y, flame);
+        movement[eventType] = (Movement*) new MovementMove(this, moveType, x, y, flame);
     }
     
 }
@@ -86,7 +86,7 @@ void Graphics::Expand(float x, float y) {
 
 // 全ての描画イベントの参照先の情報更新処理。グラフィクス用の変数はここでのみ変更
 void Graphics::Update() {
-    for (int i = 0; i < sizeof(movement); i++) {
+    for (int i = 0; i < MOVEMENT_TYPE_MAX; i++) {
         if (movement[i] != nullptr) {
             movement[i]->Action();
         }
