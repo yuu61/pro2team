@@ -18,15 +18,15 @@ void PlayerSelect::Finalize() {
 void PlayerSelect::Update() {
 
 	
-	if (button[GO_ITEM_SELECT]->CheckLeft(gameVar->player->GetInputKey(KEY_RIGHT)) == PRESSED) {
+	if (button[GO_ITEM_SELECT]->CheckLeft(gameVar->player->GetInputKey(KEY_CANSEL)) == PRESSED) {
 		gameCgr->SceneChange(ITEM_SELECT);
 	}
 	
 
 	
 
-	if (button[GO_ROULETTE_PLAY]->CheckLeft(gameVar->player->GetInputKey(KEY_RIGHT)) == PRESSED) {
-
+	if (button[GO_ROULETTE_PLAY]->CheckLeft(gameVar->player->GetInputKey(KEY_ENTER)) == PRESSED) {
+		button[GO_ROULETTE_PLAY]->SetMovement(MOVEMENT_EXPAND, MOVE_SINE, 2, 120);
 	}
 
 	button[GO_ITEM_SELECT]->Update();

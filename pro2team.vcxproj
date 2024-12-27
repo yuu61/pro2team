@@ -79,6 +79,7 @@
       <AdditionalIncludeDirectories>./dxlib_for_visual_studio</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <AdditionalOptions>/utf-8</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -115,6 +116,7 @@
       <AdditionalIncludeDirectories>./dxlib_for_visual_studio</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <AdditionalOptions>/utf-8</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -150,6 +152,7 @@
     <ClCompile Include="ButtonCharge.cpp" />
     <ClCompile Include="CatchInput.cpp" />
     <ClCompile Include="Movement.cpp" />
+    <ClCompile Include="MovementExpand.cpp" />
     <ClCompile Include="MovementI.cpp" />
     <ClCompile Include="FpsControll.cpp" />
     <ClCompile Include="GameCgr.cpp" />
@@ -163,6 +166,7 @@
     <ClCompile Include="MovementMove.cpp" />
     <ClCompile Include="MoveType.cpp" />
     <ClCompile Include="MoveTypeNormal.cpp" />
+    <ClCompile Include="MoveTypeSine.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerSelect.cpp" />
     <ClCompile Include="RoulettePlay.cpp" />
@@ -175,6 +179,7 @@
     <ClInclude Include="ButtonCharge.h" />
     <ClInclude Include="CatchInput.h" />
     <ClInclude Include="Movement.h" />
+    <ClInclude Include="MovementExpand.h" />
     <ClInclude Include="MovementI.h" />
     <ClInclude Include="FpsControll.h" />
     <ClInclude Include="GameCgr.h" />
@@ -187,6 +192,7 @@
     <ClInclude Include="MovementMove.h" />
     <ClInclude Include="MoveType.h" />
     <ClInclude Include="MoveTypeNormal.h" />
+    <ClInclude Include="MoveTypeSine.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerSelect.h" />
     <ClInclude Include="resource.h" />

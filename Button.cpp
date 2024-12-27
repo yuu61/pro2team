@@ -95,5 +95,5 @@ eButtonStatus Button::CheckRight(int inputKeyCharge) {
 }
 
 bool Button::CheckLocation() {
-	return (inputMouse.x >= graphLocation.x1 && inputMouse.y >= graphLocation.y1 && inputMouse.x <= graphLocation.x2 && inputMouse.y <= graphLocation.y2);
+	return (inputMouse.x >= location.x1 && inputMouse.y >= location.y1 && inputMouse.x <= location.x2 && inputMouse.y <= location.y2);
 }

@@ -8,7 +8,6 @@ typedef struct _Location {
 }Location;
 
 
-
 class Graphics : public Task, MovementI
 {
 protected:
@@ -16,7 +15,6 @@ protected:
 	bool visible;				// 画像を表示するかどうか
 	int graph;					// 表示する画像のハンドルを格納
 	Location location;
-	Location graphLocation;
 	float scale;
 	Movement* movement[MOVEMENT_TYPE_MAX];
 
@@ -36,13 +34,14 @@ public:
 	void Update() override;
 
 	void SetMovement(eMovementType eventType, eMoveType moveType, float x, float y, int flame);
+	void SetMovement(eMovementType eventType, eMoveType moveType, float time, int flame);
 	void Move(float x, float y) override;
 	void Expand(float x, float y) override;
 
-	int GetX() { return location.x1; }
-	int GetXx() { return location.x2; }
-	int GetY() { return location.y1; }
-	int GetYy() { return location.y2; }
+	int GetX1() { return location.x1; }
+	int GetX2() { return location.x2; }
+	int GetY1() { return location.y1; }
+	int GetY2() { return location.y2; }
 };
 
 

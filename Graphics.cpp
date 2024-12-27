@@ -1,24 +1,22 @@
 #include "DxLib.h"
 #include "Graphics.h"
 #include "MovementMove.h"
+#include "MovementExpand.h"
 
 Graphics::Graphics() :
     visible(1),
     graph(0),
     location{0,0,0,0},
-    graphLocation{0,0,0,0},
     scale(1),
-    movement{ nullptr,nullptr } {
+    movement{ nullptr} {
 }
 
 Graphics::Graphics(float x1, float y1, float x2, float y2, int graph) :
     visible(1),
     location{x1,y1,x2,y2},
-    graphLocation{x1,y1,x2,y2},
     scale(1),
     graph(graph),
-    movement{nullptr,nullptr} {
-    
+    movement{nullptr} {
 }
 
 
@@ -36,20 +34,19 @@ void Graphics::SetGraph(const char* in)
 
 void Graphics::SetLocation(float inx1, float iny1, float inx2, float iny2) {
     location = { inx1,iny1,inx2,iny2 };
-    graphLocation = { inx1,iny1,inx2,iny2 };
 }
 
 // 画像を表示する
 void Graphics::Draw() {
 
     if (visible) {
-        DrawExtendGraph(graphLocation.x1, graphLocation.y1, graphLocation.x2, graphLocation.y2, graph, TRUE);
+        DrawExtendGraph(location.x1, location.y1, location.x2, location.y2, graph, TRUE);
     }
 }
 void Graphics::Draw(int inx, int iny) {
 
     if (visible) {
-        DrawExtendGraph(graphLocation.x1 + inx, graphLocation.y1 + iny, graphLocation.x2 + inx, graphLocation.y2 + iny, graph, TRUE);
+        DrawExtendGraph(location.x1 + inx, location.y1 + iny, location.x2 + inx, location.y2 + iny, graph, TRUE);
     }
 }
 
@@ -62,12 +59,27 @@ void Graphics::LightUp() {
 
 }
 
-void Graphics::SetMovement(eMovementType eventType, eMoveType moveType, float x, float y,int flame) {
-    switch (eventType) {
+void Graphics::SetMovement(eMovementType movementType, eMoveType moveType, float x, float y,int flame) {
+    switch (movementType) {
     case MOVEMENT_MOVE:
-        movement[eventType] = (Movement*) new MovementMove(this, moveType, x, y, flame);
+        delete movement[movementType];
+        movement[movementType] = (Movement*) new MovementMove(this, moveType, x, y, flame);
+        break;
+    case MOVEMENT_MOVE_TO:
+        delete movement[MOVEMENT_MOVE];
+        movement[MOVEMENT_MOVE] = (Movement*) new MovementMove(this, moveType, x - location.x1, y - location.y1, flame);
+        break;
     }
     
+}
+
+void Graphics::SetMovement(eMovementType movementType, eMoveType moveType, float time, int flame) {
+    switch (movementType) {
+    case MOVEMENT_EXPAND:
+        delete movement[MOVEMENT_EXPAND];
+        movement[MOVEMENT_EXPAND] = (Movement*) new MovementExpand(this, moveType, (location.x2 - location.x1) / 2, (location.y2 - location.y1) / 2, time, flame);
+        break;
+    }
 }
 
 void Graphics::Move(float x, float y) {
@@ -89,6 +101,9 @@ void Graphics::Update() {
     for (int i = 0; i < MOVEMENT_TYPE_MAX; i++) {
         if (movement[i] != nullptr) {
             movement[i]->Action();
+            if (movement[i]->GetFlame() == 0) {
+                movement[i] = nullptr;
+            }
         }
     }
 }
