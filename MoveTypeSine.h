@@ -7,7 +7,7 @@ private:
 	double unit;
 	double sum{ 0 };
 public:
-	MoveTypeSine(float x, float y,float time, int flame);
+	MoveTypeSine(float x, float y, int flame);
 
 	std::tuple<float, float> Calc() override;
 };

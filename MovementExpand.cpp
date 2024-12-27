@@ -1,7 +1,7 @@
 #include "MovementExpand.h"
 
-MovementExpand::MovementExpand(MovementI* movementI, eMoveType moveType, float x, float y,float time, int flame) :
-	Movement(movementI, moveType, x, y,time, flame) {
+MovementExpand::MovementExpand(MovementI* movementI, eMoveType moveType, float x, float y, float time, int flame) :
+	Movement(movementI, moveType, x, y, time, flame) {
 }
 
 MovementExpand::~MovementExpand() {

@@ -26,7 +26,7 @@ void PlayerSelect::Update() {
 	
 
 	if (button[GO_ROULETTE_PLAY]->CheckLeft(gameVar->player->GetInputKey(KEY_ENTER)) == PRESSED) {
-		button[GO_ROULETTE_PLAY]->SetMovement(MOVEMENT_EXPAND, MOVE_SINE, 2, 120);
+		button[GO_ROULETTE_PLAY]->SetMovement(MOVEMENT_EXPAND, MOVE_SINE, -1, 20);
 	}
 
 	button[GO_ITEM_SELECT]->Update();
