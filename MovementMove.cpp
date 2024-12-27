@@ -2,7 +2,7 @@
 #include <tuple>
 
 MovementMove::MovementMove(MovementI* movementI, eMoveType moveType, float x, float y,int flame) :
-	Movement(movementI, moveType, x, y ,NULL, flame) {
+	Movement(movementI, moveType, x, y , flame) {
 }
 
 MovementMove::~MovementMove() {

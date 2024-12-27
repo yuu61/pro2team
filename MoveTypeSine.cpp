@@ -14,5 +14,5 @@ MoveTypeSine::MoveTypeSine(float x, float y, int flame) :
 
 std::tuple<float, float> MoveTypeSine::Calc() {
 	flame--;
-	return { (sin(unit * flame)* sin(unit * flame) / sum) * x , (sin(unit * flame) * sin(unit * flame) / sum) * y };
+	return { (sin(unit * flame) * sin(unit * flame) / sum) * x , (sin(unit * flame) * sin(unit * flame) / sum) * y };
 }

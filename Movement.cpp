@@ -3,7 +3,7 @@
 #include "MoveTypeSine.h"
 
 
-Movement::Movement(MovementI* eventI, eMoveType eMoveType, float x, float y,float time,int flame) :
+Movement::Movement(MovementI* eventI, eMoveType eMoveType, float x, float y,int flame) :
 	movementI(eventI)
 	{
 	switch (eMoveType) {
@@ -11,7 +11,7 @@ Movement::Movement(MovementI* eventI, eMoveType eMoveType, float x, float y,floa
 		moveType = (MoveType*) new MoveTypeNormal(x, y, flame);
 		break;
 	case MOVE_SINE:
-		moveType = (MoveType*) new MoveTypeSine(x * (time-1.f), y * (time - 1.f),flame);
+		moveType = (MoveType*) new MoveTypeSine(x , y ,flame);
 		break;
 	}
 

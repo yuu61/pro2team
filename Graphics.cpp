@@ -74,10 +74,10 @@ void Graphics::SetMovement(eMovementType movementType, eMoveType moveType, float
 }
 
 void Graphics::SetMovement(eMovementType movementType, eMoveType moveType, float time, int flame) {
-    switch (movementType) {
+    switch (movementType) { 
     case MOVEMENT_EXPAND:
         delete movement[MOVEMENT_EXPAND];
-        movement[MOVEMENT_EXPAND] = (Movement*) new MovementExpand(this, moveType, (location.x2 - location.x1) / 2, (location.y2 - location.y1) / 2, time, flame);
+        movement[MOVEMENT_EXPAND] = (Movement*) new MovementExpand(this, moveType, (location.x2 - location.x1) / 2 * (time - 1.f), (location.y2 - location.y1) / 2 * (time - 1.f), flame);
         break;
     }
 }

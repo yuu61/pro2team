@@ -21,8 +21,7 @@ protected:
 
 public:
 	Movement() {};
-	//Movement(MovementI* eventI, eMoveType moveType, float x, float y, int flame);
-	Movement(MovementI* eventI, eMoveType moveType, float x, float y,float time, int flame);
+	Movement(MovementI* eventI, eMoveType moveType, float x, float y, int flame);
 	virtual ~Movement();
 
 	int GetFlame(){ return moveType->GetFlame(); }
