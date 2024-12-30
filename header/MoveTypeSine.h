@@ -3,7 +3,7 @@
 class MoveTypeSine : public MoveType
 {
 private:
-	// ’PˆÊ•‚ğ“ü‚ê‚é
+	// 
 	double unit;
 	double sum{ 0 };
 public:
