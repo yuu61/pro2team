@@ -1,11 +1,12 @@
 #include "..\header\PlayerSelect.h"
+#include "..\header\CatchInput.h"
 #include "..\dxlib_for_visual_studio\DxLib.h"
+#include "..\header\GameVar.h"
+
 
 PlayerSelect::PlayerSelect(GameCgr* changer,GameVar* gVar) : 
 	GameScene(changer,gVar),
 	select(0){
-	button[ITEM] = Button(KEY_INPUT_S, 1, 710, 540, 910, 640, LoadGraph("image\\backGround.png"));
-	button[ROULETTE] = Button(KEY_INPUT_S, 1, 710, 690, 910, 790, LoadGraph("image\\backGround.png"));
 }
 
 void PlayerSelect::Initialize() {
@@ -17,33 +18,40 @@ void PlayerSelect::Finalize() {
 void PlayerSelect::Update() {
 
 	
-
-	if (button[ITEM].Check()) {
-		
+	if (button[GO_ITEM_SELECT]->CheckLeft(gameVar->player->GetInputKey(KEY_CANSEL)) == PRESSED) {
+		gameCgr->SceneChange(ITEM_SELECT);
 	}
 
-	if (button[ROULETTE].Check()) {
-
+	if (button[GO_ROULETTE_PLAY]->CheckLeft(gameVar->player->GetInputKey(KEY_ENTER)) == PRESSED) {
+		button[GO_ROULETTE_PLAY]->SetMovement(MOVEMENT_EXPAND, MOVE_NORMAL, 2, 60);
+		button[GO_ROULETTE_PLAY]->SetMovement(MOVEMENT_MOVE_TO, MOVE_NORMAL, 0, 0, 60);
 	}
 
-	button[ITEM].Update();
-	button[ROULETTE].Update();
-
-	//gameCgr->SceneChange(ITEM_SELECT);
+	button[GO_ITEM_SELECT]->Update();
+	button[GO_ROULETTE_PLAY]->Update();
 }
 
 void PlayerSelect::Draw() {
 	//DrawString(100, 100, "PlayerSelect", RGB(255, 255, 255));
 
 	
-	if (button[ITEM].DrawCheck()) {
-		DrawString(100, 100, "PlayerSelect", RGB(255, 255, 255));
+	if (button[GO_ITEM_SELECT]->GetStatusLeft() == INVALID) {
+		DrawString(100, 100, "INVALID", RGB(255, 255, 255));
+	}
+	if (button[GO_ITEM_SELECT]->GetStatusLeft() == PRESSED) {
+		DrawString(100, 100, "PRESSED", RGB(255, 255, 255));
+	}
+	if (button[GO_ITEM_SELECT]->GetStatusLeft() == NONE) {
+		DrawString(100, 100, "NONE", RGB(255, 255, 255));
+	}
+	if (button[GO_ITEM_SELECT]->GetStatusLeft() == CHARGING) {
+		DrawString(100, 100, "CHARGING", RGB(255, 255, 255));
+	}
+	if (button[GO_ITEM_SELECT]->GetStatusLeft() == CHARGED) {
+		DrawString(100, 100, "CHARGED", RGB(255, 255, 255));
 	}
 
-	if (button[ROULETTE].DrawCheck()) {
-
-	}
-
-	button[ITEM].Draw();
-	button[ROULETTE].Draw();
+	button[GO_ITEM_SELECT]->Draw();
+	button[GO_ROULETTE_PLAY]->Draw();
 }
+

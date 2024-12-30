@@ -3,52 +3,97 @@
 
 
 Button::Button() :
-	status(0),
-	checkKey(0),
-	checkTime(1),
+	statusRight(NONE),
+	statusLeft(NONE),
+	checkRightCharge(1),
+	checkLeftCharge(1),
 	Graphics() {
 }
 
-Button::Button(int checkKey,int checkTime, int x, int y, int xx, int yy, int graph) :
-	status(0),
-	checkKey(checkKey),
-	checkTime(checkTime),
-	Graphics(x,y,xx,yy,graph){
+Button::Button(int checkLeftCharge, int checkRightCharge, float x, float y, float xx, float yy, int graph) :
+	statusRight(NONE),
+	statusLeft(NONE),
+	checkRightCharge(checkRightCharge),
+	checkLeftCharge(checkLeftCharge),
+	Graphics(x, y, xx, yy, graph) {
 }
 
 void Button::Initialize() {}
 
-void Button::Finalize(){}
+void Button::Finalize() {}
 
 void Button::Update() {
 	this->Graphics::Update();
 }
 
-void Button::Draw() {
+/*
+void ButtonCharge::Draw() {
 	this->Graphics::Draw();
 
 }
+*/
 
-bool Button::DrawCheck() {
-	if (status == PRESSED) {
-		return 1;
-	}
-	return 0;
+eButtonStatus Button::GetStatusLeft() {
+	return statusLeft;
 }
 
-bool Button::Check() {
-	
-	if (InputKey[checkKey] == 1) {
-		status = CHARGING;
-	}
-	else if (InputKey[checkKey] == 0) {
-		status = NONE;
-	}
+eButtonStatus Button::GetStatusRight() {
+	return statusRight;
+}
 
-	if (status == CHARGING && InputKey[checkKey] >= checkTime) {
-		status = PRESSED;
-		return 1;
-	}
+eButtonStatus Button::CheckClick(int time, int charge, eButtonStatus status ,bool cheat) {
 
-	return 0;
+	if (status == CHARGED && time == 0) {
+		return PRESSED;
+	}
+	else if (time == 0) {
+		return NONE;
+	}
+	else if (status == INVALID) {
+		return INVALID;
+	}
+	else if (time == 1 && (CheckLocation() || cheat)) {
+		if (time == charge) {
+			return CHARGED;
+		}
+		else if (charge == 0) {
+			return INVALID;
+		}
+		return CHARGING;
+	}
+	else if (!(CheckLocation() || cheat)) {
+		return INVALID;
+	}
+	else if (time >= charge && status == CHARGING) {
+		return CHARGED;
+	}
+	return status;
+}
+
+/*
+eButtonStatus Button::CheckLeft() {
+	CheckClick(inputMouse.left, checkLeftCharge, statusLeft, false);
+	return statusLeft;
+}
+*/
+
+eButtonStatus Button::CheckLeft(int inputKeyCharge) {
+	statusLeft = CheckClick(inputKeyCharge, checkLeftCharge, statusLeft,true);
+	return statusLeft;
+}
+
+/*
+eButtonStatus Button::CheckRight() {
+	CheckClick(inputMouse.right, checkRightCharge, statusRight,false);
+	return statusRight;
+}
+*/
+
+eButtonStatus Button::CheckRight(int inputKeyCharge) {
+	statusRight = CheckClick(inputKeyCharge, checkRightCharge, statusRight, true);
+	return statusRight;
+}
+
+bool Button::CheckLocation() {
+	return (inputMouse.x >= location.x1 && inputMouse.y >= location.y1 && inputMouse.x <= location.x2 && inputMouse.y <= location.y2);
 }

@@ -1,18 +1,20 @@
 #pragma once
 #include "GameScene.h"
-#include "Button.h"
+#include "ButtonCharge.h"
 
 typedef enum _eButton {
-    ITEM,
-    ROULETTE,
-    MAX
+    GO_ITEM_SELECT,
+    GO_ROULETTE_PLAY,
+    E_BUTTON
 }eButton;
 
 class PlayerSelect : public GameScene
 {
+
     int select;
-    Button button[MAX];
-    // Button button();
+    Button* button[E_BUTTON]{   new Button(100, 0, 710.f, 540.f, 910.f, 640.f, LoadGraph("image\\backGround.png")) ,
+                                new Button(1, 0, 710.f, 690.f, 910.f, 790.f, LoadGraph("image\\backGround.png")) };
+    
 public:
 
 	PlayerSelect(GameCgr* changer, GameVar* gVar);

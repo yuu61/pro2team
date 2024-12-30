@@ -1,32 +1,22 @@
-#include "..\header\Graphics.h"
 #include "..\dxlib_for_visual_studio\DxLib.h"
-
+#include "..\header\Graphics.h"
+#include "..\header\MovementMove.h"
+#include "..\header\MovementExpand.h"
 
 Graphics::Graphics() :
     visible(1),
     graph(0),
-    x(0),
-    y(0),
-    xx(100),
-    yy(100),
-    gX(x),						// 左上の座標を格納
-    gY(y),
-    gXx(xx),						//右下の座標を格納
-    gYy(yy) {
+    location{0,0,0,0},
+    scale(1),
+    movement{ nullptr} {
 }
 
-Graphics::Graphics(int x, int y, int xx, int yy, int graph) :
+Graphics::Graphics(float x1, float y1, float x2, float y2, int graph) :
     visible(1),
-    x(x),
-    y(y),
-    xx(xx),
-    yy(yy),
-    gX(x),
-    gY(y),
-    gXx(xx),
-    gYy(yy),
-    graph(graph){
-    
+    location{x1,y1,x2,y2},
+    scale(1),
+    graph(graph),
+    movement{nullptr} {
 }
 
 
@@ -42,82 +32,77 @@ void Graphics::SetGraph(const char* in)
     graph = LoadGraph(in);
 }
 
-void Graphics::SetLocation(int inx, int iny, int inxx, int inyy) {
-    x = inx;
-    y = iny;
-    xx = inxx;
-    yy = inyy;
-    gX = x;						// 左上の座標を格納
-    gY = y;
-    gXx = y;						//右下の座標を格納
-    gYy = y;
+void Graphics::SetLocation(float inx1, float iny1, float inx2, float iny2) {
+    location = { inx1,iny1,inx2,iny2 };
 }
 
 // 画像を表示する
 void Graphics::Draw() {
 
     if (visible) {
-        DrawExtendGraph(x, y, xx, yy, graph, TRUE);
+        DrawExtendGraph(location.x1, location.y1, location.x2, location.y2, graph, TRUE);
     }
 }
 void Graphics::Draw(int inx, int iny) {
 
     if (visible) {
-        DrawExtendGraph(x + inx, y + iny, xx + inx, yy + iny, graph, TRUE);
+        DrawExtendGraph(location.x1 + inx, location.y1 + iny, location.x2 + inx, location.y2 + iny, graph, TRUE);
     }
 }
 
-void Graphics::ChangeScale(int scale) {
-    this->x -= scale;
-    this->xx += scale;
-    this->y -= scale;
-    this->yy += scale;
+void Graphics::SetScale(float in) {
+    scale = in;
 }
 
 //　グラフィックを囲うように枠を表示する。
 void Graphics::LightUp() {
-    DrawExtendGraph(x, y, xx, yy, graph, TRUE);
+
+}
+
+void Graphics::SetMovement(eMovementType movementType, eMoveType moveType, float x, float y,int flame) {
+    switch (movementType) {
+    case MOVEMENT_MOVE:
+        delete movement[movementType];
+        movement[movementType] = (Movement*) new MovementMove(this, moveType, x, y, flame);
+        break;
+    case MOVEMENT_MOVE_TO:
+        delete movement[MOVEMENT_MOVE];
+        movement[MOVEMENT_MOVE] = (Movement*) new MovementMove(this, moveType, x - location.x1, y - location.y1, flame);
+        break;
+    }
+    
+}
+
+void Graphics::SetMovement(eMovementType movementType, eMoveType moveType, float time, int flame) {
+    switch (movementType) { 
+    case MOVEMENT_EXPAND:
+        delete movement[MOVEMENT_EXPAND];
+        movement[MOVEMENT_EXPAND] = (Movement*) new MovementExpand(this, moveType, (location.x2 - location.x1) / 2 * (time - 1.f), (location.y2 - location.y1) / 2 * (time - 1.f), flame);
+        break;
+    }
+}
+
+void Graphics::Move(float x, float y) {
+    location.x1 += x;
+    location.y1 += y;
+    location.x2 += x;
+    location.y2 += y;
+}
+
+void Graphics::Expand(float x, float y) {
+    location.x1 -= x;
+    location.y1 -= y;
+    location.x2 += x;
+    location.y2 += y;
 }
 
 // 全ての描画イベントの参照先の情報更新処理。グラフィクス用の変数はここでのみ変更
 void Graphics::Update() {
-    if (x != gX) {
-        {
-            if (x > gX) {
-                gX += 1;
-            }
-            else {
-                gX -= 1;
-            }
-        }
-    }
-    if (xx != gXx) {
-        {
-            if (xx > gXx) {
-                gXx += 1;
-            }
-            else {
-                gXx -= 1;
-            }
-        }
-    }
-    if (y != gY) {
-        {
-            if (x > gY) {
-                gY += 1;
-            }
-            else {
-                gY -= 1;
-            }
-        }
-    }
-    if (x != gYy) {
-        {
-            if (x > gYy) {
-                gYy += 1;
-            }
-            else {
-                gYy -= 1;
+    for (int i = 0; i < MOVEMENT_TYPE_MAX; i++) {
+        if (movement[i] != nullptr) {
+            movement[i]->Action();
+            if (movement[i]->GetFlame() == 0) {
+                movement[i] = nullptr;
             }
         }
     }
