@@ -7,7 +7,7 @@
 class GameMgr : public BaseScene , GameCgr 
 {
 protected :
-	GameScene* gSStore[10]; // 適当に数を入れてる
+	GameScene* gSStore[E_GAME]; // 適当に数を入れてる
 	GameScene* gameScene;
 	eGame nextScene;
 	GameVar* gameVar;

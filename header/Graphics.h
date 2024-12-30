@@ -1,39 +1,47 @@
 #pragma once
 #include "Task.h"
+#include "MovementI.h";
+#include "Movement.h";
 
-class Graphics : public Task
+typedef struct _Location {
+	float x1, y1, x2, y2;
+}Location;
+
+
+class Graphics : public Task, MovementI
 {
 protected:
 
 	bool visible;				// 画像を表示するかどうか
 	int graph;					// 表示する画像のハンドルを格納
-	int x;						// 左上の座標を格納
-	int y;
-	int xx;						//右下の座標を格納
-	int yy;
-	int gX;						//グラフィックス用の変数
-	int gY;
-	int gXx;
-	int gYy;
+	Location location;
+	float scale;
+	Movement* movement[MOVEMENT_TYPE_MAX];
 
 public:
 	Graphics();
-	Graphics(int x, int xx, int y, int yy, int graph);
+	Graphics(float x, float y, float xx, float yy, int graph);
 
 	void Initialize() override;
 
 	void SetVisible(bool in);
 	void SetGraph(const char* in);
-	void SetLocation(int inx, int iny, int inxx, int inyy);
+	void SetLocation(float inx, float iny, float inxx, float inyy);
 	void Draw();
 	void Draw(int inx, int iny);
-	void ChangeScale(int scale);
+	void SetScale(float scale);
 	void LightUp();
 	void Update() override;
-	int GetX() { return x; }
-	int GetXx() { return xx; }
-	int GetY() { return y; }
-	int GetYy() { return yy; }
+
+	void SetMovement(eMovementType eventType, eMoveType moveType, float x, float y, int flame);
+	void SetMovement(eMovementType eventType, eMoveType moveType, float time, int flame);
+	void Move(float x, float y) override;
+	void Expand(float x, float y) override;
+
+	int GetX1() { return location.x1; }
+	int GetX2() { return location.x2; }
+	int GetY1() { return location.y1; }
+	int GetY2() { return location.y2; }
 };
 
 

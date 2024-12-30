@@ -1,11 +1,11 @@
 #pragma once
 #include "GameScene.h"
-#include "Button.h"
+#include "ButtonCharge.h"
 
 class RoulettePlay : public GameScene
 {
     int select;
-    Button button;
+    ButtonCharge button;
 
 public:
 

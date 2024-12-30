@@ -4,28 +4,38 @@
 typedef enum _eButtonStatus {
 	NONE,
 	CHARGING,
-	PRESSED
+	CHARGED,
+	PRESSED,
+	INVALID
 }eButtonStatus;
 
-class Button : Graphics
+class Button : public Graphics
 {
-private:
-	int status;
-	int checkKey;
-	int checkTime;
+protected:
+	eButtonStatus statusRight;
+	eButtonStatus statusLeft;
+	int checkRightCharge;
+	int checkLeftCharge;
+
+	virtual eButtonStatus CheckClick(int time, int charge, eButtonStatus stutas,bool cheat);
 
 public:
 	Button();
-	Button(int checkKey,int checkTime, int x, int xx, int y, int yy, int graph);
+	Button(int checkLeftCharge, int checkRightCharge, float x, float xx, float y, float yy, int graph);
 	~Button() {};
 
-	void SetKey(int k) { checkKey = k; }
-	bool Check();
-	bool DrawCheck();
+	// virtual eButtonStatus CheckLeft();
+	virtual eButtonStatus CheckLeft(int inputKeyCharge);
+	// virtual eButtonStatus CheckRight();
+	virtual eButtonStatus CheckRight(int inputKeyCharge);
+	bool CheckLocation();
 
-	void Initialize() override;        //åˆæœŸåŒ–å‡¦ç†ã¯å®Ÿè£…ã—ã¦ã‚‚ã—ãªãã¦ã‚‚ã„ã„
-	void Finalize() override;        //çµ‚äº†å‡¦ç†ã¯å®Ÿè£…ã—ã¦ã‚‚ã—ãªãã¦ã‚‚ã„ã„
-	void Update();    //æ›´æ–°å‡¦ç†ã¯å¿…ãšç¶™æ‰¿å…ˆã§å®Ÿè£…ã™ã‚‹
-	void Draw() ;    //æç”»å‡¦ç†ã¯å¿…ãšç¶™æ‰¿å…ˆã§å®Ÿè£…ã™ã‚‹
+	eButtonStatus GetStatusLeft();
+	eButtonStatus GetStatusRight();
+
+	void Initialize() override;        //‰Šú‰»ˆ—‚ÍÀ‘•‚µ‚Ä‚à‚µ‚È‚­‚Ä‚à‚¢‚¢
+	void Finalize() override;        //I—¹ˆ—‚ÍÀ‘•‚µ‚Ä‚à‚µ‚È‚­‚Ä‚à‚¢‚¢
+	void Update();    //XVˆ—‚Í•K‚¸Œp³æ‚ÅÀ‘•‚·‚é
+	// void Draw() ;    //•`‰æˆ—‚Í•K‚¸Œp³æ‚ÅÀ‘•‚·‚é
 };
 
