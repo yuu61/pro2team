@@ -1,4 +1,4 @@
-#include "MoveTypeSine.h"
+#include "..\header\MoveTypeSine.h"
 #include <cmath>
 
 static const double pi = 3.141592653589793;

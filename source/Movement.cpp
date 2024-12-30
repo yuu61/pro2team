@@ -1,6 +1,6 @@
-#include "Movement.h"
-#include "MoveTypeNormal.h"
-#include "MoveTypeSine.h"
+#include "..\header\Movement.h"
+#include "..\header\MoveTypeNormal.h"
+#include "..\header\MoveTypeSine.h"
 
 
 Movement::Movement(MovementI* eventI, eMoveType eMoveType, float x, float y,int flame) :

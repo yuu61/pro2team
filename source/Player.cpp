@@ -1,5 +1,5 @@
-#include "Player.h"
-#include "CatchInput.h"
+#include "..\header\Player.h"
+#include "..\header\CatchInput.h"
 
 Player::Player() {}
 

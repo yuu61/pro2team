@@ -1,5 +1,5 @@
-#include "Button.h"
-#include "CatchInput.h"
+#include "..\header\Button.h"
+#include "..\header\CatchInput.h"
 
 
 Button::Button() :

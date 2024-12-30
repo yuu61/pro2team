@@ -1,7 +1,7 @@
-#include "DxLib.h"
-#include "Graphics.h"
-#include "MovementMove.h"
-#include "MovementExpand.h"
+#include "..\dxlib_for_visual_studio\DxLib.h"
+#include "..\header\Graphics.h"
+#include "..\header\MovementMove.h"
+#include "..\header\MovementExpand.h"
 
 Graphics::Graphics() :
     visible(1),
