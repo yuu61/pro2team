@@ -2,6 +2,8 @@
 #include "Graphics.h"
 #include "Item.h"
 
+static const int ITEM_NUM{ 4 };
+
 typedef enum _eKey {
 	KEY_ENTER,
 	KEY_CANSEL,
@@ -14,7 +16,7 @@ class Player : public Graphics
 {
 private:
 
-	Item* item[8];
+	Item* item[ITEM_NUM];
 	int point;
 	int crown;
 	int key[E_KEY];
@@ -27,7 +29,9 @@ public:
 	int GetInputKey(eKey checkKey);
 	void Initialize() override {};
 	void Finalize() override {};
-	void Update() {};
+	void Update() {}
+	Item* GetItem(int index) { return item[index]; }
+	void SetItem(Item* newItem);
 	// void Draw();
 	
 };

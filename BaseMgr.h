@@ -3,7 +3,7 @@
 #include "BaseCgr.h"
 #include "BaseScene.h"
 
-
+// BaseSceneを管理するためのクラス
 class BaseMgr :public BaseCgr ,Task
 {
     BaseScene* baseScene;
@@ -13,6 +13,7 @@ public:
 
     BaseMgr();
 
+    // nextSceneを変更する関数
     void SceneChange(eScene changer) override;
     
     void Initialize() override;        //初期化処理は実装してもしなくてもいい

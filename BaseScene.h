@@ -5,6 +5,7 @@
 class BaseScene : public Task
 {
 protected:
+    // BaseMgrにシーンの変更を依頼するためのアドレス
     BaseCgr* baseCgr;
 
 public:

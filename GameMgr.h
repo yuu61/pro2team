@@ -3,19 +3,20 @@
 #include "GameCgr.h"
 #include "GameScene.h"
 
-
+// ゲームのシーンを管理するためのクラス
 class GameMgr : public BaseScene , GameCgr 
 {
-protected :
-	GameScene* gSStore[E_GAME]; // 適当に数を入れてる
+private :
+	GameScene* gSStore[E_GAME]; // ゲームのシーンを保存する。
 	GameScene* gameScene;
 	eGame nextScene;
-	GameVar* gameVar;
+	GameVar* gameVar; // グローバル変数代わり　将来的にはグローバル変数ヘッダーに変えたい
 
 public :
 	GameMgr(BaseCgr* changer);
 	~GameMgr() {};
 	
+	// シーンの変更を依頼する関数
 	void SceneChange(eGame changer) override;
 
 	void Initialize()override;        //初期化処理は実装してもしなくてもいい

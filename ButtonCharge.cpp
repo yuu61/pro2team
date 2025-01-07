@@ -61,6 +61,7 @@ eButtonStatus ButtonCharge::CheckClick(int time, int charge, eButtonStatus statu
 		return INVALID;
 	}
 	else if (time == charge && status == CHARGING) {
+		Click();
 		return PRESSED;
 	}
 	else if (time > charge) {

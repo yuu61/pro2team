@@ -13,6 +13,7 @@ private:
 	int checkLeftCharge;
 	*/
 
+	// クリックの状態を更新する。左右両用。Buttonと比べると、最後にキーを離さなくても反応するようになっている。
 	eButtonStatus CheckClick(int time, int charge, eButtonStatus stutas, bool cheat) override;
 
 public:

@@ -151,6 +151,7 @@
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="ButtonCharge.cpp" />
     <ClCompile Include="CatchInput.cpp" />
+    <ClCompile Include="ItemEye.cpp" />
     <ClCompile Include="Movement.cpp" />
     <ClCompile Include="MovementExpand.cpp" />
     <ClCompile Include="MovementI.cpp" />
@@ -169,6 +170,7 @@
     <ClCompile Include="MoveTypeSine.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerSelect.cpp" />
+    <ClCompile Include="Roulette.cpp" />
     <ClCompile Include="RoulettePlay.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +180,7 @@
     <ClInclude Include="Button.h" />
     <ClInclude Include="ButtonCharge.h" />
     <ClInclude Include="CatchInput.h" />
+    <ClInclude Include="ItemEye.h" />
     <ClInclude Include="Movement.h" />
     <ClInclude Include="MovementExpand.h" />
     <ClInclude Include="MovementI.h" />
@@ -196,6 +199,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerSelect.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Roulette.h" />
     <ClInclude Include="RoulettePlay.h" />
     <ClInclude Include="Task.h" />
   </ItemGroup>

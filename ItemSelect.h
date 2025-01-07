@@ -2,10 +2,13 @@
 #include "GameScene.h"
 #include "ButtonCharge.h"
 
+// アイテムを選択するシーンのクラス。
 class ItemSelect : public GameScene
 {
-    int select;
-    ButtonCharge button;
+    // 選択されてるボタンのインデックスを保管する。
+    int select{ 0 };
+    Button* button[5]{  new Button(100, 0, 710.f, 540.f, 910.f, 640.f, LoadGraph("image\\backGround.png")),
+                        nullptr };
 
 public:
 

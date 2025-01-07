@@ -6,9 +6,17 @@
 Graphics::Graphics() :
     visible(1),
     graph(0),
-    location{0,0,0,0},
+    location{0,0,200,200},
     scale(1),
     movement{ nullptr} {
+}
+
+Graphics::Graphics(const char graph[]) :
+    visible(1),
+    graph(LoadGraph(graph)),
+    location{ 0,0,200,200 },
+    scale(1),
+    movement{ nullptr } {
 }
 
 Graphics::Graphics(float x1, float y1, float x2, float y2, int graph) :
@@ -31,6 +39,11 @@ void Graphics::SetGraph(const char* in)
 {
     graph = LoadGraph(in);
 }
+
+void Graphics::SetGraph(int in) {
+    graph = in;
+}
+
 
 void Graphics::SetLocation(float inx1, float iny1, float inx2, float iny2) {
     location = { inx1,iny1,inx2,iny2 };
@@ -56,7 +69,7 @@ void Graphics::SetScale(float in) {
 
 //　グラフィックを囲うように枠を表示する。
 void Graphics::LightUp() {
-
+    DrawBoxAA(location.x1 - 30, location.y1 - 30, location.x2 + 30, location.y2 + 30, GetColor(0, 255, 255), TRUE);
 }
 
 void Graphics::SetMovement(eMovementType movementType, eMoveType moveType, float x, float y,int flame) {
@@ -77,7 +90,10 @@ void Graphics::SetMovement(eMovementType movementType, eMoveType moveType, float
     switch (movementType) { 
     case MOVEMENT_EXPAND:
         delete movement[MOVEMENT_EXPAND];
-        movement[MOVEMENT_EXPAND] = (Movement*) new MovementExpand(this, moveType, (location.x2 - location.x1) / 2 * (time - 1.f), (location.y2 - location.y1) / 2 * (time - 1.f), flame);
+        // movement[MOVEMENT_EXPAND] = (Movement*) new MovementExpand(this, moveType, (location.x2 - location.x1) / 2 * (time - 1.f), (location.y2 - location.y1) / 2 * (time - 1.f), flame);
+        movement[MOVEMENT_EXPAND] = (Movement*) new MovementExpand(this, moveType,  ((location.x2 - location.x1) / scale) * (time - scale) / 2,
+                                                                                    ((location.y2 - location.y1) / scale) * (time - scale) / 2, flame);
+        scale = time;
         break;
     }
 }

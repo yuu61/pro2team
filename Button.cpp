@@ -33,17 +33,10 @@ void ButtonCharge::Draw() {
 }
 */
 
-eButtonStatus Button::GetStatusLeft() {
-	return statusLeft;
-}
-
-eButtonStatus Button::GetStatusRight() {
-	return statusRight;
-}
-
 eButtonStatus Button::CheckClick(int time, int charge, eButtonStatus status ,bool cheat) {
 
 	if (status == CHARGED && time == 0) {
+		Click();
 		return PRESSED;
 	}
 	else if (time == 0) {

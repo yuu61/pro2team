@@ -1,6 +1,6 @@
 #include "Player.h"
 #include "CatchInput.h"
-
+#include "ItemEye.h"
 Player::Player() {}
 
 Player::Player(int enter, int cansel, int left, int right) :
@@ -8,27 +8,22 @@ Player::Player(int enter, int cansel, int left, int right) :
 	crown(0),
 	item{ nullptr } ,
 	key{ enter,cansel,left,right } {
+
+	SetItem((Item*)new ItemEye());
+	SetItem((Item*)new ItemEye());
+	SetItem((Item*)new ItemEye());
+	SetItem((Item*)new ItemEye());
 }
 
 int Player::GetInputKey(eKey checkKey) {
 	return inputKey[key[checkKey]];
 }
 
-
-/*
-if (inputKey[key[checkKey]] == 1) {
-	return true;
+void Player::SetItem(Item* newItem) {
+	for (int i = 0; i < ITEM_NUM; i++) {
+		if (item[i] == nullptr) {
+			item[i] = newItem;
+			break;
+		}
+	}
 }
-else if (InputKey[checkKey] == 1) {
-	status = CHARGING;
-}
-
-
-if (status == CHARGING && InputKey[checkKey] >= checkTime) {
-	status = PRESSED;
-	return 1;
-}
-
-return 0;
-
-*/

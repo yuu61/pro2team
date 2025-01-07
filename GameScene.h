@@ -3,6 +3,7 @@
 #include "GameCgr.h"
 #include "GameVar.h"
 
+// ゲームシーン
 class GameScene : public Task
 {
 protected:
