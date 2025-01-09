@@ -13,14 +13,14 @@ typedef enum _eButtonStatus {
 class Button : public Graphics
 {
 protected:
-	// ƒNƒŠƒbƒN‚Ìó‘Ô‚Ì•Û‘¶
+	// ã‚¯ãƒªãƒƒã‚¯ã®çŠ¶æ…‹ã®ä¿å­˜
 	eButtonStatus statusRight;
 	eButtonStatus statusLeft;
-	// ƒNƒŠƒbƒNŠ®—¹‚É•K—v‚ÈƒtƒŒ[ƒ€”
+	// ã‚¯ãƒªãƒƒã‚¯å®Œäº†ã«å¿…è¦ãªãƒ•ãƒ¬ãƒ¼ãƒ æ•°
 	int checkRightCharge;
 	int checkLeftCharge;
 
-	// ƒNƒŠƒbƒN‚Ìó‘Ô‚ğXV‚·‚éB¶‰E—¼—pB
+	// ã‚¯ãƒªãƒƒã‚¯ã®çŠ¶æ…‹ã‚’æ›´æ–°ã™ã‚‹ã€‚å·¦å³ä¸¡ç”¨ã€‚
 	virtual eButtonStatus CheckClick(int time, int charge, eButtonStatus stutas,bool cheat);
 
 public:
@@ -28,14 +28,14 @@ public:
 	Button(int checkLeftCharge, int checkRightCharge, float x, float xx, float y, float yy, int graph);
 	~Button() {};
 
-	// ƒNƒŠƒbƒNƒCƒxƒ“ƒg‚ğ•Û‘¶‚·‚éB
+	// ï¿½Nï¿½ï¿½ï¿½bï¿½Nï¿½Cï¿½xï¿½ï¿½ï¿½gï¿½ï¿½Û‘ï¿½ï¿½ï¿½ï¿½ï¿½B
 	std::function<void(void)> Click{ []() {} };
 
-	// ƒ}ƒEƒX‚ÌƒNƒŠƒbƒN‚ğŠm”F‚·‚é
+	// ãƒã‚¦ã‚¹ã®ã‚¯ãƒªãƒƒã‚¯ã‚’ç¢ºèªã™ã‚‹
 	// virtual eButtonStatus CheckLeft();
 	// virtual eButtonStatus CheckRight();
 
-	// ƒL[ƒ{[ƒh‚©‚ç‚Ì“ü—Í‚ğŠm”F‚·‚éB
+	// ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã‹ã‚‰ã®å…¥åŠ›ã‚’ç¢ºèªã™ã‚‹ã€‚
 	virtual eButtonStatus CheckLeft(int inputKeyCharge);
 	virtual eButtonStatus CheckRight(int inputKeyCharge);
 	bool CheckLocation();

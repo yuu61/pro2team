@@ -1,7 +1,7 @@
 #pragma once
 #include "Graphics.h"
 
-// アイテムのクラス
+// 繧｢繧､繝�繝縺ｮ繧ｯ繝ｩ繧ｹ
 class Item :public Graphics
 {
 public:

@@ -9,11 +9,11 @@ typedef enum _eGame{
 	BACK
 }eGame;
 
-// GameMgr‚ÉGameScene‚©‚ç‚ÌƒV[ƒ“•ÏX‚Ìw¦‚ğo‚·‚½‚ß‚ÌƒNƒ‰ƒXB
+// GameMgrã«GameSceneã‹ã‚‰ã®ã‚·ãƒ¼ãƒ³å¤‰æ›´ã®æŒ‡ç¤ºã‚’å‡ºã™ãŸã‚ã®ã‚¯ãƒ©ã‚¹ã€‚
 class GameCgr
 {
 public:
-	// ƒV[ƒ“•ÏX‚ğˆË—Š‚·‚éŠÖ”
+	// ã‚·ãƒ¼ãƒ³å¤‰æ›´ã‚’ä¾é ¼ã™ã‚‹é–¢æ•°
 	virtual void SceneChange(eGame changer) = 0;
 	virtual ~GameCgr() = 0;
 };

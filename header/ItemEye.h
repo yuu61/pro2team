@@ -1,7 +1,7 @@
 #pragma once
 #include "Item.h"
 
-// アイテムの目のクラス
+// 繧｢繧､繝�繝縺ｮ逶ｮ縺ｮ繧ｯ繝ｩ繧ｹ
 class ItemEye : public Item
 {
 public:

@@ -3,20 +3,20 @@
 #include "Player.h"
 #include "DxLib.h"
 
-// ƒQ[ƒ€‚ÌƒV[ƒ“‚Åg‚¦‚éƒOƒ[ƒoƒ‹•Ï”‘ã‚í‚è‚ÌƒNƒ‰ƒXBƒOƒ[ƒoƒ‹•Ï”ƒwƒbƒ_[‚É•Ï‚¦‚½‚¢B
+// ã‚²ãƒ¼ãƒ ã®ã‚·ãƒ¼ãƒ³ã§ä½¿ãˆã‚‹ã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°ä»£ã‚ã‚Šã®ã‚¯ãƒ©ã‚¹ã€‚ã‚°ãƒ­ãƒ¼ãƒãƒ«å¤‰æ•°ãƒ˜ãƒƒãƒ€ãƒ¼ã«å¤‰ãˆãŸã„ã€‚
 class GameVar
 {
 private:
-	// ”wŒi‰æ‘œ
+	// èƒŒæ™¯ç”»åƒ
 	Graphics* backGround{ new Graphics(0,0,1920,1080,LoadGraph("image\\backGround.png")) };
 
 public:
 	GameVar();
 	~GameVar() {};
 	Graphics* GetBackGround() { return backGround; }
-	// ƒvƒŒƒCƒ„[‚ğ•Û‘¶‚·‚éB
+	// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’ä¿å­˜ã™ã‚‹ã€‚
 	Player* playerStore[2]{ new Player(KEY_INPUT_S,KEY_INPUT_W,KEY_INPUT_A,KEY_INPUT_D),new Player(KEY_INPUT_K ,KEY_INPUT_I,KEY_INPUT_J,KEY_INPUT_L) };
-	// Œ»İ‚ÌƒƒCƒ“ƒvƒŒƒCƒ„[
+	// ç¾åœ¨ã®ãƒ¡ã‚¤ãƒ³ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼
 	Player* player{ playerStore[0] };
 
 	
