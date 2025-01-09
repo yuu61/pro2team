@@ -1,7 +1,7 @@
-#include "DxLib.h"
-#include "BaseMgr.h"
-#include "CatchInput.h"
-#include "FpsControll.h"
+#include "..\dxlib_for_visual_studio\DxLib.h"
+#include "..\header\BaseMgr.h"
+#include "..\header\CatchInput.h"
+#include "..\header\FpsControll.h"
 
 int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){
     SetWaitVSyncFlag(FALSE),ChangeWindowMode(TRUE), DxLib_Init(), SetDrawScreen( DX_SCREEN_BACK ); //ウィンドウモード変更と初期化と裏画面設定

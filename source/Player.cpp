@@ -1,6 +1,6 @@
-#include "Player.h"
-#include "CatchInput.h"
-#include "ItemEye.h"
+#include "..\header\Player.h"
+#include "..\header\CatchInput.h"
+#include "..\header\ItemEye.h"
 Player::Player() {}
 
 Player::Player(int enter, int cansel, int left, int right) :

@@ -1,4 +1,4 @@
-#include "MoveTypeNormal.h"
+#include "..\header\MoveTypeNormal.h"
 
 MoveTypeNormal:: MoveTypeNormal(float x, float y, int flame) :
 	MoveType(x/flame,y/flame,flame){

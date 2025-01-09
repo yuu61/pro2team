@@ -1,7 +1,7 @@
-#include "PlayerSelect.h"
-#include "CatchInput.h"
-#include "DxLib.h"
-#include "GameVar.h"
+#include "..\header\PlayerSelect.h"
+#include "..\header\CatchInput.h"
+#include "..\dxlib_for_visual_studio\DxLib.h"
+#include "..\header\GameVar.h"
 
 
 PlayerSelect::PlayerSelect(GameCgr* changer,GameVar* gVar) : 

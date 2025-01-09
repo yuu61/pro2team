@@ -1,5 +1,5 @@
-#include "ButtonCharge.h"
-#include "CatchInput.h"
+#include "..\header\ButtonCharge.h"
+#include "..\header\CatchInput.h"
 
 
 ButtonCharge::ButtonCharge() :

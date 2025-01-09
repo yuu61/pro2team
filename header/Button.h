@@ -44,9 +44,9 @@ public:
 	eButtonStatus GetStatusLeft() { return statusLeft; }
 	eButtonStatus GetStatusRight() { return statusRight; }
 
-	void Initialize() override;        //‰Šú‰»ˆ—‚ÍÀ‘•‚µ‚Ä‚à‚µ‚È‚­‚Ä‚à‚¢‚¢
-	void Finalize() override;        //I—¹ˆ—‚ÍÀ‘•‚µ‚Ä‚à‚µ‚È‚­‚Ä‚à‚¢‚¢
-	void Update();    //XVˆ—‚Í•K‚¸Œp³æ‚ÅÀ‘•‚·‚é
-	// void Draw() ;    //•`‰æˆ—‚Í•K‚¸Œp³æ‚ÅÀ‘•‚·‚é
+	void Initialize() override;        //åˆæœŸåŒ–å‡¦ç†ã¯å®Ÿè£…ã—ã¦ã‚‚ã—ãªãã¦ã‚‚ã„ã„
+	void Finalize() override;        //çµ‚äº†å‡¦ç†ã¯å®Ÿè£…ã—ã¦ã‚‚ã—ãªãã¦ã‚‚ã„ã„
+	void Update();    //æ›´æ–°å‡¦ç†ã¯å¿…ãšç¶™æ‰¿å…ˆã§å®Ÿè£…ã™ã‚‹
+	// void Draw() ;    //æç”»å‡¦ç†ã¯å¿…ãšç¶™æ‰¿å…ˆã§å®Ÿè£…ã™ã‚‹
 };
 

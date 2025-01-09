@@ -79,7 +79,6 @@
       <AdditionalIncludeDirectories>./dxlib_for_visual_studio</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <AdditionalOptions>/utf-8</AdditionalOptions>
-      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -116,7 +115,6 @@
       <AdditionalIncludeDirectories>./dxlib_for_visual_studio</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <AdditionalOptions>/utf-8</AdditionalOptions>
-      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -145,63 +143,59 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BaseCgr.cpp" />
-    <ClCompile Include="BaseMgr.cpp" />
-    <ClCompile Include="BaseScene.cpp" />
-    <ClCompile Include="Button.cpp" />
-    <ClCompile Include="ButtonCharge.cpp" />
-    <ClCompile Include="CatchInput.cpp" />
-    <ClCompile Include="ItemEye.cpp" />
-    <ClCompile Include="Movement.cpp" />
-    <ClCompile Include="MovementExpand.cpp" />
-    <ClCompile Include="MovementI.cpp" />
-    <ClCompile Include="FpsControll.cpp" />
-    <ClCompile Include="GameCgr.cpp" />
-    <ClCompile Include="GameMgr.cpp" />
-    <ClCompile Include="GameScene.cpp" />
-    <ClCompile Include="GameVar.cpp" />
-    <ClCompile Include="Graphics.cpp" />
-    <ClCompile Include="Item.cpp" />
-    <ClCompile Include="ItemSelect.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="MovementMove.cpp" />
-    <ClCompile Include="MoveType.cpp" />
-    <ClCompile Include="MoveTypeNormal.cpp" />
-    <ClCompile Include="MoveTypeSine.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="PlayerSelect.cpp" />
-    <ClCompile Include="Roulette.cpp" />
-    <ClCompile Include="RoulettePlay.cpp" />
+    <ClCompile Include="source\BaseCgr.cpp" />
+    <ClCompile Include="source\BaseMgr.cpp" />
+    <ClCompile Include="source\BaseScene.cpp" />
+    <ClCompile Include="source\Button.cpp" />
+    <ClCompile Include="source\ButtonCharge.cpp" />
+    <ClCompile Include="source\CatchInput.cpp" />
+    <ClCompile Include="source\Movement.cpp" />
+    <ClCompile Include="source\MovementExpand.cpp" />
+    <ClCompile Include="source\MovementI.cpp" />
+    <ClCompile Include="source\FpsControll.cpp" />
+    <ClCompile Include="source\GameCgr.cpp" />
+    <ClCompile Include="source\GameMgr.cpp" />
+    <ClCompile Include="source\GameScene.cpp" />
+    <ClCompile Include="source\GameVar.cpp" />
+    <ClCompile Include="source\Graphics.cpp" />
+    <ClCompile Include="source\Item.cpp" />
+    <ClCompile Include="source\ItemSelect.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\MovementMove.cpp" />
+    <ClCompile Include="source\MoveType.cpp" />
+    <ClCompile Include="source\MoveTypeNormal.cpp" />
+    <ClCompile Include="source\MoveTypeSine.cpp" />
+    <ClCompile Include="source\Player.cpp" />
+    <ClCompile Include="source\PlayerSelect.cpp" />
+    <ClCompile Include="source\RoulettePlay.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BaseCgr.h" />
-    <ClInclude Include="BaseMgr.h" />
-    <ClInclude Include="BaseScene.h" />
-    <ClInclude Include="Button.h" />
-    <ClInclude Include="ButtonCharge.h" />
-    <ClInclude Include="CatchInput.h" />
-    <ClInclude Include="ItemEye.h" />
-    <ClInclude Include="Movement.h" />
-    <ClInclude Include="MovementExpand.h" />
-    <ClInclude Include="MovementI.h" />
-    <ClInclude Include="FpsControll.h" />
-    <ClInclude Include="GameCgr.h" />
-    <ClInclude Include="GameMgr.h" />
-    <ClInclude Include="GameScene.h" />
-    <ClInclude Include="GameVar.h" />
-    <ClInclude Include="Graphics.h" />
-    <ClInclude Include="Item.h" />
-    <ClInclude Include="ItemSelect.h" />
-    <ClInclude Include="MovementMove.h" />
-    <ClInclude Include="MoveType.h" />
-    <ClInclude Include="MoveTypeNormal.h" />
-    <ClInclude Include="MoveTypeSine.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="PlayerSelect.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="Roulette.h" />
-    <ClInclude Include="RoulettePlay.h" />
-    <ClInclude Include="Task.h" />
+    <ClInclude Include="header\BaseCgr.h" />
+    <ClInclude Include="header\BaseMgr.h" />
+    <ClInclude Include="header\BaseScene.h" />
+    <ClInclude Include="header\Button.h" />
+    <ClInclude Include="header\ButtonCharge.h" />
+    <ClInclude Include="header\CatchInput.h" />
+    <ClInclude Include="header\Movement.h" />
+    <ClInclude Include="header\MovementExpand.h" />
+    <ClInclude Include="header\MovementI.h" />
+    <ClInclude Include="header\FpsControll.h" />
+    <ClInclude Include="header\GameCgr.h" />
+    <ClInclude Include="header\GameMgr.h" />
+    <ClInclude Include="header\GameScene.h" />
+    <ClInclude Include="header\GameVar.h" />
+    <ClInclude Include="header\Graphics.h" />
+    <ClInclude Include="header\Item.h" />
+    <ClInclude Include="header\ItemSelect.h" />
+    <ClInclude Include="header\MovementMove.h" />
+    <ClInclude Include="header\MoveType.h" />
+    <ClInclude Include="header\MoveTypeNormal.h" />
+    <ClInclude Include="header\MoveTypeSine.h" />
+    <ClInclude Include="header\Player.h" />
+    <ClInclude Include="header\PlayerSelect.h" />
+    <ClInclude Include="header\resource.h" />
+    <ClInclude Include="header\RoulettePlay.h" />
+    <ClInclude Include="header\Task.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="image\backGround.png" />

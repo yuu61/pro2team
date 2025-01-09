@@ -1,4 +1,4 @@
-#include "MovementExpand.h"
+#include "..\header\MovementExpand.h"
 
 MovementExpand::MovementExpand(MovementI* movementI, eMoveType moveType, float x, float y, int flame) :
 	Movement(movementI, moveType, x, y, flame) {
