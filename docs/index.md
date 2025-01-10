@@ -2,15 +2,15 @@
 # hogehoge
 右上からリポジトリもぜひ見てね
 ## チームメンバー
-|>|メンバー表||
-|:-:|:-:|-|
+||メンバー表||
+|:-:|:-:|:-|
 |プロジェクトマネージャー|松川|プログラムの99割を書いたひと|
 |プログラマ|山﨑|自称縁下チカモチ。何もしていない<br>GitHubのリポジトリ用意したり<br>ホームページ用意したり。細々したこと色々|
-|^|松田|example text|
+||松田|example text|
 |デザイナー|渡辺|example text|
-|^|村側|example text|
-|^|宮崎|example text|
-|^|李|example text|
+||村側|example text|
+||宮崎|example text|
+||李|example text|
  
 
 ## 反省点
