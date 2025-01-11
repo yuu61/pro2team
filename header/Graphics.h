@@ -1,14 +1,14 @@
 #pragma once
 #include "Task.h"
-#include "MovementI.h";
-#include "Movement.h";
+#include "MovementI.h"
+#include "Movement.h"
 
 typedef struct _Location {
 	float x1, y1, x2, y2;
 }Location;
 
 // グラフィックスを表現するクラス。
-class Graphics : public Task, MovementI
+class Graphics : public Task, public MovementI
 {
 protected:
 
@@ -55,5 +55,3 @@ public:
 	int GetY1() { return location.y1; }
 	int GetY2() { return location.y2; }
 };
-
-

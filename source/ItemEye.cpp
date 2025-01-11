@@ -1,4 +1,4 @@
-#include "ItemEye.h"
+#include "../header/ItemEye.h"
 
 ItemEye::ItemEye():Item("Image\\girl_A.jpg") {
 
