@@ -12,32 +12,32 @@
 ## 開発環境、言語
 <table>
     <tr>
-        <th>使用言語</th>
-        <th>C++</th>
+        <td>使用言語</td>
+        <td>C++</td>
     </tr>
     <tr>
-        <th>ライブラリ</th>
-        <th>DX ライブラリ</th>
+        <td>ライブラリ</td>
+        <td>DX ライブラリ</td>
     </tr>
     <tr>
-        <th>IDE</th>
-        <th>Visual studio</th>
+        <td>IDE</td>
+        <td>Visual studio</td>
     </tr>
     <tr>
-        <th>コードエディタ</th>
-        <th>VS code</th>
+        <td>コードエディタ</td>
+        <td>VS code</td>
     </tr>
     <tr>
-        <th>バージョン管理</th>
-        <th>GitHub</th>
+        <td>バージョン管理</td>
+        <td>GitHub</td>
     </tr>
     <tr>
-        <th>webホスティング</th>
-        <th>GitHub Pages</th>
+        <td>webホスティング</td>
+        <td>GitHub Pages</td>
     </tr>
     <tr>
-        <th>性的サイトジェネレーター</th>
-        <th>jekyll</th>
+        <td>性的サイトジェネレーター</td>
+        <td>jekyll</td>
     </tr>    
 </table>
 
@@ -61,7 +61,7 @@
   <tr>
     <td rowspan="2">プログラマー</td>
     <td>山﨑</td>
-    <td>自称縁下チカモチ。何もしていない<br>GitHubのリポジトリ用意したり<br>ホームページ用意したり。細々したこと色々</td>
+    <td>自称縁下チカモチ。何もしていない<br>Gitdubのリポジトリ用意したり<br>ホームページ用意したり。細々したこと色々</td>
   </tr>
   <tr>
     <td>松田</td>
