@@ -9,36 +9,37 @@
 ## システム構成
 ここにUML図とか
 ## 機能概要
+
 ## 開発環境、言語
 <table>
-    <tr>
-        <td>使用言語</td>
-        <td>C++</td>
-    </tr>
-    <tr>
-        <td>ライブラリ</td>
-        <td>DX ライブラリ</td>
-    </tr>
-    <tr>
-        <td>IDE</td>
-        <td>Visual studio</td>
-    </tr>
-    <tr>
-        <td>コードエディタ</td>
-        <td>VS code</td>
-    </tr>
-    <tr>
-        <td>バージョン管理</td>
-        <td>GitHub</td>
-    </tr>
-    <tr>
-        <td>webホスティング</td>
-        <td>GitHub Pages</td>
-    </tr>
-    <tr>
-        <td>性的サイトジェネレーター</td>
-        <td>jekyll</td>
-    </tr>    
+  <tr>
+    <td>使用言語</td>
+    <td>C++</td>
+  </tr>
+  <tr>
+    <td>ライブラリ</td>
+    <td>DX ライブラリ</td>
+  </tr>
+  <tr>
+    <td>IDE</td>
+    <td>Visual studio 2022</td>
+  </tr>
+  <tr>
+    <td>コードエディタ</td>
+    <td>VS code</td>
+  </tr>
+  <tr>
+    <td>バージョン管理</td>
+    <td>GitHub</td>
+  </tr>
+  <tr>
+    <td>webホスティング</td>
+    <td>GitHub Pages</td>
+  </tr>
+  <tr>
+    <td>性的サイトジェネレーター</td>
+    <td>jekyll</td>
+  </tr>    
 </table>
 
 ## 開発小話
