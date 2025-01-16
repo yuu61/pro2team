@@ -1,8 +1,13 @@
 > [!CAUTION] 
 > 注意（超重要）<br>コンフリクトを最小限に抑えるめに以下の取り組みを実施する
+<h1>コミットは呼吸</h1>
+<h1>コミットは呼吸</h1>
+<h1>コミットは呼吸</h1>
+その日の作業を終えるならコミットしろ
+
 * 頻繁にプルとマージを行い変更を同期
   * **作業前に必ずプル**
-  * **プッシュ前に必ずプル**
+  * **ステージ＞フェッチ＞マージ＞コミット＞プッシュ**
 * 頻繫にプッシュ
   * 小さな変更でもすぐにコミットしてプッシュ
 * コミットメッセージを記載する
@@ -12,7 +17,7 @@
 <br>
 
 緊急時の対応については以下の通り
-![alt](https://raw.githubusercontent.com/louim/in-case-of-fire/refs/heads/master/in_case_of_fire.png)
+<img src="https://github.com/louim/in-case-of-fire/raw/master/in_case_of_fire.png" alt="alt" width="495" />
 
 ## OutRow(あうとろう)チーム制作
 
