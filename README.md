@@ -23,7 +23,7 @@
 <br>
 
 緊急時の対応については以下の通り<br>
-<img src="https://github.com/louim/in-case-of-fire/raw/master/in_case_of_fire.png" alt="In case of fire" width="495" />
+<img src="image/in_case_of_fire.webp" alt="In case of fire" width="495" />
 
 ## OutRow(あうとろう)チーム制作
 
