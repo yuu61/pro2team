@@ -2,3 +2,9 @@ theme: jekyll-theme-slate
 title: ここにテキストを入力
 lang: ja
 markdown: kramdown
+
+# CSSファイルのパスを追加
+sass:
+  style: compressed
+  load_paths:
+    - docs
