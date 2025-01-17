@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="path/to/compiled/style.css">
 <!--VScodeで編集した方が楽-->
 # hogehoge
 右上からリポジトリもぜひ見てね
@@ -105,4 +106,4 @@
 # 謝辞
 
 
--->
+--><link rel="stylesheet" href="path/to/compiled/style.css">
