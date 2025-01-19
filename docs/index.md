@@ -9,6 +9,11 @@ cssとかはコパイで書いてるよ
   margin: auto;
   min-width: 780px;
 }
+@media (max-width: 780px) {
+  .inner {
+    min-width: 95%;
+  }
+}
 </style>
 </head>
 
@@ -70,7 +75,7 @@ cssとかはコパイで書いてるよ
 </table>
 
 ## 開発小話
-- 最初、この紹介サイトが担当者一人しか編集できないと聞いて、それはさすがに不便すぎるので全員が編集できるようにしたかった。<br><span style="color: #cccccc;">あとwordpressのビジュアルエディタがサイト自体のレスポンスの悪さも相まって死ぬほど使いづらい</span><br>幸いリダイレクトが許可されていたので、HTMLもCSSもJSも書けないけどMarkdownならそれなりに書けるので<br>何かないかと思ったら、GitHub PagesでJekyllを使ってWebホスティングができると聞いてこれを採用。
+- 最初、この紹介サイトが担当者一人しか編集できないと聞いて、それはさすがに不便すぎるので全員が編集できるようにしたかった。<br><span style="color: #cccccc;">あとwordpressのビジュアルエディタがサイト自体のレスポンスの悪さも相まって死ぬほど使いづらい</span><br>幸いリダイレクトが許可されていたので、HTMLもCSSもJSも書けないけどMarkdownならそれなりに書けるので<br>何かないかと思ったら、GitHub PagesでJekyllを使ってWebホスティングができると聞いてこれを採用。<br>なっちゃってレスポンシブ対応はコパイにおまかせ
 - 多分文字コードが原因でVisual Studioの補完機能である[IntelliSenseが動かなくなったり](https://qiita.com/yuu2461/items/7e4f090d63e8a332194f)した。
 
 ## 今後の展望
