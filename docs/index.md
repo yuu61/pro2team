@@ -1,9 +1,17 @@
-<!--VScodeで編集した方が楽-->
+<!--
+VScodeで編集した方が楽
+cssとかはコパイで書いてるよ
+-->
+<head>
 <style>
 .inner {
-    max-width: 840px;
+  max-width: 50%;
+  margin: auto;
+  min-width: 780px;
 }
 </style>
+</head>
+<div class="inner">
 <h1 align="center">右上からリポジトリもぜひ見てね</h1>
 
 ## 目的
@@ -11,6 +19,7 @@
 ## 反省点
 ### 最初の抽象的な方向決めを適切に行えなかった
   - 当事者意識を持っておらず筆者を含めPMに丸投げ状態だった
+
 ### 割とデカめの仕様変更を途中で2回挟んだ
   - 言語をC++に変更 [df7ee5a](https://github.com/yuu61/pro2team/commit/df7ee5a32985c1fc38ef0b62c8408677d5b1a422)
     - C++を書いたことがない人が大半を占めた
@@ -61,7 +70,7 @@
 </table>
 
 ## 開発小話
-- 最初、この紹介サイトが担当者一人しか編集できないと聞いて、それはさすがに不便すぎるので全員が編集できるようにしたかった。<br>幸いリダイレクトが許可されていたので、HTMLもCSSもJSも書けないけどMarkdownならそれなりに書けるので<br>何かないかと思ったら、GitHub PagesでJekyllを使ってWebホスティングができると聞いてこれを採用。
+- 最初、この紹介サイトが担当者一人しか編集できないと聞いて、それはさすがに不便すぎるので全員が編集できるようにしたかった。<br><span style="color: #cccccc;">あとwordpressのビジュアルエディタがサイト自体のレスポンスの悪さも相まって死ぬほど使いづらい</span><br>幸いリダイレクトが許可されていたので、HTMLもCSSもJSも書けないけどMarkdownならそれなりに書けるので<br>何かないかと思ったら、GitHub PagesでJekyllを使ってWebホスティングができると聞いてこれを採用。
 - 多分文字コードが原因でVisual Studioの補完機能である[IntelliSenseが動かなくなったり](https://qiita.com/yuu2461/items/7e4f090d63e8a332194f)した。
 
 ## 今後の展望
@@ -108,6 +117,7 @@
 </table>
 <!--
 # 謝辞
-
-
-<link rel="stylesheet" href="/style.scss">
+今回のチーム制作におきまして、多大なるご支援を賜りました。<br>
+この場をお借りして、深く御礼申し上げます。<br><br>
+-->
+</div>
