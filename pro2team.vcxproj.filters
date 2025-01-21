@@ -13,26 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Image">
+    <Filter Include="image">
       <UniqueIdentifier>{f1082616-b05a-4597-b954-4d6d668c75ca}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="image\girl_A.jpg">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="image\girl_B.jpg">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="image\itembox.png">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="image\convert.png">
-      <Filter>Image</Filter>
-    </Image>
-    <Image Include="image\backGround.png">
-      <Filter>Image</Filter>
-    </Image>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\BaseCgr.cpp">
@@ -50,7 +33,16 @@
     <ClCompile Include="source\ButtonCharge.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="source\Cake.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
     <ClCompile Include="source\CatchInput.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Container.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Ending.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="source\FpsControll.cpp">
@@ -68,10 +60,19 @@
     <ClCompile Include="source\GameVar.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="source\GameVarMgr.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
     <ClCompile Include="source\Graphics.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="source\Item.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ItemBasket.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ItemClock.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="source\ItemEye.cpp">
@@ -95,7 +96,16 @@
     <ClCompile Include="source\MovementMove.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="source\MovementRepetate.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="source\MovementRotate.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
     <ClCompile Include="source\MoveType.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="source\MoveTypeGrad.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="source\MoveTypeNormal.cpp">
@@ -118,6 +128,68 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="image\clock.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\dansei_01_a.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\eye.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\girl_A.jpg">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\girl_B.jpg">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\goItemSelectButton.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\goRoulettePlayButton.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\itembox.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\josei_01_a.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\modoruButton.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\strawberry.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\arrow.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\backGround.jpg">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\basket.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\cake_five.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\cake_four.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\cake_one.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\cake_three.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\cake_two.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\cake_zero.png">
+      <Filter>image</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="header\BaseCgr.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -133,7 +205,16 @@
     <ClInclude Include="header\ButtonCharge.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="header\Cake.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
     <ClInclude Include="header\CatchInput.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Container.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Ending.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="header\FpsControll.h">
@@ -151,10 +232,19 @@
     <ClInclude Include="header\GameVar.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="header\GameVarMgr.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
     <ClInclude Include="header\Graphics.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="header\Item.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ItemBasket.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ItemClock.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="header\ItemEye.h">
@@ -175,7 +265,16 @@
     <ClInclude Include="header\MovementMove.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="header\MovementRepetate.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="header\MovementRotate.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
     <ClInclude Include="header\MoveType.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="header\MoveTypeGrad.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="header\MoveTypeNormal.h">

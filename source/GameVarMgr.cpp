@@ -1,0 +1,1 @@
+#include "..\header\GameVarMgr.h"

@@ -1,5 +1,7 @@
 #include "..\header\Item.h"
 
-Item::Item(const char graph[]) :Graphics(graph) {
+Item::Item(GameVarMgr* gameVar, int graph) :
+	gameVarMgr(gameVar),
+	Graphics(graph) {
 
 }

@@ -25,7 +25,7 @@ protected:
 
 public:
 	Button();
-	Button(int checkLeftCharge, int checkRightCharge, float x, float xx, float y, float yy, int graph);
+	Button(int checkLeftCharge, int checkRightCharge, float x, float y, double xx, double yy, int graph);
 	~Button() {};
 
 	// �N���b�N�C�x���g��ۑ�����B

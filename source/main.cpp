@@ -3,6 +3,7 @@
 #include "..\header\CatchInput.h"
 #include "..\header\FpsControll.h"
 
+
 int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){
     SetWaitVSyncFlag(FALSE),ChangeWindowMode(TRUE), DxLib_Init(), SetDrawScreen( DX_SCREEN_BACK ); //ウィンドウモード変更と初期化と裏画面設定
 
@@ -20,6 +21,10 @@ int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){
         baseMgr.Update();  //更新
         baseMgr.Draw();    //描画
         
+
+        if (inputKey[KEY_INPUT_ESCAPE]) {
+            DxLib_End();
+        }
 
         //フレームレート表示
         FpsControll_Draw();

@@ -1,22 +1,17 @@
 #include "..\header\Player.h"
-#include "..\header\CatchInput.h"
 #include "..\header\ItemEye.h"
+#include "..\header\ItemClock.h"
+#include "..\header\ItemBasket.h"
+
 Player::Player() {}
 
-Player::Player(int enter, int cansel, int left, int right) :
-	point(0),
+Player::Player(int enter, int cansel, int left, int right, float x, float y, float cx, float cy, int graph) :
+	points(0),
 	crown(0),
-	item{ nullptr } ,
-	key{ enter,cansel,left,right } {
-
-	SetItem((Item*)new ItemEye());
-	SetItem((Item*)new ItemEye());
-	SetItem((Item*)new ItemEye());
-	SetItem((Item*)new ItemEye());
-}
-
-int Player::GetInputKey(eKey checkKey) {
-	return inputKey[key[checkKey]];
+	item{ nullptr },
+	key{ enter,cansel,left,right },
+	Graphics(x, y, cx, cy, graph) {
+	
 }
 
 void Player::SetItem(Item* newItem) {

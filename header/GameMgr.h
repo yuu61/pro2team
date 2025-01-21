@@ -10,7 +10,7 @@ private :
 	GameScene* gSStore[E_GAME]; // ゲームのシーンを保存する。
 	GameScene* gameScene;
 	eGame nextScene;
-	GameVar* gameVar; // グローバル変数代わり　将来的にはグローバル変数ヘッダーに変えたい
+	GameVar* gameVar{ new GameVar()};
 
 public :
 	GameMgr(BaseCgr* changer);

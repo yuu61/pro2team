@@ -3,21 +3,21 @@
 #include "ButtonCharge.h"
 
 typedef enum _eButton {
-    GO_ITEM_SELECT,
     GO_ROULETTE_PLAY,
+    GO_ITEM_SELECT,
     E_BUTTON
 }eButton;
 
 class PlayerSelect : public GameScene
 {
-
+    
     int select;
-    Button* button[E_BUTTON]{   new Button(100, 0, 710.f, 540.f, 910.f, 640.f, LoadGraph("image\\backGround.png")) ,
-                                new Button(1, 0, 710.f, 690.f, 910.f, 790.f, LoadGraph("image\\backGround.png")) };
+    Button* button[E_BUTTON]{   new Button(1, 0, 900.f, 600.f, 0.6, 0.6, LoadGraph("image\\goRoulettePlayButton.png")) ,
+                                new Button(1, 0, 1300.f, 600.f, 0.6, 0.6, LoadGraph("image\\goItemSelectButton.png")) };
     
 public:
 
-	PlayerSelect(GameCgr* changer, GameVar* gVar);
+	PlayerSelect(GameCgr* changer,GameVar* gv);
 
     void Initialize() override;        //初期化処理は実装してもしなくてもいい
     void Finalize() override ;        //終了処理は実装してもしなくてもいい

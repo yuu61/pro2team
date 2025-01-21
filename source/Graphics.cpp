@@ -1,116 +1,191 @@
-#include "..\dxlib_for_visual_studio\DxLib.h"
+
 #include "..\header\Graphics.h"
 #include "..\header\MovementMove.h"
 #include "..\header\MovementExpand.h"
+#include "..\header\MovementRotate.h"
+#include "..\header\MovementRepetate.h"
 
 Graphics::Graphics() :
-    visible(1),
-    graph(0),
-    location{0,0,200,200},
-    scale(1),
-    movement{ nullptr} {
+    Graphics(0, 0, 0, 0, -2) {
 }
 
-Graphics::Graphics(const char graph[]) :
-    visible(1),
-    graph(LoadGraph(graph)),
-    location{ 0,0,200,200 },
-    scale(1),
-    movement{ nullptr } {
+Graphics::Graphics(int g) :
+    Graphics(0, 0, 0, 0, g) {
 }
 
-Graphics::Graphics(float x1, float y1, float x2, float y2, int graph) :
-    visible(1),
-    location{x1,y1,x2,y2},
-    scale(1),
-    graph(graph),
+Graphics::Graphics(float x1, float y1, float cx, float cy, int g) :
+    location{ x1,y1 },
+    graph(g), 
+    cExtRate{ cx, cy },
     movement{nullptr} {
+
+    int fx{ 0 }, fy{ 0 };
+    
+    GetGraphSize(graph, &fx, &fy);
+    size = { fx * cExtRate.x, fy * cExtRate.y };
+    SetCnt();
 }
 
-
-void Graphics::Initialize() {}
+void Graphics::Finalize() 
+{
+    for (int i = 0; i < MOVEMENT_TYPE_MAX; i++) {
+        delete movement[i];
+    }
+}
 
 void Graphics::SetVisible(bool in)
 {
     visible = in;
 }
 
-void Graphics::SetGraph(const char* in)
-{
-    graph = LoadGraph(in);
-}
-
 void Graphics::SetGraph(int in) {
     graph = in;
-}
 
+    int fx{ 0 }, fy{ 0 };
 
-void Graphics::SetLocation(float inx1, float iny1, float inx2, float iny2) {
-    location = { inx1,iny1,inx2,iny2 };
+    GetGraphSize(graph, &fx, &fy);
+    size = { fx * cExtRate.x, fy * cExtRate.y };
+    cnt = { fx * 0.5f, fy * 0.5f };
 }
 
 // 画像を表示する
 void Graphics::Draw() {
 
     if (visible) {
-        DrawExtendGraph(location.x1, location.y1, location.x2, location.y2, graph, TRUE);
+        DrawRotaGraph3(location.x + cnt.x * cExtRate.x , location.y + cnt.y * cExtRate.y,
+            cnt.x, cnt.y, 
+            extRate.x * cExtRate.x , extRate.y * cExtRate.y,
+            angle, graph, TRUE,
+            turnX, turnY);
+        DrawFormatStringToHandle(location.x + size.x/2 + strCnt , location.y + size.y / 3, // 座標がかなり適当
+            strColor, strHandle, "%s", str.c_str());
     }
 }
 void Graphics::Draw(int inx, int iny) {
 
     if (visible) {
-        DrawExtendGraph(location.x1 + inx, location.y1 + iny, location.x2 + inx, location.y2 + iny, graph, TRUE);
+        DrawRotaGraph3(location.x + cnt.x * cExtRate.x + inx, location.y + cnt.y * cExtRate.y + iny,
+            cnt.x, cnt.y,
+            extRate.x * cExtRate.x, extRate.y * cExtRate.y,
+            angle, graph, TRUE,
+            turnX, turnY);
+        DrawFormatStringToHandle(location.x + size.x / 2 + strCnt + inx, location.y + size.y / 3 + iny, // 座標がかなり適当
+            strColor, strHandle, "%s", str.c_str());
     }
-}
-
-void Graphics::SetScale(float in) {
-    scale = in;
 }
 
 //　グラフィックを囲うように枠を表示する。
 void Graphics::LightUp() {
-    DrawBoxAA(location.x1 - 30, location.y1 - 30, location.x2 + 30, location.y2 + 30, GetColor(0, 255, 255), TRUE);
+    
+    DrawBoxAA(
+        location.x - 30 - gLoc.x  ,
+        location.y - 30 - gLoc.y ,
+        location.x + size.x + 30 - gLoc.x,
+        location.y + size.y + 30 - gLoc.y, GetColor(0, 255, 255), TRUE);
+        
+    
 }
 
+void Graphics::SetMove( eMoveType moveType, float x, float y, int flame) {
+        delete movement[MOVEMENT_MOVE];
+        movement[MOVEMENT_MOVE] = (Movement*) new MovementMove(this, moveType, x, y, flame);
+}
+
+void Graphics::SetMoveTo(eMoveType moveType, float x, float y, int flame) {
+    delete movement[MOVEMENT_MOVE];
+    movement[MOVEMENT_MOVE] = (Movement*) new MovementMove(this, moveType, x - location.x , y - location.y, flame);
+}
+
+void Graphics::SetExpand(eMoveType moveType, float time, int flame) {
+    delete movement[MOVEMENT_EXPAND];
+    movement[MOVEMENT_EXPAND] = (Movement*) new MovementExpand(this, moveType, (time - 1) * extRate.x, (time - 1) * extRate.y,
+        (size.x / extRate.x),
+        (size.y / extRate.y),
+        flame);
+}
+
+void Graphics::SetExpandTo(eMoveType moveType, float time, int flame) {
+    delete movement[MOVEMENT_EXPAND];
+    movement[MOVEMENT_EXPAND] = (Movement*) new MovementExpand(this, moveType, (time - extRate.x), (time - extRate.y),
+        (size.x / extRate.x) ,
+        (size.y / extRate.y) ,
+        flame);
+
+    /*
+    movement[MOVEMENT_EXPAND] = (Movement*) new MovementExpand(this, moveType, (time * cExtRateX - extRateX), (time * cExtRateY - extRateY),
+        (size.x / extRateX) * (time * cExtRateX - extRateX) / cExtRateX,
+        (size.y / extRateY) * (time * cExtRateY - extRateY) / cExtRateY,
+        flame);
+        */
+}
+
+
+
+/*
 void Graphics::SetMovement(eMovementType movementType, eMoveType moveType, float x, float y,int flame) {
     switch (movementType) {
-    case MOVEMENT_MOVE:
-        delete movement[movementType];
-        movement[movementType] = (Movement*) new MovementMove(this, moveType, x, y, flame);
-        break;
     case MOVEMENT_MOVE_TO:
         delete movement[MOVEMENT_MOVE];
-        movement[MOVEMENT_MOVE] = (Movement*) new MovementMove(this, moveType, x - location.x1, y - location.y1, flame);
+        movement[MOVEMENT_MOVE] = (Movement*) new MovementMove(this, moveType, x - location.x, y - location.y, flame);
         break;
     }
     
 }
-
+*/
+/*
 void Graphics::SetMovement(eMovementType movementType, eMoveType moveType, float time, int flame) {
     switch (movementType) { 
     case MOVEMENT_EXPAND:
         delete movement[MOVEMENT_EXPAND];
-        // movement[MOVEMENT_EXPAND] = (Movement*) new MovementExpand(this, moveType, (location.x2 - location.x1) / 2 * (time - 1.f), (location.y2 - location.y1) / 2 * (time - 1.f), flame);
-        movement[MOVEMENT_EXPAND] = (Movement*) new MovementExpand(this, moveType,  ((location.x2 - location.x1) / scale) * (time - scale) / 2,
-                                                                                    ((location.y2 - location.y1) / scale) * (time - scale) / 2, flame);
+        // movement[MOVEMENT_EXPAND] = (Movement*) new MovementExpand(this, moveType, (location.sizeX - location.x) / 2 * (time - 1.f), (location.sizeY - location.y) / 2 * (time - 1.f), flame);
+        movement[MOVEMENT_EXPAND] = (Movement*) new MovementExpand(this, moveType,  ((location.sizeX - location.x) / scale) * (time - scale) / 2,
+                                                                                    ((location.sizeY - location.y) / scale) * (time - scale) / 2, flame);
         scale = time;
         break;
     }
 }
+*/
+
+
+void Graphics::SetRotate(eMoveType moveType, float rota, int flame) {
+    delete movement[MOVEMENT_ROTATE];
+    movement[MOVEMENT_ROTATE] = (Movement*) new MovementRotate(this, moveType, rota, flame);
+}
+
+void Graphics::SetRotateTo(eMoveType moveType, float rota, int flame) {
+    delete movement[MOVEMENT_ROTATE];
+    movement[MOVEMENT_ROTATE] = (Movement*) new MovementRotate(this, moveType, rota - angle / degree, flame);
+}
+
+void Graphics::SetRepetate(eMoveType moveType, float x, float y, int time, int flame) {
+    delete movement[MOVEMENT_REPETATE];
+    movement[MOVEMENT_REPETATE] = (Movement*) new MovementRepetate(this, moveType, x ,y , time, flame);
+}
 
 void Graphics::Move(float x, float y) {
-    location.x1 += x;
-    location.y1 += y;
-    location.x2 += x;
-    location.y2 += y;
+    location.x += x;
+    location.y += y;
 }
 
-void Graphics::Expand(float x, float y) {
-    location.x1 -= x;
-    location.y1 -= y;
-    location.x2 += x;
-    location.y2 += y;
+void Graphics::MoveGL(float x, float y) {
+    gLoc.x += x;
+    gLoc.y += y;
 }
+
+void Graphics::Expand(float x, float y, float ux, float uy) {
+    extRate.x += x;
+    extRate.y += y;
+    size.x += ux;
+    size.y += uy;
+
+    //Move(-ux / 2 , -uy / 2);
+    MoveGL(ux / 2,uy / 2);
+}
+
+void Graphics::Rotate(float rota) {
+    angle += rota * degree;
+}
+
 
 // 全ての描画イベントの参照先の情報更新処理。グラフィクス用の変数はここでのみ変更
 void Graphics::Update() {

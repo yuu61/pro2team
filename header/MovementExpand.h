@@ -3,8 +3,12 @@
 
 class MovementExpand : public Movement
 {
+	float unitX, unitY;
+	float unitCX, unitCY;
+
 public:
-	MovementExpand(MovementI* eventI, eMoveType moveType, float x, float y,int flame);
+	//x ‡ŒvŠg‘å—Ê ux ‡ŒvˆÚ“®—Ê 
+	MovementExpand(MovementI* eventI, eMoveType moveType, float x, float y, float ux, float uy, int flame);
 	~MovementExpand();
 	void Action() override;
 };

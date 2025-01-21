@@ -2,15 +2,12 @@
 #include "..\header\CatchInput.h"
 
 
+
 Button::Button() :
-	statusRight(NONE),
-	statusLeft(NONE),
-	checkRightCharge(1),
-	checkLeftCharge(1),
-	Graphics() {
+	Button(1, 1, 0, 0, 0, 0, -1) {
 }
 
-Button::Button(int checkLeftCharge, int checkRightCharge, float x, float y, float xx, float yy, int graph) :
+Button::Button(int checkLeftCharge, int checkRightCharge, float x, float y, double xx, double yy, int graph) :
 	statusRight(NONE),
 	statusLeft(NONE),
 	checkRightCharge(checkRightCharge),
@@ -88,5 +85,5 @@ eButtonStatus Button::CheckRight(int inputKeyCharge) {
 }
 
 bool Button::CheckLocation() {
-	return (inputMouse.x >= location.x1 && inputMouse.y >= location.y1 && inputMouse.x <= location.x2 && inputMouse.y <= location.y2);
+	return (inputMouse.x >= location.x && inputMouse.y >= location.y && inputMouse.x <= location.x + size.x && inputMouse.y <= location.y + size.y);
 }

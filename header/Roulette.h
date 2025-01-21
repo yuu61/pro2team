@@ -1,7 +1,8 @@
 #pragma once
-#include "Graphics.h"
+#include "Container.h"
+#include "Cake.h"
 
-class Roulette : public Graphics
+class Roulette : public Container<Cake*>
 {
 private:
 

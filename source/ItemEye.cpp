@@ -1,6 +1,8 @@
 #include "../header/ItemEye.h"
+#include "..\dxlib_for_visual_studio\DxLib.h"
 
-ItemEye::ItemEye():Item("Image\\girl_A.jpg") {
+ItemEye::ItemEye(GameVarMgr* gameVar):
+	Item(gameVar, LoadGraph("image\\eye.png")) {
 
 }
 

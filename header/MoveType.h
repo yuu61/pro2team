@@ -4,7 +4,9 @@
 typedef enum _eMoveType {
 	MOVE_NONE,
 	MOVE_NORMAL,
-	MOVE_SINE
+	MOVE_SINE,
+	MOVE_GRAD_UP,
+	MOVE_GRAD_DOWN
 }eMoveType;
 
 class MoveType

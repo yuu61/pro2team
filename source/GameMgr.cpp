@@ -3,14 +3,15 @@
 #include "..\header\PlayerSelect.h"
 #include "..\header\ItemSelect.h"
 #include "..\header\RoulettePlay.h"
+#include "..\header\Ending.h"
 
 GameMgr::GameMgr(BaseCgr* changer) : BaseScene(changer),
 	nextScene(GAME_NON) {
-	gameVar = new GameVar();
 
 	gSStore[PLAYER_SELECT] = (GameScene*) new PlayerSelect((GameCgr*)this, gameVar);
 	gSStore[ITEM_SELECT] = (GameScene*) new ItemSelect((GameCgr*)this, gameVar);
-	gSStore[ROULETTE_PLAY] = (GameScene*) new RoulettePlay((GameCgr*)this, gameVar);
+	gSStore[ROULETTE_PLAY] = (GameScene*) new RoulettePlay((GameCgr*)this,gameVar);
+	gSStore[ENDING] = (GameScene*) new Ending((GameCgr*)this, gameVar);
 
 	gameScene = gSStore[PLAYER_SELECT];
 	
@@ -42,6 +43,9 @@ void GameMgr::Update() {
 		case ROULETTE_PLAY:
 			gameScene = gSStore[ROULETTE_PLAY];
 			break;
+		case ENDING:
+			gameScene = gSStore[ENDING];
+			break;
 		case BACK:
 			
 			break;
@@ -51,11 +55,15 @@ void GameMgr::Update() {
 		gameScene->Initialize();
 	}
 
+	gameVar->backGround->Update();
 	gameScene->Update();
 	
 }
 
 void GameMgr::Draw() {
-	gameVar->GetBackGround()->Draw();
+	
+	gameVar->backGround->Draw();
 	gameScene->Draw();
+	DrawFormatStringToHandle(1920 - 300, 30, GetColor(255, 255, 255),gameVar->fontHandle, "TURN %d/%d", gameVar->turn, gameVar->endTurn);
+	
 }

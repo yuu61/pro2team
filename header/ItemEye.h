@@ -5,7 +5,7 @@
 class ItemEye : public Item
 {
 public:
-	ItemEye();
+	ItemEye(GameVarMgr* gameVar);
 
 	void Use() override;
 };

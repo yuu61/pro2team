@@ -1,6 +1,7 @@
 #include "..\header\GameScene.h"
 
-GameScene::GameScene(GameCgr* changer,GameVar* gVar)
-	: gameCgr(changer)
-	, gameVar(gVar){
+GameScene::GameScene(GameCgr* changer, GameVar* gv):
+	gameCgr(changer),
+	gameVar(gv)
+	{
 }

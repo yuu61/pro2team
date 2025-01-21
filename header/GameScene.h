@@ -9,9 +9,8 @@ class GameScene : public Task
 protected:
     GameCgr* gameCgr;
     GameVar* gameVar;
-
 public:
-    GameScene(GameCgr* changer,GameVar* gVar);
+    GameScene(GameCgr* changer, GameVar* gv);
     virtual ~GameScene() {};
     virtual void Initialize() override {}        //初期化処理は実装してもしなくてもいい
     virtual void Finalize() override {};        //終了処理は実装してもしなくてもいい

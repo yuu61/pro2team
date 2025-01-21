@@ -6,7 +6,7 @@ ButtonCharge::ButtonCharge() :
 	Button() {
 }
 
-ButtonCharge::ButtonCharge(int checkLeftCharge, int checkRightCharge, int x, int y, int xx, int yy, int graph) :
+ButtonCharge::ButtonCharge(int checkLeftCharge, int checkRightCharge, float x, float y, double xx, double yy, int graph) :
 	Button(checkLeftCharge, checkRightCharge, x, y, xx, yy, graph) {
 
 }
