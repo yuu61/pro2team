@@ -23,7 +23,7 @@ PlayerSelect::PlayerSelect(GameCgr* changer,GameVar* gv) :
 	};
 	*/
 
-	// �ނ��菉���ʒu��ݒ�
+	// ‚Þ‚è‚â‚è�‰ŠúˆÊ’u‚ð�Ý’è
 	gameVar->roulette->SetExpandTo(MOVE_SINE, 0.5f, 45);
 	gameVar->roulette->Graphics::SetMoveTo(MOVE_SINE, 1920 - 900, 30, 45);
 	gameVar->roulette->SetMoveTo(MOVE_SINE, -250.f, -250.f, 45);

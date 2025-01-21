@@ -6,7 +6,7 @@
 
 class Ending : public GameScene
 {
-    // ‘I‘ğ‚³‚ê‚Ä‚éƒ{ƒ^ƒ“‚ÌƒCƒ“ƒfƒbƒNƒX‚ğ•ÛŠÇ‚·‚éB
+    // é¸æŠã•ã‚Œã¦ã‚‹ãƒœã‚¿ãƒ³ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’ä¿ç®¡ã™ã‚‹ã€‚
     int select{ 0 };
     std::string str{ "THANK YOU FOR PLAYING!!\n\n\n\n       END to \"Esc\"" };
 
@@ -14,10 +14,10 @@ public:
 
     Ending(GameCgr* changer, GameVar* gv);
 
-    void Initialize() override;        //‰Šú‰»ˆ—‚ÍÀ‘•‚µ‚Ä‚à‚µ‚È‚­‚Ä‚à‚¢‚¢
-    void Finalize() override;        //I—¹ˆ—‚ÍÀ‘•‚µ‚Ä‚à‚µ‚È‚­‚Ä‚à‚¢‚¢
-    void Update() override;    //XVˆ—‚Í•K‚¸Œp³æ‚ÅÀ‘•‚·‚é
-    void Draw() override;    //•`‰æˆ—‚Í•K‚¸Œp³æ‚ÅÀ‘•‚·‚é
+    void Initialize() override;        //åˆæœŸåŒ–å‡¦ç†ã¯å®Ÿè£…ã—ã¦ã‚‚ã—ãªãã¦ã‚‚ã„ã„
+    void Finalize() override;        //çµ‚äº†å‡¦ç†ã¯å®Ÿè£…ã—ã¦ã‚‚ã—ãªãã¦ã‚‚ã„ã„
+    void Update() override;    //æ›´æ–°å‡¦ç†ã¯å¿…ãšç¶™æ‰¿å…ˆã§å®Ÿè£…ã™ã‚‹
+    void Draw() override;    //æç”»å‡¦ç†ã¯å¿…ãšç¶™æ‰¿å…ˆã§å®Ÿè£…ã™ã‚‹
 };
 
 

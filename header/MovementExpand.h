@@ -7,7 +7,7 @@ class MovementExpand : public Movement
 	float unitCX, unitCY;
 
 public:
-	//x ‡ŒvŠg‘å—Ê ux ‡ŒvˆÚ“®—Ê 
+	//x ÂÂ‡ÂŒvÂŠgÂ‘ÄºÂ—Ä˜ ux ÂÂ‡ÂŒvÂˆÃšÂ“Å½Â—Ä˜ 
 	MovementExpand(MovementI* eventI, eMoveType moveType, float x, float y, float ux, float uy, int flame);
 	~MovementExpand();
 	void Action() override;

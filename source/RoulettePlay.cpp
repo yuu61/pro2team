@@ -61,7 +61,7 @@ void RoulettePlay::Update() {
 			flame = 0;
 		}
 
-		// –WŠQ
+		// Â–WÂŠQ
 		if (gameVar->opponent->GetInputKey(KEY_RIGHT) == 1) {
 			gameVar->roulette->SetRepetate(MOVE_GRAD_DOWN, 60.f, 60.f, 4, 16);
 		}
@@ -72,7 +72,7 @@ void RoulettePlay::Update() {
 		break;
 	case 2:
 		gameVar->roulette->SetRotate(MOVE_NORMAL, 8.f, 1);
-		// –WŠQ
+		// Â–WÂŠQ
 		if (gameVar->opponent->GetInputKey(KEY_RIGHT) == 1) {
 			gameVar->roulette->SetRepetate(MOVE_GRAD_DOWN, 60.f, 60.f, 4, 16);
 		}
@@ -80,7 +80,7 @@ void RoulettePlay::Update() {
 			gameVar->roulette->SetRepetate(MOVE_GRAD_DOWN, -60.f, 60.f, 4, 16);
 		}
 		
-		// ‰ñ“]~‚ß‚é
+		// Â‰Å„Â“]Â~Â‚ÃŸÂ‚Ã©
 		if (gameVar->player->GetInputKey(KEY_ENTER) == 1) {
 			status++;
 			gameVar->roulette->SetRotate(MOVE_GRAD_DOWN, 360 * 4, 60 * 6);
@@ -115,7 +115,7 @@ void RoulettePlay::Update() {
 			flame = 0;
 
 			if (gameVar->turn >= gameVar->endTurn) {
-				//ƒQ[ƒ€I—¹ˆ—
+				//ÂƒQÂ[ÂƒÂ€ÂIÂ—Å¡ÂÂˆÂ—Â
 				gameCgr->SceneChange(ENDING);
 			}
 
@@ -179,7 +179,7 @@ void RoulettePlay::Draw() {
 	}
 
 	
-	//ƒƒbƒZ[ƒW•\¦
+	//ÂƒÂÂƒbÂƒZÂ[ÂƒWÂ•\ÂÅš
 	
 
 	DrawString(100, 50, "RoulettePlay", RGB(255, 255, 255));
