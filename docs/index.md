@@ -81,9 +81,9 @@ C++を用いて作成しているため、オブジェクト指向を利用し�
   - 当事者意識を持っておらず、筆者を含めPMに丸投げ状態だった
 
 ### 割とデカめの仕様変更を途中で2回挟んだ
-  - 言語をC++に変更 [df7ee5a](https://github.com/yuu61/pro2team/commit/df7ee5a32985c1fc38ef0b62c8408677d5b1a422)
+  - 言語をC++に変更 [df7ee5a](https://github.com/yuu61/pro2team/commit/df7ee5a32985c1fc38ef0b62c8408677d5b1a422){:target="_blank"}
     - C++を書いたことがない人が大半を占めた
-  - 大幅にプログラムの構造を変更 [5242d35](https://github.com/yuu61/pro2team/commit/5242d35a5021f87dc997cb6a1b10007be2473a65)
+  - 大幅にプログラムの構造を変更 [5242d35](https://github.com/yuu61/pro2team/commit/5242d35a5021f87dc997cb6a1b10007be2473a65){:target="_blank"}
     - オブジェクト指向等に慣れておらず、扱える者が一人だけになってしまった
 
 ### チームメンバーがGitHubにあまり慣れていない状態で導入
@@ -112,16 +112,16 @@ C++を用いて作成しているため、オブジェクト指向を利用し�
   </tr>
   <tr>
     <td>プロジェクトマネージャー</td>
-    <td><a href="https://github.com/hziulq">松川</a></td>
+    <td><a href="https://github.com/hziulq" target="_blank">松川</a></td>
     <td>プログラムの99割を書いたひと<br>頭が上がらない</td>
   </tr>
   <tr>
     <td rowspan="2">プログラマー</td>
-    <td><a href="https://github.com/yuu61">山﨑</a></td>
+    <td><a href="https://github.com/yuu61" target="_blank">山﨑</a></td>
     <td>自称縁下チカモチ。何もしていない<br>GitHubのリポジトリ用意したり<br>ホームページ用意したり。細々したこと色々<br>detached HEADを修復できず大幅な変更を消失させてしまった。<br>本当に申し訳ない</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/i2kmtd">松田</a></td>
+    <td><a href="https://github.com/i2kmtd" target="_blank">松田</a></td>
     <td>example text</td>
   </tr>
   <tr>
