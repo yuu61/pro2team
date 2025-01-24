@@ -1,7 +1,7 @@
 #pragma once
-#include "Graphics.h"
-#include "CatchInput.h"
-#include "Item.h"
+#include "Graphics.hpp"
+#include "CatchInput.hpp"
+#include "Item.hpp"
 
 static const int ITEM_NUM{ 4 };
 

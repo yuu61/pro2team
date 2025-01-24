@@ -1,15 +1,15 @@
 #pragma once
-#include "Graphics.h"
-#include "Player.h"
-#include "Roulette.h"
-#include "Button.h"
+#include "Graphics.hpp"
+#include "Player.hpp"
+#include "Roulette.hpp"
+#include "Button.hpp"
 #include "..\dxlib_for_visual_studio\DxLib.h"
 #include <string>
-#include "GameVarMgr.h"
+#include "GameVarMgr.hpp"
 
-#include "ItemEye.h"
-#include "ItemBasket.h"
-#include "ItemClock.h"
+#include "ItemEye.hpp"
+#include "ItemBasket.hpp"
+#include "ItemClock.hpp"
 
 // ゲームのシーンで使えるグローバル変数代わりのクラス。グローバル変数ヘッダーに変えたい。
 /*

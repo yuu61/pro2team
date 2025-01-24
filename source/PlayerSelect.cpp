@@ -1,7 +1,7 @@
-#include "..\header\PlayerSelect.h"
-#include "..\header\CatchInput.h"
+#include "..\header\PlayerSelect.hpp"
+#include "..\header\CatchInput.hpp"
 #include "..\dxlib_for_visual_studio\DxLib.h"
-#include "..\header\GameVar.h"
+#include "..\header\GameVar.hpp"
 
 
 const int BUTTON_NUM{ 2 };

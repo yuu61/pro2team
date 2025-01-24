@@ -190,115 +190,115 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="header\BaseCgr.h">
+    <ClInclude Include="header\BaseCgr.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\BaseMgr.h">
+    <ClInclude Include="header\BaseMgr.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\BaseScene.h">
+    <ClInclude Include="header\BaseScene.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\Button.h">
+    <ClInclude Include="header\Button.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\ButtonCharge.h">
+    <ClInclude Include="header\ButtonCharge.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\Cake.h">
+    <ClInclude Include="header\Cake.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\CatchInput.h">
+    <ClInclude Include="header\CatchInput.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\Container.h">
+    <ClInclude Include="header\Container.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\Ending.h">
+    <ClInclude Include="header\Ending.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\FpsControll.h">
+    <ClInclude Include="header\FpsControll.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\GameCgr.h">
+    <ClInclude Include="header\GameCgr.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\GameMgr.h">
+    <ClInclude Include="header\GameMgr.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\GameScene.h">
+    <ClInclude Include="header\GameScene.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\GameVar.h">
+    <ClInclude Include="header\GameVar.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\GameVarMgr.h">
+    <ClInclude Include="header\GameVarMgr.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\Graphics.h">
+    <ClInclude Include="header\Graphics.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\Item.h">
+    <ClInclude Include="header\Item.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\ItemBasket.h">
+    <ClInclude Include="header\ItemBasket.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\ItemClock.h">
+    <ClInclude Include="header\ItemClock.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\ItemEye.h">
+    <ClInclude Include="header\ItemEye.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\ItemSelect.h">
+    <ClInclude Include="header\ItemSelect.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\Movement.h">
+    <ClInclude Include="header\Movement.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\MovementExpand.h">
+    <ClInclude Include="header\MovementExpand.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\MovementI.h">
+    <ClInclude Include="header\MovementI.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\MovementMove.h">
+    <ClInclude Include="header\MovementMove.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\MovementRepetate.h">
+    <ClInclude Include="header\MovementRepetate.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\MovementRotate.h">
+    <ClInclude Include="header\MovementRotate.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\MoveType.h">
+    <ClInclude Include="header\MoveType.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\MoveTypeGrad.h">
+    <ClInclude Include="header\MoveTypeGrad.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\MoveTypeNormal.h">
+    <ClInclude Include="header\MoveTypeNormal.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\MoveTypeSine.h">
+    <ClInclude Include="header\MoveTypeSine.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\Player.h">
+    <ClInclude Include="header\Player.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\PlayerSelect.h">
+    <ClInclude Include="header\PlayerSelect.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\resource.h">
+    <ClInclude Include="header\resource.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\Roulette.h">
+    <ClInclude Include="header\Roulette.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\RoulettePlay.h">
+    <ClInclude Include="header\RoulettePlay.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="header\Task.h">
+    <ClInclude Include="header\Task.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

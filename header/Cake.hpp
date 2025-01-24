@@ -1,6 +1,6 @@
 #pragma once
-#include "Graphics.h"
-#include "Item.h"
+#include "Graphics.hpp"
+#include "Item.hpp"
 
 #define CAKE_NUM 8
 

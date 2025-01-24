@@ -1,5 +1,5 @@
 #pragma once
-#include "MoveType.h"
+#include "MoveType.hpp"
 
 typedef struct _Unit {
 	float x;

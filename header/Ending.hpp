@@ -1,5 +1,5 @@
 #pragma once
-#include "GameScene.h"
+#include "GameScene.hpp"
 #include <iostream>
 
 

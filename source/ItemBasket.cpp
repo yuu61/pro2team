@@ -1,4 +1,4 @@
-#include "..\header\ItemBasket.h"
+#include "..\header\ItemBasket.hpp"
 
 ItemBasket::ItemBasket(GameVarMgr* gameVar) :
 	Item(gameVar, LoadGraph("image\\basket.png")) {

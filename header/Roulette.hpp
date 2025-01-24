@@ -1,6 +1,6 @@
 #pragma once
-#include "Container.h"
-#include "Cake.h"
+#include "Container.hpp"
+#include "Cake.hpp"
 
 class Roulette : public Container<Cake*>
 {

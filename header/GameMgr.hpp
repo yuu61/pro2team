@@ -1,7 +1,7 @@
 #pragma once
-#include "BaseScene.h"
-#include "GameCgr.h"
-#include "GameScene.h"
+#include "BaseScene.hpp"
+#include "GameCgr.hpp"
+#include "GameScene.hpp"
 
 // ゲームのシーンを管理するためのクラス
 class GameMgr : public BaseScene , GameCgr 

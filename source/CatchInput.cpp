@@ -1,4 +1,4 @@
-#include "..\header\CatchInput.h"
+#include "..\header\CatchInput.hpp"
 #include "..\dxlib_for_visual_studio\DxLib.h"
 
 // キーの入力状態を更新する

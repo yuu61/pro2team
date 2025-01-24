@@ -1,4 +1,4 @@
-#include "..\header\Ending.h"
+#include "..\header\Ending.hpp"
 
 Ending::Ending(GameCgr* changer, GameVar* gv) :
 	GameScene(changer, gv){

@@ -1,4 +1,4 @@
-#include "..\header\MovementRepetate.h"
+#include "..\header\MovementRepetate.hpp"
 #include <cmath>
 
 static const double pi = 3.141592653589793;

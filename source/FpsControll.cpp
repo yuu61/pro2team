@@ -1,4 +1,4 @@
-#include "..\header\FpsControll.h"
+#include "..\header\FpsControll.hpp"
 
 static int mStartTime;      //測定開始時刻
 static int mCount;          //カウンタ

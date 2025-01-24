@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
-#include "..\header\Graphics.h"
+#include "..\header\Graphics.hpp"
 #include <algorithm>
-#include "Button.h"
-#include "Cake.h"
+#include "Button.hpp"
+#include "Cake.hpp"
 
 
 template <class T>

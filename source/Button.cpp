@@ -1,5 +1,5 @@
-#include "..\header\Button.h"
-#include "..\header\CatchInput.h"
+#include "..\header\Button.hpp"
+#include "..\header\CatchInput.hpp"
 
 
 

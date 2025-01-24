@@ -1,7 +1,7 @@
 #pragma once
-#include "Task.h"
-#include "GameCgr.h"
-#include "GameVar.h"
+#include "Task.hpp"
+#include "GameCgr.hpp"
+#include "GameVar.hpp"
 
 // ゲームシーン
 class GameScene : public Task

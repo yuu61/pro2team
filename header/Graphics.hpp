@@ -1,8 +1,8 @@
 #pragma once
 #include "..\dxlib_for_visual_studio\DxLib.h"
-#include "Task.h"
-#include "MovementI.h"
-#include "Movement.h"
+#include "Task.hpp"
+#include "MovementI.hpp"
+#include "Movement.hpp"
 #include <string.h>
 #include <iostream>
 

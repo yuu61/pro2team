@@ -1,7 +1,7 @@
-#include "..\header\Player.h"
-#include "..\header\ItemEye.h"
-#include "..\header\ItemClock.h"
-#include "..\header\ItemBasket.h"
+#include "..\header\Player.hpp"
+#include "..\header\ItemEye.hpp"
+#include "..\header\ItemClock.hpp"
+#include "..\header\ItemBasket.hpp"
 
 Player::Player() {}
 

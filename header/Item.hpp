@@ -1,6 +1,6 @@
 #pragma once
-#include "Graphics.h"
-#include "GameVarMgr.h"
+#include "Graphics.hpp"
+#include "GameVarMgr.hpp"
 
 // アイテムのクラス
 class Item :public Graphics

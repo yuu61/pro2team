@@ -1,4 +1,4 @@
-#include "..\header\Cake.h"
+#include "..\header\Cake.hpp"
 #include "..\dxlib_for_visual_studio\DxLib.h"
 
 

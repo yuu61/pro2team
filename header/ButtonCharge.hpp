@@ -1,6 +1,6 @@
 #pragma once
-#include "Graphics.h"
-#include "Button.h"
+#include "Graphics.hpp"
+#include "Button.hpp"
 
 
 class ButtonCharge : public Button

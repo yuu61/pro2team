@@ -1,5 +1,5 @@
 #pragma once
-#include "MoveType.h"
+#include "MoveType.hpp"
 class MoveTypeSine : public MoveType
 {
 private:

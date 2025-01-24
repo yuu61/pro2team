@@ -1,2 +1,2 @@
-#include "..\header\GameVar.h"
+#include "..\header\GameVar.hpp"
 

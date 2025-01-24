@@ -1,6 +1,6 @@
 #pragma once
-#include "BaseCgr.h"
-#include "BaseScene.h"
+#include "BaseCgr.hpp"
+#include "BaseScene.hpp"
 
 // BaseSceneを管理するためのクラス
 class BaseMgr :public BaseCgr ,Task

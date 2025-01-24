@@ -1,7 +1,7 @@
 #include "..\dxlib_for_visual_studio\DxLib.h"
-#include "..\header\BaseMgr.h"
-#include "..\header\CatchInput.h"
-#include "..\header\FpsControll.h"
+#include "..\header\BaseMgr.hpp"
+#include "..\header\CatchInput.hpp"
+#include "..\header\FpsControll.hpp"
 
 
 int WINAPI WinMain(HINSTANCE,HINSTANCE,LPSTR,int){

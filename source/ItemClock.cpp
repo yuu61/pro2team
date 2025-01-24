@@ -1,4 +1,4 @@
-#include "..\header\ItemClock.h"
+#include "..\header\ItemClock.hpp"
 
 ItemClock::ItemClock(GameVarMgr* gameVar) :
 	Item(gameVar, LoadGraph("image\\clock.png")) {

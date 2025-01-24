@@ -1,9 +1,9 @@
 
-#include "..\header\Graphics.h"
-#include "..\header\MovementMove.h"
-#include "..\header\MovementExpand.h"
-#include "..\header\MovementRotate.h"
-#include "..\header\MovementRepetate.h"
+#include "..\header\Graphics.hpp"
+#include "..\header\MovementMove.hpp"
+#include "..\header\MovementExpand.hpp"
+#include "..\header\MovementRotate.hpp"
+#include "..\header\MovementRepetate.hpp"
 
 Graphics::Graphics() :
     Graphics(0, 0, 0, 0, -2) {

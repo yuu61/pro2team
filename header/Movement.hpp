@@ -1,6 +1,6 @@
 #pragma once
-#include "MovementI.h"
-#include "MoveType.h"
+#include "MovementI.hpp"
+#include "MoveType.hpp"
 
 typedef enum _eMovementType {
 	MOVEMENT_MOVE,
