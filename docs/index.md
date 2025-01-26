@@ -7,11 +7,14 @@ cssとかはコパイで書いてるよ
 .inner {
   max-width: 50%;
   margin: auto;
-  min-width: 935px;
+  min-width: 980px;
 }
-@media (max-width: 935px) {
+@media (max-width: 980px) {
   .inner {
     min-width: 95%;
+  }
+  html {
+    font-size: 62.5%;
   }
 }
 </style>
@@ -19,8 +22,29 @@ cssとかはコパイで書いてるよ
 <!--css完全に理解した
 正直これでいいのかわからん。-->
 
-<h1 align="center">右上からリポジトリもぜひ見てね</h1><br>
+<h1 align="center">右上からリポジトリもぜひ見てね</h1>
 <!--wordpress側のアイキャッチ画像がピンクのユニコーンなのはそういう意味です。知らんけど-->
+<p align="center">このページは<a href="#wordpress">PV数カウントのため</a>一度ページを開いてからリダイレクトされています</p><br>
+
+<ul>
+  <li><a href="#プロダクト">プロダクト</a></li>
+  <ul>
+    <li><a href="#企画概要">企画概要</a></li>
+    <li><a href="#システム構成">システム構成</a></li>
+    <li><a href="#機能概要">機能概要</a></li>
+    <li><a href="#今後の展望">今後の展望</a></li>
+    <li><a href="#開発環境言語">開発環境、言語</a></li>
+  </ul>
+  <li><a href="#ゲームについて">ゲームについて</a></li>
+  <li><a href="#チーム開発に当たって">チーム開発に当たって</a></li>
+  <ul>
+    <li><a href="#反省点">反省点</a></li>
+    <li><a href="#開発小話">開発小話</a></li>
+    <li><a href="#チームメンバー">チームメンバー</a></li>
+  </ul>
+  <li><a href="#スペシャルサンクス">スペシャルサンクス</a></li>
+</ul>
+
 
 # プロダクト
 ## 企画概要
@@ -124,11 +148,13 @@ C++を用いて作成しているため、オブジェクト指向を利用し�
 ## 開発小話
 - 最初、この紹介サイトが担当者一人しか編集できないと聞いて、それはさすがに不便すぎるので全員が編集できるようにしたかった。<br><span style="color: #cccccc;">あとwordpressのビジュアルエディタがサイト自体のレスポンスの悪さも相まって死ぬほど使いづらい</span><br>幸いリダイレクトが許可されていたので、HTMLもCSSもJSも書けないけどMarkdownならそれなりに書けるので<br>何かないかと思ったら、GitHub PagesでJekyllを使ってWebホスティングができると聞いてこれを採用。<br>なっちゃってレスポンシブ対応はコパイにおまかせ
 <br>
+<a id="wordpress"></a>
 - WordPressからリダイレクトさせるとPVがカウントされずPVランキングに載らない問題が発生したため、<br>設定で直接このページにアクセスするのではなく、一旦WordPress側のページを読み込んでからこのページに飛ぶようにしたかった。
   - しかし、`meta http-equiv`やJavaScriptの`window.onload = function()`は保存時に自動で消されてしまい、<br>何とかならないかと試行錯誤していたところ、ふと「素のJS以外も使えるのでは？」と思い、<br>Wappalyzerで調べたところJQueryが入っていたので、`$(document).ready(function()～`を付け加えてみると成功した。
 <br>
+
 - 多分文字コードが原因でVisual Studioの補完機能である[IntelliSenseが動かなくなったり](https://qiita.com/yuu2461/items/7e4f090d63e8a332194f){:target="_blank"}した。
-- 蛇足はコメントアウト
+- [蛇足はコメントアウト(F12)](https://github.com/yuu61/pro2team/blob/master/docs/index.md?plain=1){:target="_blank"}
 
 ## チームメンバー
 カード型表示にしたい
