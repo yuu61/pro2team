@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
   <Class Name="BaseCgr" Collapsed="true">
     <Position X="22.25" Y="2" Width="1.5" />
     <TypeIdentifier>
@@ -162,7 +162,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MovementRepetate" Collapsed="true">
-    <Position X="11.25" Y="8" Width="1.5" />
+    <Position X="11.25" Y="8" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAACAAAAhAAAAAAAAQ=</HashCode>
       <FileName>header\MovementRepetate.hpp</FileName>
@@ -239,77 +239,77 @@
     </TypeIdentifier>
   </Class>
   <Struct Name="_InputMouse" Collapsed="true">
-    <Position X="17" Y="9.5" Width="1.5" />
+    <Position X="25" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAABgAAAAgAA=</HashCode>
       <FileName>header\CatchInput.hpp</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="_Location" Collapsed="true">
-    <Position X="11.75" Y="9.5" Width="1.5" />
+    <Position X="22.75" Y="9.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
       <FileName>header\Graphics.hpp</FileName>
     </TypeIdentifier>
   </Struct>
   <Struct Name="_Unit" Collapsed="true">
-    <Position X="8.25" Y="9.5" Width="1.5" />
+    <Position X="21" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
       <FileName>header\MoveTypeGrad.hpp</FileName>
     </TypeIdentifier>
   </Struct>
   <Typedef Name="eScene" Collapsed="true">
-    <Position X="18.75" Y="9.5" Width="1.5" />
+    <Position X="14.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\BaseCgr.hpp</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="eButtonStatus" Collapsed="true">
-    <Position X="15.25" Y="11.5" Width="1.5" />
+    <Position X="12.25" Y="11.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\Button.hpp</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="InputMouse" Collapsed="true">
-    <Position X="17" Y="11.5" Width="1.5" />
+    <Position X="24.75" Y="11.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\CatchInput.hpp</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="eGame" Collapsed="true">
-    <Position X="13.5" Y="11.5" Width="1.5" />
+    <Position X="10.5" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\GameCgr.hpp</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="Location" Collapsed="true">
-    <Position X="11.75" Y="11.5" Width="1.5" />
+    <Position X="22.75" Y="11.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\Graphics.hpp</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="eMovementType" Collapsed="true">
-    <Position X="20.5" Y="11.5" Width="1.5" />
+    <Position X="16.5" Y="11.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\Movement.hpp</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="eMoveType" Collapsed="true">
-    <Position X="10" Y="11.5" Width="1.5" />
+    <Position X="8.25" Y="11.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\MoveType.hpp</FileName>
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="Unit" Collapsed="true">
-    <Position X="8.25" Y="11.5" Width="1.5" />
+    <Position X="21" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\MoveTypeGrad.hpp</FileName>
@@ -323,42 +323,42 @@
     </TypeIdentifier>
   </Typedef>
   <Typedef Name="eButton" Collapsed="true">
-    <Position X="22.25" Y="11.5" Width="1.5" />
+    <Position X="19.25" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\PlayerSelect.hpp</FileName>
     </TypeIdentifier>
   </Typedef>
   <Enum Name="_eScene" Collapsed="true">
-    <Position X="18.75" Y="11.5" Width="1.5" />
+    <Position X="14.75" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAABQAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\BaseCgr.hpp</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="_eButtonStatus" Collapsed="true">
-    <Position X="15.25" Y="9.5" Width="1.5" />
+    <Position X="12.5" Y="9.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAQAAEAAAAAAAAIQAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
       <FileName>header\Button.hpp</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="_eGame" Collapsed="true">
-    <Position X="13.5" Y="9.5" Width="1.5" />
+    <Position X="10.5" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAgIAAAAAAAAAAAAAEAEAAEAAAQAAAAAACAAAA=</HashCode>
       <FileName>header\GameCgr.hpp</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="_eMovementType" Collapsed="true">
-    <Position X="20.5" Y="9.5" Width="1.5" />
+    <Position X="17" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAIAAAQEAAAAQAAAIAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\Movement.hpp</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="_eMoveType" Collapsed="true">
-    <Position X="10" Y="9.5" Width="1.5" />
+    <Position X="8.5" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAQAAAAAAAAICAAAAAAAAAAAAAAAAAAKAAA=</HashCode>
       <FileName>header\MoveType.hpp</FileName>
@@ -372,7 +372,7 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="_eButton" Collapsed="true">
-    <Position X="22.25" Y="9.5" Width="1.5" />
+    <Position X="19.25" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAABAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\PlayerSelect.hpp</FileName>
