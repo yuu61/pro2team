@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BaseCgr" Collapsed="true">
+    <Position X="22.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\BaseCgr.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseMgr" Collapsed="true">
+    <Position X="20.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAAAAAAAAwAAAAAAAAAAAAQAgCAAEAAAAAgAAAA=</HashCode>
+      <FileName>header\BaseMgr.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseScene" Collapsed="true">
+    <Position X="13.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAACgAAAwAAAAAAAAAAAAAAgAAAAAAAABAAAAA=</HashCode>
+      <FileName>header\BaseScene.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Button" Collapsed="true">
+    <Position X="22.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAAAAAIgAAIQAAAgAAMAAAEAAAgAAAAAAgAAEQAgA=</HashCode>
+      <FileName>header\Button.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ButtonCharge" Collapsed="true">
+    <Position X="22.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAIQAAAAAAAAAABAAAgAAAAIAAAAAAAAA=</HashCode>
+      <FileName>header\ButtonCharge.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Cake" Collapsed="true">
+    <Position X="18.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AICAAAIAAIAAAAAAAAQAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\Cake.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Container&lt;T&gt;" Collapsed="true">
+    <Position X="20.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAQAAABAAwAIAKEoAAAAACABgAAAgAAAAAAAEAA=</HashCode>
+      <FileName>header\Container.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ending" Collapsed="true">
+    <Position X="9" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAwAAAAAAAAAAAAAAgCBABAAAAAAAAAA=</HashCode>
+      <FileName>header\Ending.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameCgr" Collapsed="true">
+    <Position X="15" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\GameCgr.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameMgr" Collapsed="true">
+    <Position X="14.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQBQAAAAAAAgwAAAAAAgAAAAAQAgCAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\GameMgr.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameScene" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAgwAAAAAABAAAAIAAgAAAAAAAAAAAAAE=</HashCode>
+      <FileName>header\GameScene.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameVar" Collapsed="true">
+    <Position X="13.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBAAAAAAAAAAEIAAIAAAAAAIQAAAAAVAAAIBAIgAAg=</HashCode>
+      <FileName>header\GameVar.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameVarMgr" Collapsed="true">
+    <Position X="13.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>header\GameVarMgr.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Graphics" Collapsed="true">
+    <Position X="18.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQYUAIgAgKCIAzAIYMBpAAAiGCABgCQAcACACAFAEQA=</HashCode>
+      <FileName>header\Graphics.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Item" Collapsed="true">
+    <Position X="17" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAEAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>header\Item.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemBasket" Collapsed="true">
+    <Position X="15.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\ItemBasket.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemClock" Collapsed="true">
+    <Position X="17" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\ItemClock.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemEye" Collapsed="true">
+    <Position X="18.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAABAAAAAAAAAAA=</HashCode>
+      <FileName>header\ItemEye.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ItemSelect" Collapsed="true">
+    <Position X="12.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAABAAAAAAAwAAAAAAAAAAAAAAgABAAAAAAAAIAAA=</HashCode>
+      <FileName>header\ItemSelect.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Movement" Collapsed="true">
+    <Position X="10" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAABAAAAAAAAAAABAAAEAAAAAAAgAQ=</HashCode>
+      <FileName>header\Movement.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovementExpand" Collapsed="true">
+    <Position X="6.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAARAAAAgAAAAAAEAAAAAAAAAAAAAAACQ=</HashCode>
+      <FileName>header\MovementExpand.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovementI" Collapsed="true">
+    <Position X="17" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAEAAAAAIAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\MovementI.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovementMove" Collapsed="true">
+    <Position X="9" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>header\MovementMove.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovementRepetate" Collapsed="true">
+    <Position X="11.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAACAAAAhAAAAAAAAQ=</HashCode>
+      <FileName>header\MovementRepetate.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovementRotate" Collapsed="true">
+    <Position X="13.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAQAAAAAQ=</HashCode>
+      <FileName>header\MovementRotate.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoveType" Collapsed="true">
+    <Position X="9" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAABAAAAAAAAABAAAAABgABAAAAA=</HashCode>
+      <FileName>header\MoveType.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoveTypeGrad" Collapsed="true">
+    <Position X="6.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABgAAAAAgAAAAEAAAAAAAAAAAAAAAIAAAAAAAAgA=</HashCode>
+      <FileName>header\MoveTypeGrad.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoveTypeNormal" Collapsed="true">
+    <Position X="9" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\MoveTypeNormal.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoveTypeSine" Collapsed="true">
+    <Position X="11.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABgAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>header\MoveTypeSine.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="24" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAIBCAAAAABUAAAAQEAARAAAAAgAAAAAAAAQAAAAA=</HashCode>
+      <FileName>header\Player.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerSelect" Collapsed="true">
+    <Position X="10.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAEAAAAwAAAAAAAAAAAAAAgABAAAAAAAAAAAA=</HashCode>
+      <FileName>header\PlayerSelect.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Roulette" Collapsed="true">
+    <Position X="20.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\Roulette.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoulettePlay" Collapsed="true">
+    <Position X="7.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAwAAAAAAAEAAAAAAgAAAAAAAAAAIBAA=</HashCode>
+      <FileName>header\RoulettePlay.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Task" Collapsed="true">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAwAAAAQAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\Task.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="_InputMouse" Collapsed="true">
+    <Position X="17" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAABgAAAAgAA=</HashCode>
+      <FileName>header\CatchInput.hpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="_Location" Collapsed="true">
+    <Position X="11.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>header\Graphics.hpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="_Unit" Collapsed="true">
+    <Position X="8.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAA=</HashCode>
+      <FileName>header\MoveTypeGrad.hpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="eScene" Collapsed="true">
+    <Position X="18.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\BaseCgr.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="eButtonStatus" Collapsed="true">
+    <Position X="15.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\Button.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="InputMouse" Collapsed="true">
+    <Position X="17" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\CatchInput.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="eGame" Collapsed="true">
+    <Position X="13.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\GameCgr.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="Location" Collapsed="true">
+    <Position X="11.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\Graphics.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="eMovementType" Collapsed="true">
+    <Position X="20.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\Movement.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="eMoveType" Collapsed="true">
+    <Position X="10" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\MoveType.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="Unit" Collapsed="true">
+    <Position X="8.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\MoveTypeGrad.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="eKey" Collapsed="true">
+    <Position X="6.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\Player.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="eButton" Collapsed="true">
+    <Position X="22.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\PlayerSelect.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="_eScene" Collapsed="true">
+    <Position X="18.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABQAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\BaseCgr.hpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="_eButtonStatus" Collapsed="true">
+    <Position X="15.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAEAAAAAAAAIQAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\Button.hpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="_eGame" Collapsed="true">
+    <Position X="13.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgIAAAAAAAAAAAAAEAEAAEAAAQAAAAAACAAAA=</HashCode>
+      <FileName>header\GameCgr.hpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="_eMovementType" Collapsed="true">
+    <Position X="20.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAQEAAAAQAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\Movement.hpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="_eMoveType" Collapsed="true">
+    <Position X="10" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAICAAAAAAAAAAAAAAAAAAKAAA=</HashCode>
+      <FileName>header\MoveType.hpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="_eKey" Collapsed="true">
+    <Position X="6.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAgBABAAAAAAAAACA=</HashCode>
+      <FileName>header\Player.hpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="_eButton" Collapsed="true">
+    <Position X="22.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAABAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>header\PlayerSelect.hpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Yu Gothic UI" Size="9" />
+</ClassDiagram>

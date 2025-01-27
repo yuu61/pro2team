@@ -56,7 +56,9 @@ cssとかはコパイで書いてるよ
 
 <!--あのゲーム「ええい儘よ」って言いながら毎回1/2外してる-->
 ## システム構成
-![UMLクラス図](UMLClassDiagram.webp)
+<div class="inner">
+  <img src="UMLClassDiagram.webp" alt="UMLクラス図">
+</div>
 <!--webpを使ってモダン(?)に。変換するやつ毎回どこに置いたか忘れて毎回DLしてる。
 風の噂によるとAVIFという新勢力があるらしい-->
 
