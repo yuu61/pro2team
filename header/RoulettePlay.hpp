@@ -6,7 +6,7 @@ class RoulettePlay : public GameScene
 {
     Cake* cakeTemp{ nullptr };
     int status{ 0 };
-    Graphics* arrow{ new Graphics(1920 / 2 - 50,1080 - 110,0.2f,0.2f , LoadGraph("image\\arrow.png")) };
+    Graphics* arrow{ new Graphics(1920 / 2 - 50,1080 - 110,0.2f,0.2f , LoadGraph("image/arrow.png")) };
     
 public:
 

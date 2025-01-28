@@ -1,5 +1,5 @@
 #pragma once
-#include "..\dxlib_for_visual_studio\DxLib.h"
+#include "../dxlib_for_visual_studio/DxLib.h"
 
 // FPSの初期化、一番最初に行う
 void FpsControll_Initialize();

@@ -1,4 +1,4 @@
-#include "..\header\MoveType.hpp"
+#include "../header/MoveType.hpp"
 
 MoveType::MoveType(float x, float y, int flame) :
 	x(x),

@@ -3,7 +3,7 @@
 #include "Player.hpp"
 #include "Roulette.hpp"
 #include "Button.hpp"
-#include "..\dxlib_for_visual_studio\DxLib.h"
+#include "../dxlib_for_visual_studio/DxLib.h"
 #include <string>
 #include "GameVarMgr.hpp"
 
@@ -40,13 +40,13 @@ public:
 	int turn{ 1 };
 	const int endTurn{ 8 };
 
-	Player* player{ new Player(KEY_INPUT_S, KEY_INPUT_W, KEY_INPUT_A, KEY_INPUT_D, 0.f, 300.f, 1.f, 1.f, LoadGraph("image\\dansei_01_a.png")) };
-	Player* opponent{ new Player(KEY_INPUT_K, KEY_INPUT_I, KEY_INPUT_J, KEY_INPUT_L, 400.f, 300.f, 1.f, 1.f, LoadGraph("image\\josei_01_a.png")) };
+	Player* player{ new Player(KEY_INPUT_S, KEY_INPUT_W, KEY_INPUT_A, KEY_INPUT_D, 0.f, 300.f, 1.f, 1.f, LoadGraph("image/dansei_01_a.png")) };
+	Player* opponent{ new Player(KEY_INPUT_K, KEY_INPUT_I, KEY_INPUT_J, KEY_INPUT_L, 400.f, 300.f, 1.f, 1.f, LoadGraph("image/josei_01_a.png")) };
 	Player* playerStore[2]{ player, opponent };
-	Graphics* backGround{ new Graphics(0, 0, 1, 1, LoadGraph("image\\backGround.jpg")) };
+	Graphics* backGround{ new Graphics(0, 0, 1, 1, LoadGraph("image/backGround.jpg")) };
 	Roulette* roulette{ new Roulette() };
 
-	Graphics* strawberry[2]{ new Graphics(100,0,0.3f,0.3f,LoadGraph("image\\strawberry.png")),new Graphics(500,0,0.3f,0.3f,LoadGraph("image\\strawberry.png")) };
+	Graphics* strawberry[2]{ new Graphics(100,0,0.3f,0.3f,LoadGraph("image/strawberry.png")),new Graphics(500,0,0.3f,0.3f,LoadGraph("image/strawberry.png")) };
 	Graphics* playerStrawberry{ strawberry[0] };
 	Graphics* opponentStrawberry{ strawberry[1] };
 	int fontHandle{ CreateFontToHandle(NULL , 50 , 9 ,DX_FONTTYPE_ANTIALIASING_EDGE_8X8) };
@@ -112,14 +112,14 @@ public:
 /*
 Player* player{ new Player(KEY_INPUT_S, KEY_INPUT_W, KEY_INPUT_A, KEY_INPUT_D) };
 Player* opponent{ new Player(KEY_INPUT_K, KEY_INPUT_I, KEY_INPUT_J, KEY_INPUT_L) };
-Graphics* backGround{ new Graphics(0, 0, 1.1, 1.05, LoadGraph("..\\image\\backGround.png")) };
+Graphics* backGround{ new Graphics(0, 0, 1.1, 1.05, LoadGraph("..\\image/backGround.png")) };
 */
 /*
 class GameVar
 {
 private:
 	// 背景画像
-	Graphics* backGround{ new Graphics(0,0,1.1,1.05,LoadGraph("image\\backGround.png")) };
+	Graphics* backGround{ new Graphics(0,0,1.1,1.05,LoadGraph("image/backGround.png")) };
 
 public:
 	GameVar();

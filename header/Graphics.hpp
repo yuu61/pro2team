@@ -1,5 +1,5 @@
 #pragma once
-#include "..\dxlib_for_visual_studio\DxLib.h"
+#include "../dxlib_for_visual_studio/DxLib.h"
 #include "Task.hpp"
 #include "MovementI.hpp"
 #include "Movement.hpp"

@@ -1,4 +1,4 @@
-#include "..\header\MoveTypeGrad.hpp"
+#include "../header/MoveTypeGrad.hpp"
 #include <cmath>
 
 static const double pi = 3.141592653589793;
