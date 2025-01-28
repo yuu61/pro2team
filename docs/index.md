@@ -185,7 +185,7 @@ C++を用いて作成しているため、オブジェクト指向を利用し�
   </tr>
   <tr>
     <td><a href="https://github.com/i2kmtd" target="_blank">松田</a></td>
-    <td>example text</td>
+    <td>スライドの作成、発表等</td>
   </tr>
   <tr>
     <td rowspan="4">デザイナー</td>

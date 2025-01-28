@@ -66,6 +66,7 @@
     <Image Include="image\cake_three.png" />
     <Image Include="image\cake_two.png" />
     <Image Include="image\cake_zero.png" />
+    <Image Include="image\ClassDiagram.png" />
     <Image Include="image\clock.png" />
     <Image Include="image\dansei_01_a.png" />
     <Image Include="image\eye.png" />

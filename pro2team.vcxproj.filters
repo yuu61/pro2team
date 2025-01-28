@@ -188,6 +188,9 @@
     <Image Include="image\cake_zero.png">
       <Filter>image</Filter>
     </Image>
+    <Image Include="image\ClassDiagram.png">
+      <Filter>image</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\BaseCgr.hpp">
