@@ -12,8 +12,8 @@ class PlayerSelect : public GameScene
 {
     
     int select;
-    Button* button[E_BUTTON]{   new Button(1, 0, 900.f, 600.f, 0.6, 0.6, LoadGraph("image/goRoulettePlayButton.png")) ,
-                                new Button(1, 0, 1300.f, 600.f, 0.6, 0.6, LoadGraph("image/goItemSelectButton.png")) };
+    Button* button[E_BUTTON]{   new Button(1, 0, 900.f, 600.f, 0.6, 0.6, LoadGraph("image\\goRoulettePlayButton.png")) ,
+                                new Button(1, 0, 1300.f, 600.f, 0.6, 0.6, LoadGraph("image\\goItemSelectButton.png")) };
     
 public:
 

@@ -1,4 +1,4 @@
-#include "../header/Item.hpp"
+#include "..\header\Item.hpp"
 
 Item::Item(GameVarMgr* gameVar, int graph) :
 	gameVarMgr(gameVar),

@@ -1,7 +1,7 @@
-#include "../header/ItemBasket.hpp"
+#include "..\header\ItemBasket.hpp"
 
 ItemBasket::ItemBasket(GameVarMgr* gameVar) :
-	Item(gameVar, LoadGraph("image/basket.png")) {
+	Item(gameVar, LoadGraph("image\\basket.png")) {
 
 }
 

@@ -1,4 +1,4 @@
-#include "../header/MovementRotate.hpp"
+#include "..\header\MovementRotate.hpp"
 #include <tuple>
 
 MovementRotate::MovementRotate(MovementI* eventI, eMoveType moveType, float rota, int flame):

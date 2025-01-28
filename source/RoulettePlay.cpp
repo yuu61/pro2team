@@ -1,7 +1,7 @@
-#include "../header/RoulettePlay.hpp"
-#include "../dxlib_for_visual_studio/DxLib.h"
-#include "../header/Container.hpp"
-#include "../header/CatchInput.hpp"
+#include "..\header\RoulettePlay.hpp"
+#include "..\dxlib_for_visual_studio\DxLib.h"
+#include "..\header\Container.hpp"
+#include "..\header\CatchInput.hpp"
 
 RoulettePlay::RoulettePlay(GameCgr* changer, GameVar* gv) : GameScene(changer ,gv)
 {

@@ -1,8 +1,8 @@
 #include "../header/ItemEye.hpp"
-#include "../dxlib_for_visual_studio/DxLib.h"
+#include "..\dxlib_for_visual_studio\DxLib.h"
 
 ItemEye::ItemEye(GameVarMgr* gameVar):
-	Item(gameVar, LoadGraph("image/eye.png")) {
+	Item(gameVar, LoadGraph("image\\eye.png")) {
 
 }
 

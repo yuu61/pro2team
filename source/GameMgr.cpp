@@ -1,9 +1,9 @@
-#include "../header/GameMgr.hpp"
-#include "../dxlib_for_visual_studio/DxLib.h"
-#include "../header/PlayerSelect.hpp"
-#include "../header/ItemSelect.hpp"
-#include "../header/RoulettePlay.hpp"
-#include "../header/Ending.hpp"
+#include "..\header\GameMgr.hpp"
+#include "..\dxlib_for_visual_studio\DxLib.h"
+#include "..\header\PlayerSelect.hpp"
+#include "..\header\ItemSelect.hpp"
+#include "..\header\RoulettePlay.hpp"
+#include "..\header\Ending.hpp"
 
 GameMgr::GameMgr(BaseCgr* changer) : BaseScene(changer),
 	nextScene(GAME_NON) {
