@@ -68,6 +68,9 @@ C++を用いて作成しているため、オブジェクト指向を利用し�
 ## 今後の展望
 - 未実装のアイテムや機能の追加によるゲーム性の向上
 - CMakeへの移行によるビルド環境の改善
+  - ✅完了
+- jekyllをGitHub Actionとして/docsをトリガーに修正
+  - ✅完了
 
 ## 開発環境、言語
 
@@ -86,11 +89,11 @@ C++を用いて作成しているため、オブジェクト指向を利用し�
   </tr>
   <tr>
     <td>IDE</td>
-    <td>Visual studio 2022</td>
+    <td>Visual Studio 2022</td>
   </tr>
   <tr>
     <td>コードエディタ</td>
-    <td>VS code</td>
+    <td>VS Code</td>
   </tr>
   <tr>
     <td>バージョン管理</td>
