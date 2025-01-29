@@ -49,6 +49,12 @@ if(MSVC)
     )
 endif()
 
+# Set MSVC runtime library to /MTd and /MT
+if (MSVC)
+    set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
+    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
+endif()
+
 # Resource handling
 add_custom_command(
     TARGET ${PROJECT_NAME} POST_BUILD

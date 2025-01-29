@@ -1,49 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="BaseCgr">
-    <Position X="28.25" Y="1" Width="1.5" />
+    <Position X="26.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\BaseCgr.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BaseMgr">
-    <Position X="28.25" Y="3" Width="1.5" />
+    <Position X="26.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgQAAAAAAAAAAwAAAAAAAAAAAAQAgCAAEAAAAAgAAAA=</HashCode>
       <FileName>header\BaseMgr.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BaseScene">
-    <Position X="25.75" Y="3" Width="1.5" />
+    <Position X="24.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAACgAAAwAAAAAAAAAAAAAAgAAAAAAAABAAAAA=</HashCode>
       <FileName>header\BaseScene.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Button">
-    <Position X="18.75" Y="15" Width="1.5" />
+    <Position X="13.25" Y="15" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEQAAAAAIgAAIQAAAgAAMAAAEAAAgAAAAAAgAAEQAgA=</HashCode>
       <FileName>header\Button.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ButtonCharge">
-    <Position X="18.75" Y="20" Width="1.5" />
+    <Position X="13.25" Y="20" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAIQAAAAAAAAAABAAAgAAAAIAAAAAAAAA=</HashCode>
       <FileName>header\ButtonCharge.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Cake">
-    <Position X="14.25" Y="15" Width="1.5" />
+    <Position X="18.5" Y="15" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AICAAAIAAIAAAAAAAAQAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\Cake.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Container&lt;T&gt;">
-    <Position X="16.5" Y="15" Width="1.5" />
+    <Position X="15" Y="15" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAQAAABAAwAIAKEoAAAAACABgAAAgAAAAAAAEAA=</HashCode>
       <FileName>header\Container.hpp</FileName>
@@ -64,14 +64,24 @@
     </TypeIdentifier>
   </Class>
   <Class Name="GameMgr">
-    <Position X="25.75" Y="6.25" Width="1.5" />
+    <Position X="24.5" Y="6.25" Width="1.5" />
+    <InheritanceLine Type="BaseScene">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="-0.438" Y="0.06" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
+    <InheritanceLine Type="GameCgr">
+      <InheritanceModifierLabel ManuallyPlaced="true">
+        <Position X="0.04" Y="0.06" />
+      </InheritanceModifierLabel>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>QAQBQAAAAAAAgwAAAAAAgAAAAAQAgCAAAAAAAAAAAAA=</HashCode>
       <FileName>header\GameMgr.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GameScene">
-    <Position X="20.25" Y="3" Width="1.5" />
+    <Position X="20" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAgwAAAAAABAAAAIAAgAAAAAAAAAAAAAE=</HashCode>
       <FileName>header\GameScene.hpp</FileName>
@@ -92,7 +102,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Graphics">
-    <Position X="14.25" Y="3" Width="1.5" />
+    <Position X="15.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QQYUAIgAgKCIAzAIYMBpAAAiGCABgCQAcACACAFAEQA=</HashCode>
       <FileName>header\Graphics.hpp</FileName>
@@ -106,7 +116,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ItemBasket">
-    <Position X="7.5" Y="17.5" Width="1.5" />
+    <Position X="8" Y="17.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\ItemBasket.hpp</FileName>
@@ -120,14 +130,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ItemEye">
-    <Position X="12" Y="17.5" Width="1.5" />
+    <Position X="11.5" Y="17.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAABAAAAAAAAAAA=</HashCode>
       <FileName>header\ItemEye.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ItemSelect">
-    <Position X="23.5" Y="6.5" Width="1.5" />
+    <Position X="20.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAABAAAAAAAwAAAAAAAAAAAAAAgABAAAAAAAAIAAA=</HashCode>
       <FileName>header\ItemSelect.hpp</FileName>
@@ -141,35 +151,35 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MovementExpand">
-    <Position X="24.75" Y="13.25" Width="1.5" />
+    <Position X="25.25" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAARAAAAgAAAAAAEAAAAAAAAAAAAAAACQ=</HashCode>
       <FileName>header\MovementExpand.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MovementI">
-    <Position X="14.25" Y="0.5" Width="1.5" />
+    <Position X="15.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAEAAAAAIAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\MovementI.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MovementMove">
-    <Position X="27" Y="13.25" Width="1.5" />
+    <Position X="29" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAACAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>header\MovementMove.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MovementRepetate">
-    <Position X="29.25" Y="13.25" Width="1.75" />
+    <Position X="27" Y="13.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAACAAAAhAAAAAAAAQ=</HashCode>
       <FileName>header\MovementRepetate.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MovementRotate">
-    <Position X="31.75" Y="13.25" Width="1.5" />
+    <Position X="30.75" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAQAAAAAQ=</HashCode>
       <FileName>header\MovementRotate.hpp</FileName>
@@ -183,49 +193,49 @@
     </TypeIdentifier>
   </Class>
   <Class Name="MoveTypeGrad">
-    <Position X="6.75" Y="4.25" Width="1.5" />
+    <Position X="7.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABgAAAAAgAAAAEAAAAAAAAAAAAAAAIAAAAAAAAgA=</HashCode>
       <FileName>header\MoveTypeGrad.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MoveTypeNormal">
-    <Position X="9" Y="4.25" Width="1.5" />
+    <Position X="10.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\MoveTypeNormal.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="MoveTypeSine">
-    <Position X="11.25" Y="4.25" Width="1.5" />
+    <Position X="9" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABgAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>header\MoveTypeSine.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Player">
-    <Position X="21" Y="15" Width="1.5" />
+    <Position X="16.75" Y="15" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABAIBCAAAAABUAAAAQEAARAAAAAgAAAAAAAAQAAAAA=</HashCode>
       <FileName>header\Player.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PlayerSelect">
-    <Position X="21.25" Y="6.5" Width="1.5" />
+    <Position X="22.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAEAAAAwAAAAAAAAAAAAAAgABAAAAAAAAAAAA=</HashCode>
       <FileName>header\PlayerSelect.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Roulette">
-    <Position X="16.5" Y="20.25" Width="1.5" />
+    <Position X="15" Y="20.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>header\Roulette.hpp</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="RoulettePlay">
-    <Position X="16.75" Y="6.5" Width="1.5" />
+    <Position X="17.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAwAAAAAAAEAAAAAAgAAAAAAAAAAIBAA=</HashCode>
       <FileName>header\RoulettePlay.hpp</FileName>
