@@ -26,7 +26,7 @@ cssとかはコパイで書いてるよ
 
 <h1 align="center">右上からリポジトリもぜひ見てね</h1>
 <!--wordpress側のアイキャッチ画像がピンクのユニコーンなのはそういう意味です。知らんけど-->
-<p align="center">このページは<a href="#wordpress">PV数カウントのため</a>一度ページを開いてからリダイレクトされています</p><br>
+<p align="center">このページは<a href="#wordpress">PV数カウントのため</a>一度ページを開いてからリダイレクトされています<br>フィードバックはTwitterか<a href="https://github.com/yuu61/pro2team/discussions" target="_blank">discussion</a>までお願いします</p><br>
 
 - [プロダクト](#プロダクト)
   - [企画概要](#企画概要)
