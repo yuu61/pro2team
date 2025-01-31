@@ -25,6 +25,7 @@
 * 作業範囲について事前にコミュニケーションをとる
 <br>
 
+
 緊急時の対応については以下の通り<br>
 <img src="image/in_case_of_fire.webp" alt="In case of fire" width="495" />
 
