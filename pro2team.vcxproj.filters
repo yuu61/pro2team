@@ -126,71 +126,9 @@
     <ClCompile Include="source\RoulettePlay.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="image\clock.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\dansei_01_a.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\eye.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\girl_A.jpg">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\girl_B.jpg">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\goItemSelectButton.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\goRoulettePlayButton.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\itembox.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\josei_01_a.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\modoruButton.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\strawberry.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\arrow.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\backGround.jpg">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\basket.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\cake_five.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\cake_four.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\cake_one.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\cake_three.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\cake_two.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\cake_zero.png">
-      <Filter>image</Filter>
-    </Image>
-    <Image Include="image\ClassDiagram.png">
-      <Filter>image</Filter>
-    </Image>
+    <ClCompile Include="source\Title.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\BaseCgr.hpp">
@@ -215,6 +153,9 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="header\Container.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="header\ControlTemplate.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="header\Ending.hpp">
@@ -304,10 +245,94 @@
     <ClInclude Include="header\Task.hpp">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="header\Title.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd">
+    <Image Include="image\cake_four.png">
       <Filter>image</Filter>
-    </None>
+    </Image>
+    <Image Include="image\cake_one.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\cake_three.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\cake_two.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\cake_zero.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\ClassDiagram.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\clock.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\dansei_01_a.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\endButton.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\eye.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\goItemSelectButton.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\goRoulettePlayButton.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\itembox.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\josei_01_a.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\modoruButton.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\startButton.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\strawberry.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\titlezimaku.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\arrow.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\backGround.jpg">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\basket.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\buttonEnd.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\buttonItem.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\buttonReturn.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\buttonRoulette.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\buttonStart.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\buttonTitle.png">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\cake_five.png">
+      <Filter>image</Filter>
+    </Image>
   </ItemGroup>
 </Project>

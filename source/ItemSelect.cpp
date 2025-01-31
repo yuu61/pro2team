@@ -57,7 +57,7 @@ void ItemSelect::Update() {
 
 	button[select]->CheckLeft(gameVar->player->GetInputKey(KEY_ENTER)) ;
 
-	if (gameVar->player->GetInputKey(KEY_CANSEL) == 1) {
+	if (gameVar->player->GetInputKey(KEY_CANCEL) == 1) {
 		gameCgr->SceneChange(PLAYER_SELECT);
 	}
 
@@ -98,7 +98,7 @@ void ItemSelect::Draw() {
 	}
 
 	DrawFormatStringToHandle(600, 1000, RGB(255, 255, 255), gameVar->fontHandle, "RETURN to \"%c\"  ENTER to \"%c\"  SELECT to \"%c\" \"%c\"",
-		gameVar->keyCharPlayer[KEY_CANSEL],
+		gameVar->keyCharPlayer[KEY_CANCEL],
 		gameVar->keyCharPlayer[KEY_ENTER],
 		gameVar->keyCharPlayer[KEY_RIGHT],
 		gameVar->keyCharPlayer[KEY_LEFT]);

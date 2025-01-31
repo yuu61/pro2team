@@ -2,11 +2,16 @@
 #include "BaseCgr.hpp"
 #include "BaseScene.hpp"
 
+
+
+
 // BaseSceneを管理するためのクラス
-class BaseMgr :public BaseCgr ,Task
+class BaseMgr : public BaseCgr, Task
 {
+    BaseScene* baseSceneStore[2];
     BaseScene* baseScene;
     eScene nextScene;
+
     
 public:
 

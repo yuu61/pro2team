@@ -1,9 +1,12 @@
 #include "..\header\BaseMgr.hpp"
 #include "..\header\GameMgr.hpp"
+#include "..\header\Title.hpp"
 
 BaseMgr::BaseMgr():
 	nextScene(SCENE_NON) {
-	baseScene = (BaseScene*) new GameMgr((BaseCgr*)this);
+	baseSceneStore[0] = (BaseScene*) new Title((BaseCgr*)this);
+	baseSceneStore[1] = (BaseScene*) new GameMgr((BaseCgr*)this);
+	baseScene = baseSceneStore[0];
 }
 
 void BaseMgr::SceneChange(eScene Changer) {
@@ -24,10 +27,10 @@ void BaseMgr::Update() {
 		switch (nextScene)
 		{
 		case SCENE_GAME:
-			baseScene = (BaseScene*) new GameMgr((BaseCgr*)this);
+			baseScene = baseSceneStore[1];
 			break;
 		case SCENE_MENU:
-			baseScene = (BaseScene*) new GameMgr((BaseCgr*)this);
+			baseScene = baseSceneStore[0];
 			break;
 		}
 

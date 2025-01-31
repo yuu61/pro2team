@@ -37,7 +37,7 @@ void RoulettePlay::Update() {
 	static int flame{ 0 };
 	switch (status) {
 	case 0:
-		if (gameVar->player->GetInputKey(KEY_CANSEL) == 1) {
+		if (gameVar->player->GetInputKey(KEY_CANCEL) == 1) {
 			gameCgr->SceneChange(PLAYER_SELECT);	
 		}
 
@@ -157,8 +157,8 @@ void RoulettePlay::Draw() {
 
 	switch (status) {
 	case 0:
-		DrawFormatStringToHandle(gameVar->player->GetX() , 500, RGB(255, 255, 255), gameVar->fontHandle, " CANSEL to \"%c\"\n START to \"%c\"",
-			gameVar->keyCharPlayer[KEY_CANSEL],
+		DrawFormatStringToHandle(gameVar->player->GetX() , 500, RGB(255, 255, 255), gameVar->fontHandle, " CANCEL to \"%c\"\n START to \"%c\"",
+			gameVar->keyCharPlayer[KEY_CANCEL],
 			gameVar->keyCharPlayer[KEY_ENTER]);
 		break;
 	case 1:

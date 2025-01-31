@@ -33,7 +33,7 @@ void ButtonCharge::Draw() {
 eButtonStatus Button::CheckClick(int time, int charge, eButtonStatus status ,bool cheat) {
 
 	if (status == CHARGED && time == 0) {
-		Click();
+		this->Click();
 		return PRESSED;
 	}
 	else if (time == 0) {
@@ -86,4 +86,28 @@ eButtonStatus Button::CheckRight(int inputKeyCharge) {
 
 bool Button::CheckLocation() {
 	return (inputMouse.x >= location.x && inputMouse.y >= location.y && inputMouse.x <= location.x + size.x && inputMouse.y <= location.y + size.y);
+}
+
+void Button::Selected(bool x) {
+	if (x) {
+		this->SetExpandTo(MOVE_SINE, 1.1, 12);
+	}
+	else {
+		this->SetExpandTo(MOVE_SINE, 1.0, 12);
+	}
+}
+
+
+
+
+void ButtonControl(int* select, int next, const int buttonNum, Button* button[]) {
+	button[*select]->Selected(false);
+	*select += next;
+	if (*select >= buttonNum) {
+		*select = 0;
+	}
+	if (*select < 0) {
+		*select = buttonNum - 1;
+	}
+	button[*select]->Selected(true);
 }

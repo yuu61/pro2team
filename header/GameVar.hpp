@@ -57,23 +57,23 @@ public:
 	void SetKey() {
 		if (player->GetKey(KEY_ENTER) == KEY_INPUT_S) {
 			keyCharPlayer[KEY_ENTER] = 'S';
-			keyCharPlayer[KEY_CANSEL] = 'W';
+			keyCharPlayer[KEY_CANCEL] = 'W';
 			keyCharPlayer[KEY_RIGHT] = 'D';
 			keyCharPlayer[KEY_LEFT] = 'A';
 
 			keyCharOpponent[KEY_ENTER] = 'K';
-			keyCharOpponent[KEY_CANSEL] = 'I';
+			keyCharOpponent[KEY_CANCEL] = 'I';
 			keyCharOpponent[KEY_RIGHT] = 'L';
 			keyCharOpponent[KEY_LEFT] = 'J';
 		}
 		else if(player->GetKey(KEY_ENTER) == KEY_INPUT_K){
 			keyCharPlayer[KEY_ENTER] = 'K';
-			keyCharPlayer[KEY_CANSEL] = 'I';
+			keyCharPlayer[KEY_CANCEL] = 'I';
 			keyCharPlayer[KEY_RIGHT] = 'L';
 			keyCharPlayer[KEY_LEFT] = 'J';
 
 			keyCharOpponent[KEY_ENTER] = 'S';
-			keyCharOpponent[KEY_CANSEL] = 'W';
+			keyCharOpponent[KEY_CANCEL] = 'W';
 			keyCharOpponent[KEY_RIGHT] = 'D';
 			keyCharOpponent[KEY_LEFT] = 'A';
 		}

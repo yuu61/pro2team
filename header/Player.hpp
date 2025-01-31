@@ -7,7 +7,7 @@ static const int ITEM_NUM{ 4 };
 
 typedef enum _eKey {
 	KEY_ENTER,
-	KEY_CANSEL,
+	KEY_CANCEL,
 	KEY_LEFT,
 	KEY_RIGHT,
 	E_KEY

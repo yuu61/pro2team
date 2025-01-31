@@ -55,29 +55,7 @@
     <ClCompile Include="source\PlayerSelect.cpp" />
     <ClCompile Include="source\Roulette.cpp" />
     <ClCompile Include="source\RoulettePlay.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="image\arrow.png" />
-    <Image Include="image\backGround.jpg" />
-    <Image Include="image\basket.png" />
-    <Image Include="image\cake_five.png" />
-    <Image Include="image\cake_four.png" />
-    <Image Include="image\cake_one.png" />
-    <Image Include="image\cake_three.png" />
-    <Image Include="image\cake_two.png" />
-    <Image Include="image\cake_zero.png" />
-    <Image Include="image\ClassDiagram.png" />
-    <Image Include="image\clock.png" />
-    <Image Include="image\dansei_01_a.png" />
-    <Image Include="image\eye.png" />
-    <Image Include="image\girl_A.jpg" />
-    <Image Include="image\girl_B.jpg" />
-    <Image Include="image\goItemSelectButton.png" />
-    <Image Include="image\goRoulettePlayButton.png" />
-    <Image Include="image\itembox.png" />
-    <Image Include="image\josei_01_a.png" />
-    <Image Include="image\modoruButton.png" />
-    <Image Include="image\strawberry.png" />
+    <ClCompile Include="source\Title.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\BaseCgr.hpp" />
@@ -88,6 +66,7 @@
     <ClInclude Include="header\Cake.hpp" />
     <ClInclude Include="header\CatchInput.hpp" />
     <ClInclude Include="header\Container.hpp" />
+    <ClInclude Include="header\ControlTemplate.hpp" />
     <ClInclude Include="header\Ending.hpp" />
     <ClInclude Include="header\FpsControll.hpp" />
     <ClInclude Include="header\GameCgr.hpp" />
@@ -117,9 +96,37 @@
     <ClInclude Include="header\Roulette.hpp" />
     <ClInclude Include="header\RoulettePlay.hpp" />
     <ClInclude Include="header\Task.hpp" />
+    <ClInclude Include="header\Title.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <Image Include="image\arrow.png" />
+    <Image Include="image\backGround.jpg" />
+    <Image Include="image\basket.png" />
+    <Image Include="image\buttonEnd.png" />
+    <Image Include="image\buttonItem.png" />
+    <Image Include="image\buttonReturn.png" />
+    <Image Include="image\buttonRoulette.png" />
+    <Image Include="image\buttonStart.png" />
+    <Image Include="image\buttonTitle.png" />
+    <Image Include="image\cake_five.png" />
+    <Image Include="image\cake_four.png" />
+    <Image Include="image\cake_one.png" />
+    <Image Include="image\cake_three.png" />
+    <Image Include="image\cake_two.png" />
+    <Image Include="image\cake_zero.png" />
+    <Image Include="image\ClassDiagram.png" />
+    <Image Include="image\clock.png" />
+    <Image Include="image\dansei_01_a.png" />
+    <Image Include="image\endButton.png" />
+    <Image Include="image\eye.png" />
+    <Image Include="image\goItemSelectButton.png" />
+    <Image Include="image\goRoulettePlayButton.png" />
+    <Image Include="image\itembox.png" />
+    <Image Include="image\josei_01_a.png" />
+    <Image Include="image\modoruButton.png" />
+    <Image Include="image\startButton.png" />
+    <Image Include="image\strawberry.png" />
+    <Image Include="image\titlezimaku.png" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

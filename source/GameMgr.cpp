@@ -47,7 +47,7 @@ void GameMgr::Update() {
 			gameScene = gSStore[ENDING];
 			break;
 		case BACK:
-			
+			baseCgr->SceneChange(SCENE_MENU);
 			break;
 		}
 

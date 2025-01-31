@@ -3,14 +3,12 @@
 #include "..\dxlib_for_visual_studio\DxLib.h"
 #include "..\header\GameVar.hpp"
 
-
-const int BUTTON_NUM{ 2 };
-
 PlayerSelect::PlayerSelect(GameCgr* changer,GameVar* gv) :
 	GameScene(changer,gv),
 	select(0){
 	button[GO_ITEM_SELECT]->Click = [changer]() {changer->SceneChange(ITEM_SELECT); };
 	button[GO_ROULETTE_PLAY]->Click = [changer]() {changer->SceneChange(ROULETTE_PLAY); };
+	button[GO_TITLE]->Click = [changer]() {changer->SceneChange(BACK); };
 
 	/*
 	button[GO_ROULETTE_PLAY]->Click = [this]() {
@@ -60,25 +58,10 @@ void PlayerSelect::Finalize() {
 void PlayerSelect::Update() {
 
 	if (gameVar->player->GetInputKey(KEY_LEFT) == 1) {
-		button[select]->SetExpandTo(MOVE_SINE, 1.0f, 12);
-		select--;
-		if (select < 0) {
-			for (int i = BUTTON_NUM - 1 ; i >= 0; i--) {
-				if (button[i] != nullptr) {
-					select = i;
-					break;
-				}
-			}
-		}
-		button[select]->SetExpandTo(MOVE_SINE, 1.1f, 12);
+		ButtonControl(&select, -1, BUTTON_NUM, button);
 	}
 	if (gameVar->player->GetInputKey(KEY_RIGHT) == 1) {
-		button[select]->SetExpandTo(MOVE_SINE, 1.0f, 12);
-		select++;
-		if (select >= BUTTON_NUM || button[select] == nullptr) {
-			select = 0;
-		}
-		button[select]->SetExpandTo(MOVE_SINE, 1.1f, 12);
+		ButtonControl(&select, 1, BUTTON_NUM, button);
 	}
 
 	button[select]->CheckLeft(gameVar->player->GetInputKey(KEY_ENTER));
@@ -101,7 +84,7 @@ void PlayerSelect::Update() {
 void PlayerSelect::Draw() {
 	//DrawString(100, 100, "PlayerSelect", RGB(255, 255, 255));
 
-	
+	/*
 	if (button[GO_ITEM_SELECT]->GetStatusLeft() == INVALID) {
 		DrawString(100, 100, "INVALID", RGB(255, 255, 255));
 	}
@@ -117,13 +100,14 @@ void PlayerSelect::Draw() {
 	if (button[GO_ITEM_SELECT]->GetStatusLeft() == CHARGED) {
 		DrawString(100, 100, "CHARGED", RGB(255, 255, 255));
 	}
-
+	*/
 
 	button[select]->LightUp();
 
 	gameVar->roulette->Draw();
 	button[GO_ITEM_SELECT]->Draw();
 	button[GO_ROULETTE_PLAY]->Draw();
+	button[GO_TITLE]->Draw();
 
 	
 	DrawString(100, 50, "PlayerSelect", RGB(255, 255, 255));

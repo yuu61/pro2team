@@ -40,6 +40,7 @@ public:
 	virtual eButtonStatus CheckRight(int inputKeyCharge);
 	bool CheckLocation();
 
+	void Selected(bool x);
 
 	eButtonStatus GetStatusLeft() { return statusLeft; }
 	eButtonStatus GetStatusRight() { return statusRight; }
@@ -50,3 +51,5 @@ public:
 	// void Draw() ;    //描画処理は必ず継承先で実装する
 };
 
+// ボタンを選択する処理をかんたんに行ってくれる。
+void ButtonControl(int* select, int next, const int buttonNum, Button* button[]);
