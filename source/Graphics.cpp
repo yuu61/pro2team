@@ -58,7 +58,7 @@ void Graphics::Draw() {
             angle, graph, TRUE,
             turnX, turnY);
         DrawFormatStringToHandle(location.x + size.x/2 + strCnt , location.y + size.y / 3, // 座標がかなり適当
-            strColor, strHandle, "%s", str.c_str());
+            strColor, strHandle, _T("%s"), str.c_str());
     }
 }
 void Graphics::Draw(int inx, int iny) {
@@ -70,7 +70,7 @@ void Graphics::Draw(int inx, int iny) {
             angle, graph, TRUE,
             turnX, turnY);
         DrawFormatStringToHandle(location.x + size.x / 2 + strCnt + inx, location.y + size.y / 3 + iny, // 座標がかなり適当
-            strColor, strHandle, "%s", str.c_str());
+            strColor, strHandle, _T("%s"), str.c_str());
     }
 }
 

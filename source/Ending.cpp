@@ -34,5 +34,5 @@ void Ending::Draw()
 	}
 	gameVar->roulette->Draw();
 
-	DrawFormatStringToHandle(600, 600, GetColor(255, 255, 255), gameVar->fontHandle, "%s", str.c_str());
+	DrawFormatStringToHandle(600, 600, GetColor(255, 255, 255), gameVar->fontHandle, _T("%s"), str.c_str());
 }

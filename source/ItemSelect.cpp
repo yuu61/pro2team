@@ -82,7 +82,7 @@ void ItemSelect::Draw() {
 	arrow->Draw();
 
 	button[select]->LightUp();
-	DrawFormatString(100, 150, GetColor(255, 255, 255), "%d %d %d %d %lf %lf", 
+	DrawFormatString(100, 150, GetColor(255, 255, 255), _T("%d %d %d %d %lf %lf"), 
 		button[select]->GetX(), button[select]->GetY(), button[select]->GetSizeX(), button[select]->GetSizeY(),
 		button[select]->GetExtRateX(), button[select]->GetExtRateY());
 	
@@ -97,12 +97,12 @@ void ItemSelect::Draw() {
 		}
 	}
 
-	DrawFormatStringToHandle(600, 1000, RGB(255, 255, 255), gameVar->fontHandle, "RETURN to \"%c\"  ENTER to \"%c\"  SELECT to \"%c\" \"%c\"",
+	DrawFormatStringToHandle(600, 1000, RGB(255, 255, 255), gameVar->fontHandle, _T("RETURN to \"%c\"  ENTER to \"%c\"  SELECT to \"%c\" \"%c\""),
 		gameVar->keyCharPlayer[KEY_CANCEL],
 		gameVar->keyCharPlayer[KEY_ENTER],
 		gameVar->keyCharPlayer[KEY_RIGHT],
 		gameVar->keyCharPlayer[KEY_LEFT]);
 
-	DrawString(100, 50, "ItemSelect", RGB(255, 255, 255));
+	DrawString(100, 50, _T("ItemSelect"), RGB(255, 255, 255));
 	
 }

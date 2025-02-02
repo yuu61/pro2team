@@ -69,8 +69,16 @@ public:
 	void SetString(std::string s) { str = s; SetStringCnt(); }
 	void SetStringHandle(int h) { strHandle = h; SetStringCnt(); }
 	void SetString(unsigned c) { strColor = c; }
-	void SetStringCnt() {strCnt = -GetDrawFormatStringWidthToHandle(strHandle, "%s", str.c_str()) / 2.f;}
-
+    #include <tchar.h>
+    // 修正後の SetStringCnt メソッド
+    void SetStringCnt() {
+        #ifdef UNICODE
+            std::wstring wstr(str.begin(), str.end());
+            strCnt = -GetDrawFormatStringWidthToHandle(strHandle, _T("%s"), wstr.c_str()) / 2.f;
+        #else
+            strCnt = -GetDrawFormatStringWidthToHandle(strHandle, _T("%s"), str.c_str()) / 2.f;
+        #endif
+    }
 	// 見た目を強調してわかりやすくする。
 	void LightUp();
 

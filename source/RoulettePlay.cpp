@@ -157,21 +157,21 @@ void RoulettePlay::Draw() {
 
 	switch (status) {
 	case 0:
-		DrawFormatStringToHandle(gameVar->player->GetX() , 500, RGB(255, 255, 255), gameVar->fontHandle, " CANCEL to \"%c\"\n START to \"%c\"",
+		DrawFormatStringToHandle(gameVar->player->GetX(), 500, RGB(255, 255, 255), gameVar->fontHandle, _T(" CANCEL to \"%c\"\n START to \"%c\""),
 			gameVar->keyCharPlayer[KEY_CANCEL],
 			gameVar->keyCharPlayer[KEY_ENTER]);
 		break;
 	case 1:
-		DrawFormatStringToHandle(gameVar->opponent->GetX(), 500, RGB(255, 255, 255), gameVar->fontHandle, "SHAKE to\n       \"%c\" \"%c\"",
+		DrawFormatStringToHandle(gameVar->opponent->GetX(), 500, RGB(255, 255, 255), gameVar->fontHandle, _T("SHAKE to\n       \"%c\" \"%c\""),
 			gameVar->keyCharOpponent[KEY_RIGHT],
 			gameVar->keyCharOpponent[KEY_LEFT]);
 		break;
 	case 2:
 		
-		DrawFormatStringToHandle(gameVar->player->GetX(), 500, RGB(255, 255, 255), gameVar->fontHandle, "   STOP to \"%c\"",
+		DrawFormatStringToHandle(gameVar->player->GetX(), 500, RGB(255, 255, 255), gameVar->fontHandle, _T("   STOP to \"%c\""),
 			gameVar->keyCharPlayer[KEY_ENTER]);
 
-		DrawFormatStringToHandle(gameVar->opponent->GetX(), 500, RGB(255, 255, 255), gameVar->fontHandle, "SHAKE to\n       \"%c\" \"%c\"",
+		DrawFormatStringToHandle(gameVar->opponent->GetX(), 500, RGB(255, 255, 255), gameVar->fontHandle, _T("SHAKE to\n       \"%c\" \"%c\""),
 			gameVar->keyCharOpponent[KEY_RIGHT],
 			gameVar->keyCharOpponent[KEY_LEFT]);
 		
@@ -182,6 +182,6 @@ void RoulettePlay::Draw() {
 	//bZ[W\Ś
 	
 
-	DrawString(100, 50, "RoulettePlay", RGB(255, 255, 255));
+	DrawString(100, 50, _T("RoulettePlay"), RGB(255, 255, 255));
 
 }

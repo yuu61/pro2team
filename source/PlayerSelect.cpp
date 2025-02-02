@@ -110,10 +110,10 @@ void PlayerSelect::Draw() {
 	button[GO_TITLE]->Draw();
 
 	
-	DrawString(100, 50, "PlayerSelect", RGB(255, 255, 255));
+	DrawString(100, 50, _T("PlayerSelect"), RGB(255, 255, 255));
 	
 
-	DrawFormatString(100, 150, GetColor(255, 255, 255), "%d %d\n%d %d\n%lf %lf",
+	DrawFormatString(100, 150, GetColor(255, 255, 255), _T("%d %d\n%d %d\n%lf %lf"),
 		button[GO_ROULETTE_PLAY]->GetX(), button[GO_ROULETTE_PLAY]->GetY(), button[GO_ROULETTE_PLAY]->GetSizeX(), button[GO_ROULETTE_PLAY]->GetSizeY(),
 		button[GO_ROULETTE_PLAY]->GetExtRateX(), button[GO_ROULETTE_PLAY]->GetExtRateY());
 	
@@ -122,7 +122,7 @@ void PlayerSelect::Draw() {
 		gameVar->playerStore[i]->Draw();
 	}
 
-	DrawFormatStringToHandle(1000, 1000, RGB(255, 255, 255), gameVar->fontHandle, "ENTER to \"%c\"  SELECT to \"%c\" \"%c\"",
+	DrawFormatStringToHandle(1000, 1000, RGB(255, 255, 255), gameVar->fontHandle, _T("ENTER to \"%c\"  SELECT to \"%c\" \"%c\""),
 		gameVar->keyCharPlayer[KEY_ENTER],
 		gameVar->keyCharPlayer[KEY_RIGHT],
 		gameVar->keyCharPlayer[KEY_LEFT]);

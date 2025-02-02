@@ -64,6 +64,6 @@ void GameMgr::Draw() {
 	
 	gameVar->backGround->Draw();
 	gameScene->Draw();
-	DrawFormatStringToHandle(1920 - 300, 30, GetColor(255, 255, 255),gameVar->fontHandle, "TURN %d/%d", gameVar->turn, gameVar->endTurn);
+	DrawFormatStringToHandle(1920 - 300, 30, GetColor(255, 255, 255),gameVar->fontHandle, _T("TURN %d/%d"), gameVar->turn, gameVar->endTurn);
 	
 }

@@ -30,7 +30,7 @@ bool FpsControll_Update() {
 
 //FPS表示
 void FpsControll_Draw() {
-	DrawFormatString(0, 0, GetColor(255, 255, 255), "%.1f", mFps);
+	DrawFormatString(0, 0, GetColor(255, 255, 255), _T("%.1f"), mFps);
 }
 
 //待機することでフレームレートを60にする関数。
