@@ -44,7 +44,7 @@ cssとかはコパイで書いてるよ
 
 
 # プロダクト
-<p align="center"><a href="https://github.com/yuu61/pro2team/releases" target="_blank">こちらから実際にダウンロードして遊べます</a></p>
+<p align="center"><a href="https://github.com/yuu61/pro2team/releases" target="_blank">あなたとスイーツルーレット<br>今すぐダウンロー<br>ド</a></p>
 
 ## 企画概要
 ルーレットを用いたオフライン対戦ゲームです。ルーレットの目押しスキルに加え、<br>アイテムなどのランダム要素を含めることで、カジュアルな層にもわかりやすく親しみやすいゲームを目指しました。<br>現状未完成のため、タイトル画面やアイテムに関わる処理が大幅に削られています。<br>
