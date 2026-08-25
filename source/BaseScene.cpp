@@ -1,4 +1,4 @@
-#include "..\header\BaseScene.hpp"
+#include "BaseScene.hpp"
 
 BaseScene::BaseScene(BaseCgr* changer) 
 	: baseCgr(changer){

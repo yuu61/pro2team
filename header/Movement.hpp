@@ -17,16 +17,16 @@ class Movement
 {
 protected:
 	
-	MovementI* movementI;
-	MoveType* moveType;
+	MovementI* movementI{ nullptr };
+	MoveType* moveType{ nullptr };
 
 public:
-	Movement() {};
+	Movement();
 	Movement(MovementI* eventI, eMoveType moveType, float x, float y, int flame);
 	virtual ~Movement();
 
-	int GetFlame(){ return moveType->GetFlame(); }
-	virtual void Action() {};
+	int GetFlame();
+	virtual void Action();
 
 };
 

@@ -1,4 +1,4 @@
-#include "..\header\GameScene.hpp"
+#include "GameScene.hpp"
 
 GameScene::GameScene(GameCgr* changer, GameVar* gv):
 	gameCgr(changer),

@@ -1,9 +1,9 @@
-#include "..\header\GameMgr.hpp"
-#include "..\dxlib_for_visual_studio\DxLib.h"
-#include "..\header\PlayerSelect.hpp"
-#include "..\header\ItemSelect.hpp"
-#include "..\header\RoulettePlay.hpp"
-#include "..\header\Ending.hpp"
+#include "GameMgr.hpp"
+#include <DxLib.h>
+#include "PlayerSelect.hpp"
+#include "ItemSelect.hpp"
+#include "RoulettePlay.hpp"
+#include "Ending.hpp"
 
 GameMgr::GameMgr(BaseCgr* changer) : BaseScene(changer),
 	nextScene(GAME_NON) {
@@ -49,6 +49,9 @@ void GameMgr::Update() {
 		case BACK:
 			baseCgr->SceneChange(SCENE_MENU);
 			break;
+		case E_GAME:
+		case GAME_NON:
+			break;
 		}
 
 		nextScene = GAME_NON;
@@ -65,6 +68,6 @@ void GameMgr::Draw() {
 	gameVar->Background().Draw();
 	gameScene->Draw();
 	DrawFormatStringToHandle(1920 - 300, 30, GetColor(255, 255, 255), gameVar->FontHandle(),
-		_T("TURN %d/%d"), gameVar->Players().Turn(), gameVar->Players().EndTurn());
+		_T("TURN %zu/%zu"), gameVar->Players().Turn(), gameVar->Players().EndTurn());
 	
 }

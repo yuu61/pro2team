@@ -1,5 +1,5 @@
-#include "..\header\Cake.hpp"
-#include "..\dxlib_for_visual_studio\DxLib.h"
+#include "Cake.hpp"
+#include <DxLib.h>
 
 
 Cake::Cake() :
@@ -15,9 +15,9 @@ Cake::Cake(Item* item) :
 }
 
 Cake::Cake(int strawberry, Item* item) :
+	Graphics(0,0,1,1, LoadGraph(_T("image\\cake_zero.png"))),
 	strawberry(strawberry),
-	item(item),
-	Graphics(0,0,1,1, LoadGraph(_T("image\\cake_zero.png"))){
+	item(item){
 	
 	SetCakeGraph();
 }

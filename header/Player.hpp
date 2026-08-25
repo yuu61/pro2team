@@ -30,13 +30,17 @@ public:
 
 	Player();
 	Player(int enter, int cansel, int left, int right, float x, float y, float cx, float cy, int graph);
+	Player(const Player&) = delete;
+	Player(Player&&) = delete;
+	Player& operator=(const Player&) = delete;
+	Player& operator=(Player&&) = delete;
 
 	int GetInputKey(eKey checkKey){ return inputKey[key[checkKey]]; }
 	int GetKey(eKey checkKey) const {return key[checkKey];}
 
 	void Initialize() override {};
 	void Finalize() override {};
-	Item* GetItem(int index) { return item[index].get(); }
+	Item* GetItem(std::size_t index) { return item[index].get(); }
 	void SetItem(std::unique_ptr<Item> newItem);
 	int GetPoints() const { return points; }
 	void addPoints(int p) { points += p; }

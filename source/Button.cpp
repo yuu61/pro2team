@@ -1,5 +1,5 @@
-#include "..\header\Button.hpp"
-#include "..\header\CatchInput.hpp"
+#include "Button.hpp"
+#include "CatchInput.hpp"
 
 
 
@@ -7,12 +7,12 @@ Button::Button() :
 	Button(1, 1, 0, 0, 0, 0, -1) {
 }
 
-Button::Button(int checkLeftCharge, int checkRightCharge, float x, float y, double xx, double yy, int graph) :
+Button::Button(int checkLeftCharge, int checkRightCharge, float x, float y, float xx, float yy, int graph) :
+	Graphics(x, y, xx, yy, graph),
 	statusRight(NONE),
 	statusLeft(NONE),
 	checkRightCharge(checkRightCharge),
-	checkLeftCharge(checkLeftCharge),
-	Graphics(x, y, xx, yy, graph) {
+	checkLeftCharge(checkLeftCharge) {
 }
 
 void Button::Initialize() {}
@@ -85,15 +85,18 @@ eButtonStatus Button::CheckRight(int inputKeyCharge) {
 }
 
 bool Button::CheckLocation() {
-	return (inputMouse.x >= location.x && inputMouse.y >= location.y && inputMouse.x <= location.x + size.x && inputMouse.y <= location.y + size.y);
+	const float mouseX{ static_cast<float>(inputMouse.x) };
+	const float mouseY{ static_cast<float>(inputMouse.y) };
+	return mouseX >= location.x && mouseY >= location.y &&
+		mouseX <= location.x + size.x && mouseY <= location.y + size.y;
 }
 
 void Button::Selected(bool x) {
 	if (x) {
-		this->SetExpandTo(MOVE_SINE, 1.1, 12);
+		this->SetExpandTo(MOVE_SINE, 1.1f, 12);
 	}
 	else {
-		this->SetExpandTo(MOVE_SINE, 1.0, 12);
+		this->SetExpandTo(MOVE_SINE, 1.0f, 12);
 	}
 }
 

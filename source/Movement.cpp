@@ -1,7 +1,9 @@
-#include "..\header\Movement.hpp"
-#include "..\header\MoveTypeNormal.hpp"
-#include "..\header\MoveTypeSine.hpp"
-#include "..\header\MoveTypeGrad.hpp"
+#include "Movement.hpp"
+#include "MoveTypeNormal.hpp"
+#include "MoveTypeSine.hpp"
+#include "MoveTypeGrad.hpp"
+
+Movement::Movement() = default;
 
 Movement::Movement(MovementI* eventI, eMoveType eMoveType, float x, float y,int flame) :
 	movementI(eventI)
@@ -24,5 +26,12 @@ Movement::Movement(MovementI* eventI, eMoveType eMoveType, float x, float y,int 
 }
 
 Movement::~Movement() {
-	
+	delete moveType;
+}
+
+int Movement::GetFlame() {
+	return moveType->GetFlame();
+}
+
+void Movement::Action() {
 }

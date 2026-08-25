@@ -1,7 +1,7 @@
-#include "..\header\RoulettePlay.hpp"
-#include "..\dxlib_for_visual_studio\DxLib.h"
-#include "..\header\Container.hpp"
-#include "..\header\CatchInput.hpp"
+#include "RoulettePlay.hpp"
+#include <DxLib.h>
+#include "Container.hpp"
+#include "CatchInput.hpp"
 
 RoulettePlay::RoulettePlay(GameCgr* changer, GameVar* gv) : GameScene(changer ,gv)
 {
@@ -98,18 +98,20 @@ void RoulettePlay::Update() {
 		if (flame >= 360) {
 			status++;
 			flame = 0;
-			int num{ 7 - (int)(roulette.at(0)->GetDegree() + 90) / 45 % 8 };
-			int x{ roulette.GetX() }, y{ roulette.GetY() };
+			const auto num{ static_cast<std::size_t>(
+				7 - static_cast<int>(roulette.at(0)->GetDegree() + 90.0) / 45 % 8) };
+			const float x{ static_cast<float>(roulette.GetX()) };
+			const float y{ static_cast<float>(roulette.GetY()) };
 			player.addPoints(roulette.at(num)->GetStrawberry());
 			cakeTemp = roulette.at(num);
 			cakeTemp->SetMoveTo(MOVE_NORMAL, x, y, 1);
-			cakeTemp->SetMove(MOVE_GRAD_UP, 0, 1080, 60);
+			cakeTemp->SetMove(MOVE_GRAD_UP, 0.0f, 1080.0f, 60);
 			
 			roulette.erase(num);
 			roulette.insert(num, new Cake());
 			roulette.at(num)->SetAngle(cakeTemp->GetAngle());
-			roulette.at(num)->SetMove(MOVE_NORMAL, 0, 1080 , 1);
-			roulette.at(num)->SetMoveTo(MOVE_GRAD_DOWN, 0, 0, 120);
+			roulette.at(num)->SetMove(MOVE_NORMAL, 0.0f, 1080.0f, 1);
+			roulette.at(num)->SetMoveTo(MOVE_GRAD_DOWN, 0.0f, 0.0f, 120);
 			players.RefreshScores();
 		}
 		break;

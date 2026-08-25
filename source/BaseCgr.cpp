@@ -1,4 +1,4 @@
-#include "..\header\BaseCgr.hpp"
+#include "BaseCgr.hpp"
 
 BaseCgr::~BaseCgr() {
 }

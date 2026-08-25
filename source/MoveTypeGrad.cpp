@@ -1,15 +1,12 @@
-#include "..\header\MoveTypeGrad.hpp"
-#include <cmath>
-
-static const double pi = 3.141592653589793;
+#include "MoveTypeGrad.hpp"
 
 MoveTypeGrad::MoveTypeGrad(float x, float y, int flame , int uod) :
-	varIndecatingUpOrDown(uod),
-	MoveType(x, y, flame) {
-	for (int i = 1; i <= flame; i++) {
-		sum += i;
+	MoveType(x, y, flame),
+	varIndecatingUpOrDown(uod) {
+	for (int frameIndex = 1; frameIndex <= flame; ++frameIndex) {
+		sum += static_cast<double>(frameIndex);
 	}
-	unit = 1 / sum;
+	unit = 1.0 / sum;
 
 	if (uod == 1) {
 		i = 0;
@@ -22,5 +19,8 @@ MoveTypeGrad::MoveTypeGrad(float x, float y, int flame , int uod) :
 std::tuple<float, float> MoveTypeGrad::Calc() {
 	flame--;
 	i += varIndecatingUpOrDown;
-	return { i * unit * x, i * unit * y };
+	return {
+		static_cast<float>(static_cast<double>(i) * unit * static_cast<double>(x)),
+		static_cast<float>(static_cast<double>(i) * unit * static_cast<double>(y))
+	};
 }

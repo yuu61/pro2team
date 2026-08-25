@@ -1,6 +1,6 @@
-#include "..\header\Title.hpp"
-#include "..\dxlib_for_visual_studio\DxLib.h"
-#include "..\header\CatchInput.hpp"
+#include "Title.hpp"
+#include <DxLib.h>
+#include "CatchInput.hpp"
 
 
 Title::Title(BaseCgr* changer) :

@@ -1,14 +1,14 @@
-#include "..\header\PlayerSession.hpp"
+#include "PlayerSession.hpp"
 
-#include "..\header\GameVarMgr.hpp"
-#include "..\header\ItemBasket.hpp"
-#include "..\header\ItemClock.hpp"
-#include "..\header\ItemEye.hpp"
-#include "..\dxlib_for_visual_studio\DxLib.h"
+#include "GameVarMgr.hpp"
+#include "ItemBasket.hpp"
+#include "ItemClock.hpp"
+#include "ItemEye.hpp"
+#include <DxLib.h>
 
 #include <string>
 
-PlayerSession::PlayerSession(GameVarMgr* itemAction) :
+PlayerSession::PlayerSession() :
 	players{
 		std::make_unique<Player>(KEY_INPUT_S, KEY_INPUT_W, KEY_INPUT_A, KEY_INPUT_D,
 			0.f, 300.f, 1.f, 1.f, LoadGraph(_T("image\\dansei_01_a.png"))),
@@ -20,14 +20,20 @@ PlayerSession::PlayerSession(GameVarMgr* itemAction) :
 {
 	for (std::size_t i = 0; i < PLAYER_COUNT; ++i) {
 		scores[i]->SetStringHandle(CreateFontToHandle(nullptr, 200, 9, DX_FONTTYPE_ANTIALIASING_EDGE_8X8));
+	}
+
+	RefreshTurnText();
+	RefreshScores();
+}
+
+void PlayerSession::InitializeItems(GameVarMgr* itemAction)
+{
+	for (std::size_t i = 0; i < PLAYER_COUNT; ++i) {
 		players[i]->SetItem(std::make_unique<ItemBasket>(itemAction));
 		players[i]->SetItem(std::make_unique<ItemBasket>(itemAction));
 		players[i]->SetItem(std::make_unique<ItemEye>(itemAction));
 		players[i]->SetItem(std::make_unique<ItemClock>(itemAction));
 	}
-
-	RefreshTurnText();
-	RefreshScores();
 }
 
 PlayerSession::~PlayerSession() = default;

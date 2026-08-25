@@ -1,7 +1,7 @@
-#include "..\header\PlayerSelect.hpp"
-#include "..\header\CatchInput.hpp"
-#include "..\dxlib_for_visual_studio\DxLib.h"
-#include "..\header\GameVar.hpp"
+#include "PlayerSelect.hpp"
+#include "CatchInput.hpp"
+#include <DxLib.h>
+#include "GameVar.hpp"
 
 PlayerSelect::PlayerSelect(GameCgr* changer,GameVar* gv) :
 	GameScene(changer,gv),

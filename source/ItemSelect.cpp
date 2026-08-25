@@ -1,5 +1,5 @@
-#include "..\header\ItemSelect.hpp"
-#include "..\dxlib_for_visual_studio\DxLib.h"
+#include "ItemSelect.hpp"
+#include <DxLib.h>
 
 ItemSelect::ItemSelect(GameCgr* changer, GameVar* gv) : GameScene(changer,gv)
 {
@@ -10,9 +10,11 @@ void ItemSelect::Initialize() {
 	select = 0;
 	auto& player = gameVar->Players().Current();
 
-	for(int i = 0; i < ITEM_NUM; i++) {
+	for (std::size_t i = 0; i < static_cast<std::size_t>(ITEM_NUM); ++i) {
 		if (player.GetItem(i) != nullptr) {
-			button[i + 1] = (Button*) new Button(1, 0, 17 + (i + 1)* 384, 600, 0.35, 0.35, player.GetItem(i)->GetGraph());
+			button[i + 1] = new Button(
+				1, 0, 17.0f + static_cast<float>(i + 1) * 384.0f, 600.0f,
+				0.35f, 0.35f, player.GetItem(i)->GetGraph());
 			                                 
 			button[i + 1]->Click = [this, i]() {button[i + 1]->SetRepetate(MOVE_NORMAL, 50.f, 0.f, 6, 60);
 												gameVar->Players().Current().GetItem(i)->Use(); };
@@ -27,7 +29,7 @@ void ItemSelect::Initialize() {
 	gameVar->Background().SetExpandTo(MOVE_SINE, 2.3f, 45);
 	gameVar->Background().SetMoveTo(MOVE_SINE, -700.f,-200.f, 45);
 
-	player.SetMoveTo(MOVE_SINE, 400, 100, 45);
+	player.SetMoveTo(MOVE_SINE, 400.0f, 100.0f, 45);
 }
 void ItemSelect::Finalize() {
 
@@ -37,21 +39,23 @@ void ItemSelect::Update() {
 
 	if (player.GetInputKey(KEY_LEFT) == 1) {
 		button[select]->SetExpandTo(MOVE_SINE, 1.0f, 12);
-		select--;
-		if (select < 0) {
-			for (int i = ITEM_NUM; i >= 0; i--) {
+		if (select == 0) {
+			for (std::size_t i = static_cast<std::size_t>(ITEM_NUM) + 1; i-- > 0;) {
 				if (button[i] != nullptr) {
 					select = i;
 					break;
 				}
 			}
 		}
+		else {
+			--select;
+		}
 		button[select]->SetExpandTo(MOVE_SINE, 1.1f, 12);
 	}
 	if (player.GetInputKey(KEY_RIGHT) == 1) {
 		button[select]->SetExpandTo(MOVE_SINE, 1.0f, 12);
-		select++;
-		if (select >= ITEM_NUM + 1 || button[select] == nullptr) {
+		++select;
+		if (select >= static_cast<std::size_t>(ITEM_NUM) + 1 || button[select] == nullptr) {
 			select = 0;
 		}
 		button[select]->SetExpandTo(MOVE_SINE, 1.1f, 12);

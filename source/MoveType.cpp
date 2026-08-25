@@ -1,7 +1,11 @@
-#include "..\header\MoveType.hpp"
+#include "MoveType.hpp"
 
 MoveType::MoveType(float x, float y, int flame) :
 	x(x),
 	y(y),
 	flame(flame){
+}
+
+int MoveType::GetFlame() {
+	return flame;
 }

@@ -1,28 +1,31 @@
 
-#include "..\header\Graphics.hpp"
-#include "..\header\MovementMove.hpp"
-#include "..\header\MovementExpand.hpp"
-#include "..\header\MovementRotate.hpp"
-#include "..\header\MovementRepetate.hpp"
+#include "Graphics.hpp"
+#include "MovementMove.hpp"
+#include "MovementExpand.hpp"
+#include "MovementRotate.hpp"
+#include "MovementRepetate.hpp"
 
 Graphics::Graphics() :
-    Graphics(0, 0, 0, 0, -2) {
+    Graphics(0.0f, 0.0f, 0.0f, 0.0f, -2) {
 }
 
 Graphics::Graphics(int g) :
-    Graphics(0, 0, 0, 0, g) {
+    Graphics(0.0f, 0.0f, 0.0f, 0.0f, g) {
 }
 
 Graphics::Graphics(float x1, float y1, float cx, float cy, int g) :
+    graph(g),
     location{ x1,y1 },
-    graph(g), 
     cExtRate{ cx, cy },
     movement{nullptr} {
 
     int fx{ 0 }, fy{ 0 };
     
     GetGraphSize(graph, &fx, &fy);
-    size = { fx * cExtRate.x, fy * cExtRate.y };
+    size = {
+        static_cast<float>(fx) * cExtRate.x,
+        static_cast<float>(fy) * cExtRate.y
+    };
     SetCnt();
 }
 
@@ -44,32 +47,46 @@ void Graphics::SetGraph(int in) {
     int fx{ 0 }, fy{ 0 };
 
     GetGraphSize(graph, &fx, &fy);
-    size = { fx * cExtRate.x, fy * cExtRate.y };
-    cnt = { fx * 0.5f, fy * 0.5f };
+    size = {
+        static_cast<float>(fx) * cExtRate.x,
+        static_cast<float>(fy) * cExtRate.y
+    };
+    cnt = {
+        static_cast<float>(fx) * 0.5f,
+        static_cast<float>(fy) * 0.5f
+    };
 }
 
 // 画像を表示する
 void Graphics::Draw() {
 
     if (visible) {
-        DrawRotaGraph3(location.x + cnt.x * cExtRate.x , location.y + cnt.y * cExtRate.y,
-            cnt.x, cnt.y, 
+        DrawRotaGraph3(
+            static_cast<int>(location.x + cnt.x * cExtRate.x),
+            static_cast<int>(location.y + cnt.y * cExtRate.y),
+            static_cast<int>(cnt.x), static_cast<int>(cnt.y),
             extRate.x * cExtRate.x , extRate.y * cExtRate.y,
             angle, graph, TRUE,
             turnX, turnY);
-        DrawFormatStringToHandle(location.x + size.x/2 + strCnt , location.y + size.y / 3, // 座標がかなり適当
+        DrawFormatStringToHandle(
+            static_cast<int>(location.x + size.x / 2.0f + strCnt),
+            static_cast<int>(location.y + size.y / 3.0f), // 座標がかなり適当
             strColor, strHandle, _T("%s"), str.c_str());
     }
 }
 void Graphics::Draw(int inx, int iny) {
 
     if (visible) {
-        DrawRotaGraph3(location.x + cnt.x * cExtRate.x + inx, location.y + cnt.y * cExtRate.y + iny,
-            cnt.x, cnt.y,
+        DrawRotaGraph3(
+            static_cast<int>(location.x + cnt.x * cExtRate.x + static_cast<float>(inx)),
+            static_cast<int>(location.y + cnt.y * cExtRate.y + static_cast<float>(iny)),
+            static_cast<int>(cnt.x), static_cast<int>(cnt.y),
             extRate.x * cExtRate.x, extRate.y * cExtRate.y,
             angle, graph, TRUE,
             turnX, turnY);
-        DrawFormatStringToHandle(location.x + size.x / 2 + strCnt + inx, location.y + size.y / 3 + iny, // 座標がかなり適当
+        DrawFormatStringToHandle(
+            static_cast<int>(location.x + size.x / 2.0f + strCnt + static_cast<float>(inx)),
+            static_cast<int>(location.y + size.y / 3.0f + static_cast<float>(iny)), // 座標がかなり適当
             strColor, strHandle, _T("%s"), str.c_str());
     }
 }
@@ -78,10 +95,10 @@ void Graphics::Draw(int inx, int iny) {
 void Graphics::LightUp() {
     
     DrawBoxAA(
-        location.x - 30 - gLoc.x  ,
-        location.y - 30 - gLoc.y ,
-        location.x + size.x + 30 - gLoc.x,
-        location.y + size.y + 30 - gLoc.y, GetColor(0, 255, 255), TRUE);
+        location.x - 30.0f - gLoc.x,
+        location.y - 30.0f - gLoc.y,
+        location.x + size.x + 30.0f - gLoc.x,
+        location.y + size.y + 30.0f - gLoc.y, GetColor(0, 255, 255), TRUE);
         
     
 }
@@ -98,7 +115,7 @@ void Graphics::SetMoveTo(eMoveType moveType, float x, float y, int flame) {
 
 void Graphics::SetExpand(eMoveType moveType, float time, int flame) {
     delete movement[MOVEMENT_EXPAND];
-    movement[MOVEMENT_EXPAND] = (Movement*) new MovementExpand(this, moveType, (time - 1) * extRate.x, (time - 1) * extRate.y,
+    movement[MOVEMENT_EXPAND] = new MovementExpand(this, moveType, (time - 1.0f) * extRate.x, (time - 1.0f) * extRate.y,
         (size.x / extRate.x),
         (size.y / extRate.y),
         flame);
@@ -149,17 +166,18 @@ void Graphics::SetMovement(eMovementType movementType, eMoveType moveType, float
 
 void Graphics::SetRotate(eMoveType moveType, float rota, int flame) {
     delete movement[MOVEMENT_ROTATE];
-    movement[MOVEMENT_ROTATE] = (Movement*) new MovementRotate(this, moveType, rota, flame);
+    movement[MOVEMENT_ROTATE] = new MovementRotate(this, moveType, rota, flame);
 }
 
 void Graphics::SetRotateTo(eMoveType moveType, float rota, int flame) {
     delete movement[MOVEMENT_ROTATE];
-    movement[MOVEMENT_ROTATE] = (Movement*) new MovementRotate(this, moveType, rota - angle / degree, flame);
+    movement[MOVEMENT_ROTATE] = new MovementRotate(
+        this, moveType, static_cast<float>(static_cast<double>(rota) - angle / degree), flame);
 }
 
 void Graphics::SetRepetate(eMoveType moveType, float x, float y, int time, int flame) {
     delete movement[MOVEMENT_REPETATE];
-    movement[MOVEMENT_REPETATE] = (Movement*) new MovementRepetate(this, moveType, x ,y , time, flame);
+    movement[MOVEMENT_REPETATE] = new MovementRepetate(this, moveType, x, y, time, flame);
 }
 
 void Graphics::Move(float x, float y) {
@@ -179,7 +197,7 @@ void Graphics::Expand(float x, float y, float ux, float uy) {
     size.y += uy;
 
     //Move(-ux / 2 , -uy / 2);
-    MoveGL(ux / 2,uy / 2);
+    MoveGL(ux / 2.0f, uy / 2.0f);
 }
 
 void Graphics::Rotate(float rota) {
@@ -193,6 +211,7 @@ void Graphics::Update() {
         if (movement[i] != nullptr) {
             movement[i]->Action();
             if (movement[i]->GetFlame() == 0) {
+                delete movement[i];
                 movement[i] = nullptr;
             }
         }

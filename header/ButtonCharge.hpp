@@ -18,7 +18,9 @@ private:
 
 public:
 	ButtonCharge();
-	ButtonCharge(int checkLeftCharge, int checkRightCharge, float x, float y, double xx, double yy, int graph);
+	ButtonCharge(int checkLeftCharge, int checkRightCharge, float x, float y, float xx, float yy, int graph);
+	ButtonCharge(const ButtonCharge&) = delete;
+	ButtonCharge& operator=(const ButtonCharge&) = delete;
 	~ButtonCharge() {};
 
 	//eButtonStatus CheckLeft() override ;
