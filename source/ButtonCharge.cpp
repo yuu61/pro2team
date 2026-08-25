@@ -1,12 +1,12 @@
-#include "..\header\ButtonCharge.hpp"
-#include "..\header\CatchInput.hpp"
+#include "ButtonCharge.hpp"
+#include "CatchInput.hpp"
 
 
 ButtonCharge::ButtonCharge() :
 	Button() {
 }
 
-ButtonCharge::ButtonCharge(int checkLeftCharge, int checkRightCharge, float x, float y, double xx, double yy, int graph) :
+ButtonCharge::ButtonCharge(int checkLeftCharge, int checkRightCharge, float x, float y, float xx, float yy, int graph) :
 	Button(checkLeftCharge, checkRightCharge, x, y, xx, yy, graph) {
 
 }

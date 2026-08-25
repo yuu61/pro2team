@@ -1,4 +1,4 @@
-#include "..\header\GameCgr.hpp"
+#include "GameCgr.hpp"
 
 GameCgr::~GameCgr() {
 

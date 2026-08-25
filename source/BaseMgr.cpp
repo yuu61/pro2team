@@ -1,6 +1,6 @@
-#include "..\header\BaseMgr.hpp"
-#include "..\header\GameMgr.hpp"
-#include "..\header\Title.hpp"
+#include "BaseMgr.hpp"
+#include "GameMgr.hpp"
+#include "Title.hpp"
 
 BaseMgr::BaseMgr():
 	nextScene(SCENE_NON) {
@@ -31,6 +31,8 @@ void BaseMgr::Update() {
 			break;
 		case SCENE_MENU:
 			baseScene = baseSceneStore[0];
+			break;
+		case SCENE_NON:
 			break;
 		}
 

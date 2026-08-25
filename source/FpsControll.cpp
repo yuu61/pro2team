@@ -1,4 +1,4 @@
-#include "..\header\FpsControll.hpp"
+#include "FpsControll.hpp"
 
 static int mStartTime;      //測定開始時刻
 static int mCount;          //カウンタ
@@ -10,7 +10,7 @@ static const int FPS = 60;  //設定したFPS
 void FpsControll_Initialize() {
 	mStartTime = GetNowCount();
 	mCount = 0;
-	mFps = 0;
+	mFps = 0.0f;
 }
 
 //FPS制御
@@ -19,8 +19,8 @@ bool FpsControll_Update() {
 		mStartTime = GetNowCount();
 	}
 	if (mCount == N) { //60フレーム目なら平均を計算する
-		int t = GetNowCount();
-		mFps = 1000.f / ((t - mStartTime) / (float)N);
+		const int t{ GetNowCount() };
+		mFps = 1000.0f / (static_cast<float>(t - mStartTime) / static_cast<float>(N));
 		mCount = 0;
 		mStartTime = t;
 	}
@@ -35,10 +35,10 @@ void FpsControll_Draw() {
 
 //待機することでフレームレートを60にする関数。
 void FpsControll_Wait() {
-	int tookTime = GetNowCount() - mStartTime;  //かかった時間
-	int waitTime = mCount * 1000 / FPS - tookTime;  //待つべき時間
+	const int tookTime{ GetNowCount() - mStartTime };  //かかった時間
+	const int waitTime{ mCount * 1000 / FPS - tookTime };  //待つべき時間
 	if (waitTime > 0) {
-		Sleep(waitTime);  //待機
+		Sleep(static_cast<unsigned long>(waitTime));  //待機
 	}
 }
 

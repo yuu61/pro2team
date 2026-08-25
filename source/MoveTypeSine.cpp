@@ -1,4 +1,4 @@
-#include "..\header\MoveTypeSine.hpp"
+#include "MoveTypeSine.hpp"
 #include <cmath>
 
 static const double pi = 3.141592653589793;
@@ -15,6 +15,11 @@ MoveTypeSine::MoveTypeSine(float x, float y, int flame) :
 
 std::tuple<float, float> MoveTypeSine::Calc() {
 	flame--;
-	return { (sin(unit * flame) * sin(unit * flame) / sum) * x , (sin(unit * flame) * sin(unit * flame) / sum) * y };
+	const double scale{ std::sin(unit * static_cast<double>(flame)) *
+		std::sin(unit * static_cast<double>(flame)) / sum };
+	return {
+		static_cast<float>(scale * static_cast<double>(x)),
+		static_cast<float>(scale * static_cast<double>(y))
+	};
 	//return { (sin(unit * flame) / sum) * x , (sin(unit * flame) / sum) * y };
 }

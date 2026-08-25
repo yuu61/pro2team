@@ -8,6 +8,10 @@ private:
 
 public:
 	Roulette();
+	Roulette(const Roulette&) = delete;
+	Roulette(Roulette&&) = delete;
+	Roulette& operator=(const Roulette&) = delete;
+	Roulette& operator=(Roulette&&) = delete;
 
 
 

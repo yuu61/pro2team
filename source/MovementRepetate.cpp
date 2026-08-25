@@ -1,11 +1,11 @@
-#include "..\header\MovementRepetate.hpp"
-#include <cmath>
-
-static const double pi = 3.141592653589793;
+#include "MovementRepetate.hpp"
 
 MovementRepetate::MovementRepetate(MovementI* eventI, eMoveType moveType, float x, float y, int time, int flame) :
-	oneFlame(time / 2),
-	Movement(eventI, moveType, x * flame / time * 2, y * flame / time * 2, flame) {
+	Movement(eventI, moveType,
+		x * static_cast<float>(flame) / static_cast<float>(time) * 2.0f,
+		y * static_cast<float>(flame) / static_cast<float>(time) * 2.0f,
+		flame),
+	oneFlame(time / 2) {
 
 }
 MovementRepetate::~MovementRepetate() {
@@ -20,5 +20,5 @@ void MovementRepetate::Action() {
 	}
 	auto [x, y] = moveType->Calc();
 	
-	movementI->Move(x * v, y * v);
+	movementI->Move(x * static_cast<float>(v), y * static_cast<float>(v));
 }

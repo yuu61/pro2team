@@ -1,12 +1,13 @@
 #pragma once
 #include "GameScene.hpp"
 #include "ButtonCharge.hpp"
+#include <cstddef>
 
 // アイテムを選択するシーンのクラス。
 class ItemSelect : public GameScene
 {
     // 選択されてるボタンのインデックスを保管する。
-    int select{ 0 };
+    std::size_t select{ 0 };
     
     Button* button[5]{ new Button(1, 0, 17, 600, 0.2f, 0.2f, LoadGraph(_T("image\\buttonReturn.png"))),
                         nullptr };

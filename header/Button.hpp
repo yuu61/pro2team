@@ -25,7 +25,9 @@ protected:
 
 public:
 	Button();
-	Button(int checkLeftCharge, int checkRightCharge, float x, float y, double xx, double yy, int graph);
+	Button(int checkLeftCharge, int checkRightCharge, float x, float y, float xx, float yy, int graph);
+	Button(const Button&) = delete;
+	Button& operator=(const Button&) = delete;
 	~Button() {};
 
 	// �N���b�N�C�x���g��ۑ�����B

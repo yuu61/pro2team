@@ -1,10 +1,10 @@
-#include "..\header\Roulette.hpp"
+#include "Roulette.hpp"
 
 Roulette::Roulette() :
 	Container(){
-	for (int i = 0; i < CAKE_NUM; i++) {
+	for (std::size_t i = 0; i < static_cast<std::size_t>(CAKE_NUM); ++i) {
 		vec.push_back(new Cake());
-		vec.at(i)->SetDegree(i * 45);
+		vec.at(i)->SetDegree(static_cast<double>(i) * 45.0);
 	}
 }
 

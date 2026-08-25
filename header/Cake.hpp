@@ -15,6 +15,9 @@ public:
 	Cake(int strawberry);
 	Cake(Item* item);
 	Cake(int strawberry, Item* item);
+	Cake(const Cake&) = delete;
+	Cake& operator=(const Cake&) = delete;
+	Cake& operator=(Cake&&) = delete;
 
 	void AddStrawberry(int i);
 

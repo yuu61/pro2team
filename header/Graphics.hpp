@@ -1,5 +1,5 @@
 #pragma once
-#include "..\dxlib_for_visual_studio\DxLib.h"
+#include <DxLib.h>
 #include "Task.hpp"
 #include "MovementI.hpp"
 #include "Movement.hpp"
@@ -53,6 +53,9 @@ public:
 	Graphics();
 	Graphics(int graph);
 	Graphics(float x1, float y1, float cx, float cy, int graph);
+	Graphics(const Graphics&) = delete;
+	Graphics& operator=(const Graphics&) = delete;
+	Graphics& operator=(Graphics&&) = delete;
 
 	void Initialize() override {};
 	void Finalize() override;
@@ -76,7 +79,7 @@ public:
             std::wstring wstr(str.begin(), str.end());
             strCnt = -GetDrawFormatStringWidthToHandle(strHandle, _T("%s"), wstr.c_str()) / 2.f;
         #else
-            strCnt = -GetDrawFormatStringWidthToHandle(strHandle, _T("%s"), str.c_str()) / 2.f;
+            strCnt = -static_cast<float>(GetDrawFormatStringWidthToHandle(strHandle, _T("%s"), str.c_str())) / 2.f;
         #endif
     }
 	// 見た目を強調してわかりやすくする。
@@ -112,10 +115,10 @@ public:
 	double GetAngle() { return angle; }
 	double GetDegree() { return angle / degree; }
 
-	int GetX() { return location.x; }
-	int GetY() { return location.y; }
-	int GetSizeX() { return size.x; }
-	int GetSizeY() { return size.y; }
+	int GetX() { return static_cast<int>(location.x); }
+	int GetY() { return static_cast<int>(location.y); }
+	int GetSizeX() { return static_cast<int>(size.x); }
+	int GetSizeY() { return static_cast<int>(size.y); }
 	double GetExtRateX() { return extRate.x; }
 	double GetExtRateY() { return extRate.y; }
 };
