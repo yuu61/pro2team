@@ -21,33 +21,35 @@ PlayerSelect::PlayerSelect(GameCgr* changer,GameVar* gv) :
 	};
 	*/
 
-	// ‚Þ‚è‚â‚è�‰ŠúˆÊ’u‚ð�Ý’è
-	gameVar->roulette->SetExpandTo(MOVE_SINE, 0.5f, 45);
-	gameVar->roulette->Graphics::SetMoveTo(MOVE_SINE, 1920 - 900, 30, 45);
-	gameVar->roulette->SetMoveTo(MOVE_SINE, -250.f, -250.f, 45);
+	auto& roulette = gameVar->RouletteWheel();
 
-	//gameVar->backGround->SetMoveTo(MOVE_SINE, 0.f, 0.f, 45);
-	//gameVar->backGround->SetExpandTo(MOVE_SINE, 1.5f, 45);
+	// ‚Þ‚è‚â‚è�‰ŠúˆÊ’u‚ð�Ý’è
+	roulette.SetExpandTo(MOVE_SINE, 0.5f, 45);
+	roulette.Graphics::SetMoveTo(MOVE_SINE, 1920 - 900, 30, 45);
+	roulette.SetMoveTo(MOVE_SINE, -250.f, -250.f, 45);
 
 }
 
 void PlayerSelect::Initialize() {
-	gameVar->roulette->SetExpandTo(MOVE_SINE, 0.5f, 45);
-	gameVar->roulette->Graphics::SetMoveTo(MOVE_SINE, 1920 - 900, 30, 45);
-	gameVar->roulette->SetMoveTo(MOVE_SINE, -250.f, -250.f, 45);
+	auto& roulette = gameVar->RouletteWheel();
+	auto& players = gameVar->Players();
+
+	roulette.SetExpandTo(MOVE_SINE, 0.5f, 45);
+	roulette.Graphics::SetMoveTo(MOVE_SINE, 1920 - 900, 30, 45);
+	roulette.SetMoveTo(MOVE_SINE, -250.f, -250.f, 45);
 	
-	gameVar->backGround->SetMoveTo(MOVE_SINE, 0.f, 0.f, 45);
-	gameVar->backGround->SetExpandTo(MOVE_SINE, 1.5f, 45);
+	gameVar->Background().SetMoveTo(MOVE_SINE, 0.f, 0.f, 45);
+	gameVar->Background().SetExpandTo(MOVE_SINE, 1.5f, 45);
 
 
 	select = 0;
 	button[select]->SetExpandTo(MOVE_SINE, 1.1f, 12);
 
-	gameVar->playerStrawberry->SetMoveTo(MOVE_SINE, 500, 0, 45);
-	gameVar->opponentStrawberry->SetMoveTo(MOVE_SINE, 100, 0, 45);
+	players.CurrentScore().SetMoveTo(MOVE_SINE, 500, 0, 45);
+	players.OpponentScore().SetMoveTo(MOVE_SINE, 100, 0, 45);
 
-	gameVar->player->SetMoveTo(MOVE_SINE, 400, 300, 45);
-	gameVar->opponent->SetMoveTo(MOVE_SINE, 0, 400, 45);
+	players.Current().SetMoveTo(MOVE_SINE, 400, 300, 45);
+	players.Opponent().SetMoveTo(MOVE_SINE, 0, 400, 45);
 
 }
 
@@ -56,15 +58,16 @@ void PlayerSelect::Finalize() {
 }
 
 void PlayerSelect::Update() {
+	auto& players = gameVar->Players();
 
-	if (gameVar->player->GetInputKey(KEY_LEFT) == 1) {
+	if (players.Current().GetInputKey(KEY_LEFT) == 1) {
 		ButtonControl(&select, -1, BUTTON_NUM, button);
 	}
-	if (gameVar->player->GetInputKey(KEY_RIGHT) == 1) {
+	if (players.Current().GetInputKey(KEY_RIGHT) == 1) {
 		ButtonControl(&select, 1, BUTTON_NUM, button);
 	}
 
-	button[select]->CheckLeft(gameVar->player->GetInputKey(KEY_ENTER));
+	button[select]->CheckLeft(players.Current().GetInputKey(KEY_ENTER));
 
 	for (int i = 0; i < BUTTON_NUM; i++) {
 		if (button[i] != nullptr) {
@@ -72,12 +75,8 @@ void PlayerSelect::Update() {
 		}
 	}
 
-	gameVar->roulette->Update();
-
-	for (int i = 0; i < 2; i++) {
-		gameVar->strawberry[i]->Update();
-		gameVar->playerStore[i]->Update();
-	}
+	gameVar->RouletteWheel().Update();
+	players.UpdateAll();
 
 }
 
@@ -104,7 +103,7 @@ void PlayerSelect::Draw() {
 
 	button[select]->LightUp();
 
-	gameVar->roulette->Draw();
+	gameVar->RouletteWheel().Draw();
 	button[GO_ITEM_SELECT]->Draw();
 	button[GO_ROULETTE_PLAY]->Draw();
 	button[GO_TITLE]->Draw();
@@ -117,14 +116,11 @@ void PlayerSelect::Draw() {
 		button[GO_ROULETTE_PLAY]->GetX(), button[GO_ROULETTE_PLAY]->GetY(), button[GO_ROULETTE_PLAY]->GetSizeX(), button[GO_ROULETTE_PLAY]->GetSizeY(),
 		button[GO_ROULETTE_PLAY]->GetExtRateX(), button[GO_ROULETTE_PLAY]->GetExtRateY());
 	
-	for (int i = 0; i < 2; i++) {
-		gameVar->strawberry[i]->Draw();
-		gameVar->playerStore[i]->Draw();
-	}
+	gameVar->Players().DrawAll();
 
-	DrawFormatStringToHandle(1000, 1000, RGB(255, 255, 255), gameVar->fontHandle, _T("ENTER to \"%c\"  SELECT to \"%c\" \"%c\""),
-		gameVar->keyCharPlayer[KEY_ENTER],
-		gameVar->keyCharPlayer[KEY_RIGHT],
-		gameVar->keyCharPlayer[KEY_LEFT]);
+	DrawFormatStringToHandle(1000, 1000, RGB(255, 255, 255), gameVar->FontHandle(), _T("ENTER to \"%c\"  SELECT to \"%c\" \"%c\""),
+		gameVar->Players().CurrentKeyLabel(KEY_ENTER),
+		gameVar->Players().CurrentKeyLabel(KEY_RIGHT),
+		gameVar->Players().CurrentKeyLabel(KEY_LEFT));
 }
 

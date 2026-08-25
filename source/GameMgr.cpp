@@ -55,15 +55,16 @@ void GameMgr::Update() {
 		gameScene->Initialize();
 	}
 
-	gameVar->backGround->Update();
+	gameVar->Background().Update();
 	gameScene->Update();
 	
 }
 
 void GameMgr::Draw() {
 	
-	gameVar->backGround->Draw();
+	gameVar->Background().Draw();
 	gameScene->Draw();
-	DrawFormatStringToHandle(1920 - 300, 30, GetColor(255, 255, 255),gameVar->fontHandle, _T("TURN %d/%d"), gameVar->turn, gameVar->endTurn);
+	DrawFormatStringToHandle(1920 - 300, 30, GetColor(255, 255, 255), gameVar->FontHandle(),
+		_T("TURN %d/%d"), gameVar->Players().Turn(), gameVar->Players().EndTurn());
 	
 }

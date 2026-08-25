@@ -3,22 +3,21 @@
 #include "..\header\ItemClock.hpp"
 #include "..\header\ItemBasket.hpp"
 
+#include <utility>
+
 Player::Player() {}
 
 Player::Player(int enter, int cansel, int left, int right, float x, float y, float cx, float cy, int graph) :
-	points(0),
-	crown(0),
-	item{ nullptr },
-	key{ enter,cansel,left,right },
-	Graphics(x, y, cx, cy, graph) {
+	Graphics(x, y, cx, cy, graph),
+	key{ enter,cansel,left,right } {
 	
 }
 
-void Player::SetItem(Item* newItem) {
-	for (int i = 0; i < ITEM_NUM; i++) {
-		if (item[i] == nullptr) {
-			item[i] = newItem;
-			break;
+void Player::SetItem(std::unique_ptr<Item> newItem) {
+	for (auto& itemSlot : item) {
+		if (itemSlot == nullptr) {
+			itemSlot = std::move(newItem);
+			return;
 		}
 	}
 }
